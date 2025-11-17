@@ -9,7 +9,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="min-h-screen flex items-center py-20 bg-gradient-subtle">
+    <section id="about" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">

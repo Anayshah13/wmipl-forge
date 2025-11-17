@@ -13,7 +13,7 @@ export const ProductionProcess = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center py-20 bg-gradient-subtle">
+    <section className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -24,46 +24,22 @@ export const ProductionProcess = () => {
           </p>
         </div>
 
-        {/* Desktop Process Flow */}
-        <div className="hidden lg:flex items-center justify-between gap-4 mb-8">
+        {/* Uniform Grid - 8 Boxes */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div key={index} className="flex items-center">
-              <div className="flex-1">
-                <div className="bg-white border-2 border-primary rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {index + 1}
-                  </div>
+            <div
+              key={index}
+              className="group relative bg-white border-2 border-primary rounded-lg p-6 text-center transition-shadow hover:shadow-xl"
+            >
+              <div className="flex flex-col items-center gap-3">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  {index + 1}
+                </div>
+                <div className="will-change-transform transition-transform duration-300 ease-out origin-center group-hover:scale-[1.3]">
                   <h3 className="font-semibold text-secondary mb-1">{step.name}</h3>
                   <p className="text-xs text-muted-foreground">{step.description}</p>
                 </div>
               </div>
-              {index < steps.length - 1 && (
-                <ArrowRight className="text-primary mx-2 flex-shrink-0" size={24} />
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Mobile Process Flow */}
-        <div className="lg:hidden space-y-4">
-          {steps.map((step, index) => (
-            <div key={index}>
-              <div className="bg-white border-2 border-primary rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 flex-shrink-0 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-secondary mb-1">{step.name}</h3>
-                    <p className="text-sm text-muted-foreground">{step.description}</p>
-                  </div>
-                </div>
-              </div>
-              {index < steps.length - 1 && (
-                <div className="flex justify-center py-2">
-                  <ArrowRight className="text-primary rotate-90" size={24} />
-                </div>
-              )}
             </div>
           ))}
         </div>

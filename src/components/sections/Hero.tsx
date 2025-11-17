@@ -15,7 +15,7 @@ export const Hero = () => {
         <div 
           className="w-full h-full bg-cover bg-center" 
           style={{ 
-            backgroundImage: "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070')"
+            backgroundImage: "url('hero-bg.png')"
           }}
         />
       </div>
@@ -25,9 +25,7 @@ export const Hero = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between py-6">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-primary hexagon flex items-center justify-center">
-                <span className="text-white font-bold text-xl">W</span>
-              </div>
+              <img src="icon.jpg" alt="Western Icon" className="w-[8%] h-auto"/>
               <h2 className="text-white text-lg font-bold leading-tight tracking-tight hidden md:block">
                 Western Metal Industries Pvt. Ltd.
               </h2>
@@ -65,12 +63,11 @@ export const Hero = () => {
                 Contact
               </button>
               <Link to="/certifications">
-                <Button 
-                  size="sm"
-                  className="bg-accent hover:bg-accent/90 text-white"
+                <button 
+                  className="text-white/90 hover:text-white text-sm font-medium transition-colors"
                 >
                   View Certifications
-                </Button>
+                </button>
               </Link>
             </nav>
 
@@ -86,12 +83,7 @@ export const Hero = () => {
         <div className="w-full md:w-1/2 lg:w-2/5">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter">
-                Forging the Future of Aluminium.
-              </h1>
-              <p className="text-white/80 text-lg md:text-xl font-normal leading-relaxed">
-                Precision Engineered. Globally Trusted.
-              </p>
+              <img src="logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-[200%] h-auto"/>
               <p className="text-white/70 text-base leading-relaxed">
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </p>

@@ -36,7 +36,7 @@ export const WhyWMIPL = () => {
   ];
 
   return (
-    <section id="why-wmipl" className="min-h-screen flex items-center py-20 bg-secondary text-white relative overflow-hidden">
+    <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-secondary text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 industrial-pattern"></div>
       
