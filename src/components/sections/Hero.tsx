@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -63,6 +64,14 @@ export const Hero = () => {
               >
                 Contact
               </button>
+              <Link to="/certifications">
+                <Button 
+                  size="sm"
+                  className="bg-accent hover:bg-accent/90 text-white"
+                >
+                  View Certifications
+                </Button>
+              </Link>
             </nav>
 
             <button className="lg:hidden text-white">
@@ -98,9 +107,9 @@ export const Hero = () => {
               </Button>
               <Button 
                 size="lg"
-                variant="outline"
+                variant="secondary"
                 onClick={() => scrollToSection('contact')}
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="bg-white text-secondary hover:bg-white/90"
               >
                 Get in Touch
               </Button>

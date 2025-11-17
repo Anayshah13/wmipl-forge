@@ -39,7 +39,7 @@ export const Products = () => {
   ];
 
   return (
-    <section id="products" className="section-padding bg-white">
+    <section id="products" className="min-h-screen flex items-center py-20 bg-white">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -82,20 +82,23 @@ export const Products = () => {
           </div>
         </div>
 
-        {/* Product-wise Sales */}
+        {/* Product-wise Sales & End Products */}
         <div className="bg-muted rounded-xl p-8">
-          <h3 className="text-2xl font-semibold text-secondary mb-8 text-center">Annual Sales Distribution (30,000 MT)</h3>
+          <h3 className="text-2xl font-semibold text-secondary mb-8 text-center">End Products & Annual Sales Distribution (30,000 MT)</h3>
           <div className="grid md:grid-cols-4 gap-6">
             {endProducts.map((product, index) => (
               <div 
                 key={index}
-                className="bg-white rounded-lg p-6 text-center border-2 border-primary/20 hover:border-primary transition-colors"
+                className="bg-white rounded-lg overflow-hidden border-2 border-primary/20 hover:border-primary transition-colors"
               >
-                <div className="mb-4">
-                  <div className="text-4xl font-bold text-primary mb-1">{product.percentage}%</div>
+                <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                  <div className="text-6xl font-bold text-primary/20">{product.name[0]}</div>
+                </div>
+                <div className="p-6 text-center">
+                  <h4 className="text-lg font-semibold text-secondary mb-2">{product.name}</h4>
+                  <div className="text-3xl font-bold text-primary mb-1">{product.percentage}%</div>
                   <div className="text-sm text-muted-foreground">{product.volume}</div>
                 </div>
-                <h4 className="text-lg font-semibold text-secondary">{product.name}</h4>
               </div>
             ))}
           </div>
