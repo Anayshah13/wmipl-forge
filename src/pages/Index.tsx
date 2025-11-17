@@ -1,12 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { WhyWMIPL } from "@/components/sections/WhyWMIPL";
+import { Products } from "@/components/sections/Products";
+import { ProductionProcess } from "@/components/sections/ProductionProcess";
+import { Infrastructure } from "@/components/sections/Infrastructure";
+import { Management } from "@/components/sections/Management";
+import { CSR } from "@/components/sections/CSR";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <Hero />
+      <About />
+      <WhyWMIPL />
+      <Products />
+      <ProductionProcess />
+      <Infrastructure />
+      <Management />
+      <CSR />
+      <Contact />
+      <Footer />
     </div>
   );
 };
