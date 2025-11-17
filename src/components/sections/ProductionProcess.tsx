@@ -13,7 +13,7 @@ export const ProductionProcess = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-subtle">
+    <section className="min-h-screen flex items-center py-20 bg-gradient-subtle">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">

@@ -9,7 +9,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gradient-subtle">
+    <section id="about" className="min-h-screen flex items-center py-20 bg-gradient-subtle">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -24,11 +24,11 @@ export const About = () => {
           <div>
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-semibold text-secondary mb-3">Our Legacy</h3>
+                <h3 className="text-2xl font-semibold text-secondary mb-3">Our Journey</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Established in <span className="font-semibold text-primary">1978</span>, Western Metal Industries Pvt. Ltd. 
-                  began aluminium slugs production in <span className="font-semibold text-primary">1985</span>, responding 
-                  to the growing demand in India's manufacturing sector.
+                  <span className="font-semibold text-primary">Western Metal Industries was established in 1978</span> producing 
+                  Aluminium Sheets. We started production of Aluminium Slugs in <span className="font-semibold text-primary">1985</span>, 
+                  responding to the growing demand of this product in India's manufacturing sector.
                 </p>
               </div>
 
@@ -36,8 +36,10 @@ export const About = () => {
                 <h3 className="text-2xl font-semibold text-secondary mb-3">Today's Leadership</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   Today, we stand as <span className="font-semibold text-primary">India's largest producer</span> of 
-                  aluminium slugs, commanding a remarkable 70% market share. Our state-of-the-art facilities span 
-                  300,000 square feet with a dedicated workforce of over 400 skilled professionals.
+                  aluminium slugs, commanding a remarkable 70% market share. Our work area spreads over 
+                  <span className="font-semibold text-primary"> 300,000 square feet</span> with a dedicated workforce of 
+                  <span className="font-semibold text-primary"> over 400 skilled employees</span>, having a turnover close to 
+                  <span className="font-semibold text-primary"> INR 7,500 Million</span>.
                 </p>
               </div>
 

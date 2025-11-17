@@ -26,7 +26,7 @@ export const CSR = () => {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section id="csr" className="min-h-screen flex items-center py-20 bg-white">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
