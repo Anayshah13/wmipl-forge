@@ -10,7 +10,7 @@ export const Infrastructure = () => {
       builtUpArea: "5,260 sq.m",
       solarCapacity: "320 KW",
       location: "Within Pune city limits",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070",
+      image: "/hadapsar.jpg",
     },
     {
       name: "Bhandgaon Plant",
@@ -19,7 +19,7 @@ export const Infrastructure = () => {
       builtUpArea: "8,846 sq.m",
       solarCapacity: "1 MW",
       location: "50 km from Head Office via Pune-Solapur highway",
-      image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2070",
+      image: "/bhandgaon.jpg",
     },
   ];
 
@@ -39,7 +39,7 @@ export const Infrastructure = () => {
           {plants.map((plant, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-2xl transition-shadow">
               <div className="aspect-video overflow-hidden">
-                <img 
+                <img
                   src={plant.image}
                   alt={plant.name}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"

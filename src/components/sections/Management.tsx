@@ -52,14 +52,6 @@ export const Management = () => {
             </Card>
           ))}
         </div>
-
-        <div className="mt-12 bg-primary/10 border border-primary/30 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold text-secondary mb-4">Strong Mid-Level Management</h3>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Backed by a robust mid-level management team that has been with the company for 20+ years, 
-            ensuring continuity, expertise, and operational excellence.
-          </p>
-        </div>
       </div>
     </section>
   );

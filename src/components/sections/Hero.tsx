@@ -12,10 +12,10 @@ export const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent z-10"></div>
-        <div 
-          className="w-full h-full bg-cover bg-center" 
-          style={{ 
-            backgroundImage: "url('hero-bg.png')"
+        <div
+          className="w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/hero-bg.png')"
           }}
         />
       </div>
@@ -23,48 +23,41 @@ export const Hero = () => {
       {/* Header Navigation */}
       <header className="w-full absolute top-0 left-0 right-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between py-6">
-            <div className="flex items-center gap-4">
-              <img src="icon.jpg" alt="Western Icon" className="w-[8%] h-auto"/>
-              <h2 className="text-white text-lg font-bold leading-tight tracking-tight hidden md:block">
-                Western Metal Industries Pvt. Ltd.
-              </h2>
-            </div>
-            
-            <nav className="hidden lg:flex items-center gap-8">
-              <button 
+          <div className="flex items-center justify-end py-8">
+            <nav className="hidden lg:flex items-center gap-12">
+              <button
                 onClick={() => scrollToSection('about')}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
               >
                 About Us
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('products')}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
               >
                 Products
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('infrastructure')}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
               >
                 Infrastructure
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('management')}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
               >
                 Management
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
               >
                 Contact
               </button>
               <Link to="/certifications">
-                <button 
-                  className="text-white/90 hover:text-white text-sm font-medium transition-colors"
+                <button
+                  className="text-white/90 hover:text-white text-lg font-medium transition-colors"
                 >
                   View Certifications
                 </button>
@@ -72,36 +65,36 @@ export const Hero = () => {
             </nav>
 
             <button className="lg:hidden text-white">
-              <Menu size={24} />
+              <Menu size={32} />
             </button>
           </div>
         </div>
       </header>
 
       {/* Hero Content */}
-      <main className="relative z-20 flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="w-full md:w-1/2 lg:w-2/5">
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <img src="logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-[200%] h-auto"/>
-              <p className="text-white/70 text-base leading-relaxed">
+      <main className="relative z-20 flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-start text-left">
+          <div className="flex flex-col gap-8 items-start">
+            <div className="flex flex-col gap-6 items-start w-full">
+              <img src="/logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-full max-w-3xl h-auto drop-shadow-2xl origin-left" />
+              <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-light max-w-3xl">
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </p>
             </div>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button 
+
+            <div className="flex flex-wrap justify-start gap-6 mt-4">
+              <Button
                 size="lg"
                 onClick={() => scrollToSection('about')}
-                className="bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
               >
                 Discover Our Capabilities
               </Button>
-              <Button 
+              <Button
                 size="lg"
                 variant="secondary"
                 onClick={() => scrollToSection('contact')}
-                className="bg-white text-secondary hover:bg-white/90"
+                className="bg-white text-secondary hover:bg-white/90 text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
               >
                 Get in Touch
               </Button>
@@ -111,7 +104,7 @@ export const Hero = () => {
       </main>
 
       {/* Scroll Indicator */}
-      <button 
+      <button
         onClick={() => scrollToSection('about')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
       >

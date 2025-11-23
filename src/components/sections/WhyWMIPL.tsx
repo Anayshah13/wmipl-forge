@@ -39,7 +39,7 @@ export const WhyWMIPL = () => {
     <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-secondary text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 industrial-pattern"></div>
-      
+
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -50,73 +50,66 @@ export const WhyWMIPL = () => {
           </p>
         </div>
 
-        <div className="grid gap-6">
-          {/* Row 1: 2 cards */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {features.slice(0, 2).map((feature, index) => {
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          {/* Left Column */}
+          <div className="space-y-6">
+            {features.slice(0, 3).map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div 
+                <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all hover:scale-105"
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:scale-105 hover:border-primary/50"
                 >
-                  <div className="mb-6">
-                    <HexagonIcon 
-                      icon={Icon} 
-                      size={72}
-                      className="group-hover:scale-110 transition-transform"
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Row 2: 3 cards */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {features.slice(2, 5).map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div 
-                  key={index}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:scale-105"
-                >
-                  <div className="mb-4">
-                    <HexagonIcon 
-                      icon={Icon} 
-                      size={60}
-                      className="group-hover:scale-110 transition-transform"
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Row 3: 1 large card */}
-          <div className="grid md:grid-cols-1">
-            {features.slice(5, 6).map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div 
-                  key={index}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all hover:scale-105"
-                >
-                  <div className="flex items-start gap-6">
-                    <div className="mb-6">
-                      <HexagonIcon 
-                        icon={Icon} 
-                        size={72}
-                        className="group-hover:scale-110 transition-transform"
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0">
+                      <HexagonIcon
+                        icon={Icon}
+                        size={48}
+                        className="group-hover:scale-110 transition-transform text-primary"
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                      <p className="text-white/70 leading-relaxed">{feature.description}</p>
+                      <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Center Column - Rotating Image */}
+          <div className="flex justify-center items-center py-12 lg:py-0">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
+              <img
+                src="/hexagon.png"
+                alt="WMIPL Icon"
+                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+              />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-6">
+            {features.slice(3, 6).map((feature, index) => {
+              const Icon = feature.icon;
+              return (
+                <div
+                  key={index + 3}
+                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:scale-105 hover:border-primary/50"
+                >
+                  <div className="flex items-start gap-4 lg:flex-row-reverse lg:text-right">
+                    <div className="shrink-0">
+                      <HexagonIcon
+                        icon={Icon}
+                        size={48}
+                        className="group-hover:scale-110 transition-transform text-primary"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -128,7 +121,7 @@ export const WhyWMIPL = () => {
         <div className="mt-16 bg-primary/20 border border-primary/30 rounded-xl p-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Export House Registration</h3>
           <p className="text-white/80 max-w-2xl mx-auto">
-            Recognized by the Government of India as a trusted export house, we serve clients across South Africa, 
+            Recognized by the Government of India as a trusted export house, we serve clients across South Africa,
             New Zealand, Saudi Arabia, Bangladesh, and other international markets.
           </p>
         </div>

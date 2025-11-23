@@ -64,24 +64,6 @@ export const About = () => {
           </div>
         </div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div 
-                key={index}
-                className="bg-white border border-border rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
-              >
-                <div className="w-12 h-12 mx-auto mb-4 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Icon className="text-primary" size={24} />
-                </div>
-                <p className="text-3xl font-bold text-primary mb-2">{stat.value}</p>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-              </div>
-            );
-          })}
-        </div>
       </div>
     </section>
   );
