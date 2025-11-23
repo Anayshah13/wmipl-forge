@@ -1,5 +1,5 @@
 import { HexagonIcon } from "@/components/HexagonIcon";
-import { GraduationCap, Users, Sun, Leaf } from "lucide-react";
+import { GraduationCap, Users, Sun, Leaf, ChevronDown } from "lucide-react";
 
 export const CSR = () => {
   const initiatives = [
@@ -25,8 +25,12 @@ export const CSR = () => {
     },
   ];
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="csr" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-white">
+    <section id="csr" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-white relative">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -39,13 +43,13 @@ export const CSR = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {initiatives.map((initiative, index) => (
-            <div 
+            <div
               key={index}
               className="text-center group"
             >
               <div className="mb-6 flex justify-center">
-                <HexagonIcon 
-                  icon={initiative.icon} 
+                <HexagonIcon
+                  icon={initiative.icon}
                   size={80}
                   className="group-hover:scale-110 transition-transform"
                 />
@@ -61,7 +65,7 @@ export const CSR = () => {
             <div>
               <h3 className="text-3xl font-bold text-secondary mb-4">Our Environmental Commitment</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                We believe in responsible manufacturing. Our solar power installations and sustainable practices 
+                We believe in responsible manufacturing. Our solar power installations and sustainable practices
                 demonstrate our dedication to reducing environmental impact while maintaining operational excellence.
               </p>
               <div className="space-y-3">
@@ -99,6 +103,13 @@ export const CSR = () => {
           </div>
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('contact')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+      >
+        <ChevronDown size={32} />
+      </button>
     </section>
   );
 };

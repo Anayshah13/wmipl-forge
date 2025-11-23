@@ -1,5 +1,5 @@
 import { HexagonIcon } from "@/components/HexagonIcon";
-import { Trophy, Package, Building2, Users, Award, CheckCircle2 } from "lucide-react";
+import { Trophy, Package, Building2, Users, Award, CheckCircle2, ChevronDown } from "lucide-react";
 
 export const WhyWMIPL = () => {
   const features = [
@@ -34,6 +34,10 @@ export const WhyWMIPL = () => {
       description: "Stringent quality control processes ensuring consistent product excellence",
     },
   ];
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-secondary text-white relative overflow-hidden">
@@ -81,11 +85,11 @@ export const WhyWMIPL = () => {
           {/* Center Column - Rotating Image */}
           <div className="flex justify-center items-center py-12 lg:py-0">
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
               <img
-                src="/hexagon.png"
+                src="/icon.jpg"
                 alt="WMIPL Icon"
-                className="w-full h-full object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                className="w-full h-full object-contain animate-[spin_20s_linear_infinite] drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
               />
             </div>
           </div>
@@ -117,15 +121,14 @@ export const WhyWMIPL = () => {
             })}
           </div>
         </div>
-
-        <div className="mt-16 bg-primary/20 border border-primary/30 rounded-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">Export House Registration</h3>
-          <p className="text-white/80 max-w-2xl mx-auto">
-            Recognized by the Government of India as a trusted export house, we serve clients across South Africa,
-            New Zealand, Saudi Arabia, Bangladesh, and other international markets.
-          </p>
-        </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('products')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
+      >
+        <ChevronDown size={32} />
+      </button>
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { User } from "lucide-react";
+import { User, ChevronDown } from "lucide-react";
 
 export const Management = () => {
   const team = [
@@ -23,8 +23,12 @@ export const Management = () => {
     },
   ];
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="management" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle">
+    <section id="management" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -53,6 +57,13 @@ export const Management = () => {
           ))}
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('csr')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+      >
+        <ChevronDown size={32} />
+      </button>
     </section>
   );
 };

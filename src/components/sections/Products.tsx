@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-import { Cylinder, Pipette, FlaskConical, Package, ArrowRight } from "lucide-react";
+import { Cylinder, Pipette, FlaskConical, Package, ArrowRight, ChevronDown } from "lucide-react";
 
 interface SlugType {
   name: string;
@@ -57,8 +57,12 @@ export const Products = () => {
     return `conic-gradient(${gradientParts.join(", ")})`;
   };
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="products" className="min-h-screen w-full overflow-x-hidden py-24 bg-gradient-to-b from-white to-gray-50">
+    <section id="products" className="min-h-screen w-full overflow-x-hidden py-24 bg-gradient-to-b from-white to-gray-50 relative">
       <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 pb-8">
@@ -230,6 +234,13 @@ export const Products = () => {
           </div>
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('production-process')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-blue-800 animate-bounce"
+      >
+        <ChevronDown size={32} />
+      </button>
     </section>
   );
 };

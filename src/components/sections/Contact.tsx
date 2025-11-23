@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
-import { MapPin, Phone, Mail, Globe } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -37,8 +37,12 @@ export const Contact = () => {
     },
   ];
 
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section id="contact" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle">
+    <section id="contact" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
@@ -56,38 +60,38 @@ export const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-secondary mb-2">Full Name</label>
-                <Input 
+                <Input
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Your name"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-secondary mb-2">Email</label>
-                <Input 
+                <Input
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="your@email.com"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-secondary mb-2">Phone</label>
-                <Input 
+                <Input
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+91 XXXXX XXXXX"
                 />
               </div>
               <div>
                 <label className="block text-sm font-medium text-secondary mb-2">Message</label>
-                <Textarea 
+                <Textarea
                   required
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your requirements..."
                   rows={4}
                 />
@@ -150,6 +154,13 @@ export const Contact = () => {
           </div>
         </div>
       </div>
+
+      <button
+        onClick={() => scrollToSection('footer')}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+      >
+        <ChevronDown size={32} />
+      </button>
     </section>
   );
 };
