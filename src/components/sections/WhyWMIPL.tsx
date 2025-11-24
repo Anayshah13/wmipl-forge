@@ -40,10 +40,7 @@ export const WhyWMIPL = () => {
   };
 
   return (
-    <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gray-50 text-secondary relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 industrial-pattern pointer-events-none"></div>
-
+    <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex flex-col justify-center pt-10 pb-32 bg-[url('/grey_bg.avif')] bg-cover bg-center text-secondary relative overflow-hidden">
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-secondary">
@@ -62,7 +59,7 @@ export const WhyWMIPL = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-xl p-4 shadow-sm hover:shadow-xl transition-all hover:scale-110 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -74,7 +71,7 @@ export const WhyWMIPL = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -84,12 +81,12 @@ export const WhyWMIPL = () => {
 
           {/* Center Column */}
           <div className="flex justify-center items-center py-12 lg:py-0">
-            <div className="relative md:w-80 md:h-80 lg:w-96 lg:h-96">
+            <div className="relative md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
                 src="/hexagon.png"
                 alt="WMIPL Icon"
-                className="w-full h-full object-contain drop-shadow-xl"
+                className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]"
               />
             </div>
           </div>
@@ -101,7 +98,7 @@ export const WhyWMIPL = () => {
               return (
                 <div
                   key={index + 3}
-                  className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-xl p-4 shadow-sm hover:shadow-xl transition-all hover:scale-110 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4 lg:flex-row-reverse lg:text-right">
                     <div className="shrink-0">
@@ -113,7 +110,7 @@ export const WhyWMIPL = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                      <p className="text-muted-foreground text-xs leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
