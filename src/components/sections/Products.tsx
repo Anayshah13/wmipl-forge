@@ -237,7 +237,7 @@ export const Products = () => {
 
       <button
         onClick={() => scrollToSection('production-process')}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-blue-800 animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-blue-800 animate-bounce"
       >
         <ChevronDown size={28} />
       </button>

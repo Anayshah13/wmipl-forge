@@ -102,26 +102,11 @@ export const Infrastructure = () => {
             </Card>
           ))}
         </div>
-
-        <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-center">
-            <div className="text-2xl font-bold text-primary mb-1">43,300</div>
-            <p className="text-secondary font-medium text-sm">Total Plot Area (sq.m)</p>
-          </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-center">
-            <div className="text-2xl font-bold text-primary mb-1">35,000 MT</div>
-            <p className="text-secondary font-medium text-sm">Annual Production Capacity</p>
-          </div>
-          <div className="bg-primary/5 border border-primary/20 rounded-xl p-3 text-center">
-            <div className="text-2xl font-bold text-primary mb-1">1.32 MW</div>
-            <p className="text-secondary font-medium text-sm">Total Solar Capacity</p>
-          </div>
-        </div>
       </div>
 
       <button
         onClick={() => scrollToSection('management')}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
       >
         <ChevronDown size={28} />
       </button>

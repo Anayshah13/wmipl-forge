@@ -122,7 +122,7 @@ export const WhyWMIPL = () => {
 
       <button
         onClick={() => scrollToSection('products')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+        className="absolute bottom-16 left-1/2 -translate-x-1/2 text-primary animate-bounce"
       >
         <ChevronDown size={32} />
       </button>

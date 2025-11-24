@@ -154,13 +154,6 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-
-      <button
-        onClick={() => scrollToSection('footer')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
-      >
-        <ChevronDown size={32} />
-      </button>
     </section>
   );
 };
