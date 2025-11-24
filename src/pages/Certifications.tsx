@@ -137,22 +137,22 @@ const Certifications = () => {
     {
       title: "ISO 9001:2015",
       desc: "Management System Certificate for Western Metal Industries Private Limited.",
-      src: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=3540&auto=format&fit=crop",
+      src: "iso9001_1.png",
     },
     {
       title: "Appendix to Certificate",
       desc: "Detailed scope and sites covered under the DNV Management System.",
-      src: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=3540&auto=format&fit=crop",
+      src: "appendix_to_certificate.png",
     },
     {
       title: "ISO 45001:2018",
       desc: "Occupational Health and Safety Management System (TÜV SÜD).",
-      src: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=3540&auto=format&fit=crop",
+      src: "iso45001.png",
     },
     {
       title: "ISO 14001:2015",
       desc: "Environmental Management System Certification (TÜV SÜD).",
-      src: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3540&auto=format&fit=crop",
+      src: "iso14001.png",
     },
   ];
 
@@ -175,19 +175,7 @@ const Certifications = () => {
           <header className="flex flex-col md:flex-row justify-center items-center gap-4 mb-12 text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-[#0A4DAA]">
               QUALITY ASSURANCE
-            </h1>
-            <div className="w-10 h-10 text-[#0A4DAA]">
-              <svg
-                fill="none"
-                viewBox="0 0 48 48"
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-full h-full fill-current"
-              >
-                <path
-                  d="M14 4H34V14H44V34H34V44H14V34H4V14H14V4Z"
-                />
-              </svg>
-            </div>
+            </h1> 
           </header>
 
           {/* Main Content Grid */}
@@ -274,7 +262,7 @@ const Certifications = () => {
 
             {/* Zoomable Image Wrapper */}
             <TransformWrapper
-              initialScale={1.5}
+              initialScale={1.1}
               minScale={0.5}
               maxScale={4}
               centerOnInit={true}

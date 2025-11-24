@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -40,10 +42,26 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Certifications</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>ISO 9001:2015</li>
-              <li>ISO 14001:2015</li>
-              <li>ISO 45001:2018</li>
-              <li>Export House</li>
+              <li>
+                <Link to="/certifications#certifications-carousel" className="hover:text-white transition-colors">
+                  ISO 9001:2015
+                </Link>
+              </li>
+              <li>
+                <Link to="/certifications#certifications-carousel" className="hover:text-white transition-colors">
+                  ISO 14001:2015
+                </Link>
+              </li>
+              <li>
+                <Link to="/certifications#certifications-carousel" className="hover:text-white transition-colors">
+                  ISO 45001:2018
+                </Link>
+              </li>
+              <li>
+                <Link to="/certifications#certifications-carousel" className="hover:text-white transition-colors">
+                  Export House
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
