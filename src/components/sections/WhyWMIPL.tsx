@@ -40,16 +40,16 @@ export const WhyWMIPL = () => {
   };
 
   return (
-    <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-secondary text-white relative overflow-hidden">
+    <section id="why-wmipl" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gray-50 text-secondary relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5 industrial-pattern"></div>
+      <div className="absolute inset-0 opacity-5 industrial-pattern pointer-events-none"></div>
 
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-secondary">
             Why Choose WMIPL?
           </h2>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Decades of expertise, cutting-edge infrastructure, and unwavering commitment to quality
           </p>
         </div>
@@ -62,7 +62,7 @@ export const WhyWMIPL = () => {
               return (
                 <div
                   key={index}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -73,8 +73,8 @@ export const WhyWMIPL = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -82,14 +82,14 @@ export const WhyWMIPL = () => {
             })}
           </div>
 
-          {/* Center Column - Rotating Image */}
+          {/* Center Column */}
           <div className="flex justify-center items-center py-12 lg:py-0">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="relative md:w-80 md:h-80 lg:w-96 lg:h-96">
+              <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
-                src="/icon.jpg"
+                src="/hexagon.png"
                 alt="WMIPL Icon"
-                className="w-full h-full object-contain animate-[spin_20s_linear_infinite] drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                className="w-full h-full object-contain drop-shadow-xl"
               />
             </div>
           </div>
@@ -101,7 +101,7 @@ export const WhyWMIPL = () => {
               return (
                 <div
                   key={index + 3}
-                  className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4 lg:flex-row-reverse lg:text-right">
                     <div className="shrink-0">
@@ -112,8 +112,8 @@ export const WhyWMIPL = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold mb-2 text-white group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-white/70 text-sm leading-relaxed">{feature.description}</p>
+                      <h3 className="text-lg font-semibold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ export const WhyWMIPL = () => {
 
       <button
         onClick={() => scrollToSection('products')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
       >
         <ChevronDown size={32} />
       </button>

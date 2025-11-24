@@ -22,7 +22,7 @@ export const Hero = () => {
 
       {/* Header Navigation */}
       <header className="w-full absolute top-0 left-0 right-0 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-end py-8">
             <nav className="hidden lg:flex items-center gap-12">
               <button
@@ -72,21 +72,21 @@ export const Hero = () => {
       </header>
 
       {/* Hero Content */}
-      <main className="relative z-20 flex items-center w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-start text-left">
-          <div className="flex flex-col gap-8 items-start">
-            <div className="flex flex-col gap-6 items-start w-full">
-              <img src="/logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-full max-w-3xl h-auto drop-shadow-2xl origin-left" />
-              <p className="text-white/80 text-xl md:text-2xl leading-relaxed font-light max-w-3xl">
+      <main className="relative z-20 flex items-center justify-left w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full ml-10">
+        <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
+          <div className="flex flex-col gap-6 items-center">
+            <div className="flex flex-col gap-4 items-center w-full">
+              <img src="/logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-full max-w-2xl h-auto drop-shadow-2xl" />
+              <p className="text-white/80 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-start gap-6 mt-4">
+            <div className="flex flex-wrap justify-center gap-4 mt-2">
               <Button
                 size="lg"
                 onClick={() => scrollToSection('about')}
-                className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                className="bg-primary hover:bg-primary-dark text-white text-base px-6 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
               >
                 Discover Our Capabilities
               </Button>
@@ -94,7 +94,7 @@ export const Hero = () => {
                 size="lg"
                 variant="secondary"
                 onClick={() => scrollToSection('contact')}
-                className="bg-white text-secondary hover:bg-white/90 text-lg px-8 py-6 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                className="bg-white text-secondary hover:bg-white/90 text-base px-6 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
               >
                 Get in Touch
               </Button>
