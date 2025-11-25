@@ -5,6 +5,24 @@ import { Card } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+
+const containerStyle = {
+  width: '100%',
+  height: '100%',
+  minHeight: '500px',
+  borderRadius: '0.75rem'
+};
+
+const center = {
+  lat: 18.5105,
+  lng: 73.9356
+};
+
+const bhandgaon = {
+  lat: 18.4609,
+  lng: 74.3085
+};
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -26,13 +44,30 @@ export const Contact = () => {
 
   const offices = [
     {
-      title: "Head Office & Hadapsar Plant",
-      address: "Pune, Maharashtra",
+      title: "Main Factory and Registered Office",
+      address: (
+        <>
+          251/1 A, B Hadapsar Industrial Estate,<br />
+          Hadapsar,<br />
+          Pune - 411013<br />
+          Maharashtra<br />
+          India
+        </>
+      ),
       location: "Within Pune city limits",
     },
     {
-      title: "Bhandgaon Plant",
-      address: "Bhandgaon, Maharashtra",
+      title: "Second Unit",
+      address: (
+        <>
+          294 Khor Road, Bhandgaon,<br />
+          Pune-Solapur Road<br />
+          Taluka - Daund<br />
+          Dist.Pune - 412214<br />
+          Maharashtra<br />
+          India
+        </>
+      ),
       location: "50 km from Pune via Pune-Solapur Highway",
     },
   ];
@@ -43,7 +78,7 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
-      <div className="section-container">
+      <div className="section-container max-w-[90rem]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
             Get in Touch
@@ -53,9 +88,9 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Form */}
-          <Card className="p-8">
+          <Card className="p-8 h-full">
             <h3 className="text-2xl font-semibold text-secondary mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -103,8 +138,8 @@ export const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="p-6">
+          <div className="space-y-6 h-full flex flex-col">
+            <Card className="p-6 flex-grow">
               <h3 className="text-xl font-semibold text-secondary mb-4">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -112,8 +147,9 @@ export const Contact = () => {
                     <Mail className="text-primary" size={20} />
                   </div>
                   <div>
-                    <p className="font-medium text-secondary">Email</p>
-                    <p className="text-muted-foreground">info@westernmetal.com</p>
+                    <p className="font-medium text-secondary">E-mail</p>
+                    <p className="text-muted-foreground text-sm">western@westernaluminium.com</p>
+                    <p className="text-muted-foreground text-sm">prashant@westernaluminium.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -122,7 +158,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-secondary">Phone</p>
-                    <p className="text-muted-foreground">+91 20 XXXX XXXX</p>
+                    <p className="text-muted-foreground text-sm">+91-20-26870164 / 26875054 / 29805054</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -131,26 +167,39 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-secondary">Website</p>
-                    <p className="text-muted-foreground">www.westernmetal.com</p>
+                    <p className="text-muted-foreground text-sm">www.westernaluminium.com</p>
                   </div>
                 </div>
               </div>
             </Card>
 
             {offices.map((office, index) => (
-              <Card key={index} className="p-6">
+              <Card key={index} className="p-6 flex-grow">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-primary" size={20} />
                   </div>
                   <div>
                     <h4 className="font-semibold text-secondary mb-1">{office.title}</h4>
-                    <p className="text-muted-foreground text-sm">{office.address}</p>
-                    <p className="text-muted-foreground text-sm">{office.location}</p>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{office.address}</p>
                   </div>
                 </div>
               </Card>
             ))}
+          </div>
+
+          {/* Google Map */}
+          <div className="h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg border border-gray-200">
+            <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
+              <GoogleMap
+                mapContainerStyle={containerStyle}
+                center={center}
+                zoom={10}
+              >
+                <Marker position={center} title="Main Factory (Hadapsar)" />
+                <Marker position={bhandgaon} title="Second Unit (Bhandgaon)" />
+              </GoogleMap>
+            </LoadScript>
           </div>
         </div>
       </div>
