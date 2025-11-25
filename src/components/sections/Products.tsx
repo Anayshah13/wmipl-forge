@@ -75,7 +75,7 @@ export const Products = () => {
             </p>
           </div>
           <div className="hidden md:block">
-            <img src="/icon.jpg" alt="WMIPL Logo" className="h-16 w-auto object-contain" />
+            <img src="/blue_bold_logo.png" alt="WMIPL Logo" className="h-16 w-auto object-contain" />
           </div>
         </div>
 

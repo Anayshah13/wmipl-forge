@@ -30,7 +30,7 @@ const Carousel = ({ slides, onImageClick }: CarouselProps) => {
   return (
     <div className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gray-50 dark:bg-gray-900 py-20">
       <div className="absolute inset-0 bg-grid-black/[0.02] dark:bg-grid-white/[0.02]" />
-      
+
       <div className="relative z-10 w-full max-w-6xl px-4 flex flex-col items-center">
         <h2 className="text-3xl md:text-5xl font-bold text-[#0A4DAA] mb-12 text-center uppercase tracking-tight">
           Our Certifications
@@ -52,17 +52,17 @@ const Carousel = ({ slides, onImageClick }: CarouselProps) => {
                   className="relative w-full md:w-[700px] aspect-[3/4] md:aspect-[16/9] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col md:flex-row"
                 >
                   {/* Image Section - Clickable with Overlay */}
-                  <div 
+                  <div
                     className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group cursor-pointer"
                     onClick={() => onImageClick(slide.src)}
                   >
-                    <img 
-                      src={slide.src} 
+                    <img
+                      src={slide.src}
                       alt={slide.title}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-[#0A4DAA]/10 group-hover:bg-[#0A4DAA]/0 transition-colors duration-300" />
-                    
+
                     {/* Overlay hint */}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
                       <span className="opacity-0 group-hover:opacity-100 bg-black/70 text-white px-3 py-1 rounded-full text-sm transition-opacity pointer-events-none">
@@ -89,29 +89,28 @@ const Carousel = ({ slides, onImageClick }: CarouselProps) => {
           </AnimatePresence>
 
           {/* Controls */}
-          <button 
+          <button
             onClick={handlePrev}
             className="absolute left-0 md:-left-16 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-lg hover:bg-gray-50 text-[#0A4DAA] transition-all z-20 hover:scale-110"
           >
             <ChevronLeft size={28} />
           </button>
-          <button 
+          <button
             onClick={handleNext}
             className="absolute right-0 md:-right-16 top-1/2 -translate-y-1/2 p-4 rounded-full bg-white shadow-lg hover:bg-gray-50 text-[#0A4DAA] transition-all z-20 hover:scale-110"
           >
             <ChevronRight size={28} />
           </button>
         </div>
-        
+
         {/* Indicators */}
         <div className="flex gap-2 mt-8">
           {slides.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrent(idx)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                current === idx ? "w-8 bg-[#0A4DAA]" : "w-2 bg-gray-300 hover:bg-gray-400"
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${current === idx ? "w-8 bg-[#0A4DAA]" : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
             />
           ))}
         </div>
@@ -165,7 +164,7 @@ const Certifications = () => {
 
   return (
     <div className="font-sans text-gray-900">
-      
+
       {/* SECTION 1: Quality Assurance Main */}
       <section className="bg-white dark:bg-gray-900 min-h-screen relative flex flex-col">
         {/* Added blur effect when modal is open */}
@@ -175,7 +174,7 @@ const Certifications = () => {
           <header className="flex flex-col md:flex-row justify-center items-center gap-4 mb-12 text-center">
             <h1 className="text-4xl lg:text-5xl font-bold text-[#0A4DAA]">
               QUALITY ASSURANCE
-            </h1> 
+            </h1>
           </header>
 
           {/* Main Content Grid */}
@@ -192,15 +191,15 @@ const Certifications = () => {
                   className="w-full max-w-sm mx-auto object-cover"
                   src="/export_house.png"
                 />
-                
+
                 {/* Overlay hint */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors rounded-lg flex items-center justify-center">
-                   <span className="opacity-0 group-hover:opacity-100 bg-black/70 text-white px-3 py-1 rounded-full text-sm transition-opacity pointer-events-none">
-                     Click to expand
-                   </span>
+                  <span className="opacity-0 group-hover:opacity-100 bg-black/70 text-white px-3 py-1 rounded-full text-sm transition-opacity pointer-events-none">
+                    Click to expand
+                  </span>
                 </div>
               </div>
-              
+
               <div className="bg-[#0A4DAA] text-white text-center py-4 px-6 mt-6 rounded-md w-full max-w-sm shadow-md">
                 <p className="font-medium text-lg">Export House Recognition</p>
               </div>
@@ -224,7 +223,7 @@ const Certifications = () => {
 
         {/* Bouncing Chevron */}
         <div className="absolute bottom-8 left-0 right-0 flex justify-center pb-4">
-          <button 
+          <button
             onClick={scrollToNextSection}
             className="animate-bounce p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition-colors cursor-pointer text-[#0A4DAA]"
             aria-label="Scroll down"
@@ -235,25 +234,25 @@ const Certifications = () => {
       </section>
 
       {/* SECTION 2: Carousel of Certifications - Full Viewport Height */}
-      <section 
-        id="certifications-carousel" 
+      <section
+        id="certifications-carousel"
         className="relative w-full min-h-screen"
       >
-        <Carousel 
-          slides={slideData} 
-          onImageClick={setSelectedImage} 
+        <Carousel
+          slides={slideData}
+          onImageClick={setSelectedImage}
         />
       </section>
 
       {/* Global Modal / Lightbox with Zoom */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 transition-opacity duration-300"
+          className="fixed inset-0 z-[100] flex items-center justify-center backdrop-blur-xl p-4 transition-opacity duration-300"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative w-full h-full overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            
-            <button 
+
+            <button
               className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-[60]"
               onClick={() => setSelectedImage(null)}
             >
@@ -261,6 +260,7 @@ const Certifications = () => {
             </button>
 
             {/* Zoomable Image Wrapper */}
+
             <TransformWrapper
               initialScale={1.1}
               minScale={0.5}

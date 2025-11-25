@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -19,57 +18,6 @@ export const Hero = () => {
           }}
         />
       </div>
-
-      {/* Header Navigation */}
-      <header className="w-full absolute top-0 left-0 right-0 z-30">
-        <div className="w-full px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-end py-8">
-            <nav className="hidden lg:flex items-center gap-12">
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-              >
-                About Us
-              </button>
-              <button
-                onClick={() => scrollToSection('products')}
-                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-              >
-                Products
-              </button>
-              <button
-                onClick={() => scrollToSection('infrastructure')}
-                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-              >
-                Infrastructure
-              </button>
-              <button
-                onClick={() => scrollToSection('management')}
-                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-              >
-                Management
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-              >
-                Contact
-              </button>
-              <Link to="/certifications">
-                <button
-                  className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                >
-                  View Certifications
-                </button>
-              </Link>
-            </nav>
-
-            <button className="lg:hidden text-white">
-              <Menu size={32} />
-            </button>
-          </div>
-        </div>
-      </header>
 
       {/* Hero Content */}
       <main className="relative z-20 flex items-center justify-left w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full ml-10">

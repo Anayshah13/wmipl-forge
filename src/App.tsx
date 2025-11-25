@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Certifications from "./pages/Certifications";
 import NotFound from "./pages/NotFound";
 
+import { Navbar } from "@/components/Navbar";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -15,6 +17,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/certifications" element={<Certifications />} />
