@@ -8,15 +8,18 @@ export const Hero = () => {
 
   return (
     <div className="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent z-10"></div>
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/hero-bg.png')"
-          }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/video1.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Hero Content */}
@@ -24,7 +27,7 @@ export const Hero = () => {
         <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-4 items-center w-full">
-              <img src="/logo.png" alt="Western Metal Industries Pvt. Ltd." className="w-full max-w-2xl h-auto drop-shadow-2xl" />
+              <img src="/logo2.png" alt="Western Metal Industries Pvt. Ltd." className="w-full max-w-2xl h-auto drop-shadow-2xl" />
               <p className="text-white/80 text-lg md:text-xl leading-relaxed font-light max-w-2xl">
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </p>

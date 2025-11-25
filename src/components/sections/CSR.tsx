@@ -30,7 +30,7 @@ export const CSR = () => {
   };
 
   return (
-    <section id="csr" className="min-h-screen w-screen overflow-x-hidden flex items-center py-12 bg-white relative">
+    <section id="csr" className="min-h-screen w-full overflow-x-hidden flex items-center py-12 bg-white relative">
       <div className="section-container">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
@@ -106,7 +106,7 @@ export const CSR = () => {
 
       <button
         onClick={() => scrollToSection('contact')}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-green-600 animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-green-600 animate-bounce"
       >
         <ChevronDown size={28} />
       </button>

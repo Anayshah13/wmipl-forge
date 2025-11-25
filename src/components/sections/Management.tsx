@@ -4,16 +4,16 @@ import { User, ChevronDown } from "lucide-react";
 export const Management = () => {
   const team = [
     {
-      name: "Anuj Gandhi",
-      position: "MD & CEO",
-      experience: "50 years of Experience",
-      expertise: "Purchase, Finance and Strategic Management",
-    },
-    {
       name: "Prashant Shah",
       position: "Executive Director",
       experience: "30 years of Experience",
       expertise: "Production Administration, Exports and Domestic Sales",
+    },
+    {
+      name: "Anuj Gandhi",
+      position: "MD & CEO",
+      experience: "50 years of Experience",
+      expertise: "Purchase, Finance and Strategic Management",
     },
     {
       name: "Rakesh Shah",
@@ -30,9 +30,12 @@ export const Management = () => {
   return (
     <section
       id="management"
-      className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative"
+      className="min-h-screen w-full overflow-x-hidden flex items-center py-20 relative bg-cover bg-center"
+      style={{ backgroundImage: "url('/metal.avif')" }}
     >
-      <div className="section-container">
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-white/50 z-0" />
+      <div className="section-container relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
             Management Team
@@ -73,7 +76,7 @@ export const Management = () => {
       </div>
 
       <button
-        onClick={() => scrollToSection("csr")}
+        onClick={() => scrollToSection("clients")}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
       >
         <ChevronDown size={32} />

@@ -6,17 +6,9 @@ export const Footer = () => {
   return (
     <footer id="footer" className="bg-secondary text-white py-12">
       <div className="section-container">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-primary hexagon flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
-              <h3 className="font-bold text-lg">Western Metal</h3>
-            </div>
-            <p className="text-white/70 text-sm">
-              India's largest manufacturer of aluminium slugs with 70% market share.
-            </p>
+        <div className="grid md:grid-cols-5 gap-8 mb-8">
+          <div className="md:col-span-2">
+            <img src="logo2.png" alt="" className="h-18 pr-8" />
           </div>
 
           <div>

@@ -42,7 +42,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen w-screen overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
+    <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">

@@ -6,7 +6,7 @@ export const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen w-screen overflow-x-hidden flex items-center py-16 bg-gradient-subtle relative">
+    <section id="about" className="min-h-screen w-full overflow-x-hidden flex items-center py-16 bg-gradient-subtle relative">
       <div className="section-container">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-6">

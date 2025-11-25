@@ -28,8 +28,19 @@ export const Infrastructure = () => {
   };
 
   return (
-    <section id="infrastructure" className="min-h-screen w-screen overflow-x-hidden flex items-center py-12 bg-white relative">
-      <div className="section-container">
+    <section id="infrastructure" className="min-h-screen w-full overflow-x-hidden flex items-center py-12 relative">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-white/10 z-0"></div>
+        <div
+          className="w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/western_background.png')"
+          }}
+        />
+      </div>
+
+      <div className="section-container relative z-20">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-2">
             Infrastructure & Capabilities
@@ -106,7 +117,7 @@ export const Infrastructure = () => {
 
       <button
         onClick={() => scrollToSection('management')}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
       >
         <ChevronDown size={28} />
       </button>
