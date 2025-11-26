@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { User, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Management = () => {
   const team = [
@@ -27,6 +28,21 @@ export const Management = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section
       id="management"
@@ -37,42 +53,61 @@ export const Management = () => {
       <div className="absolute inset-0 bg-white/50 z-0" />
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-secondary mb-4"
+          >
             Management Team
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+          >
             Led by industry veterans with decades of experience
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
           {team.map((member, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2"
-            >
-              <div className="bg-gradient-to-br from-primary to-primary-dark p-8 flex items-center justify-center">
-                <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center">
-                  <User className="text-white" size={64} />
+            <motion.div key={index} variants={itemVariants}>
+              <Card
+                className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2 h-full"
+              >
+                <div className="bg-gradient-to-br from-primary to-primary-dark p-8 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center">
+                    <User className="text-white" size={64} />
+                  </div>
                 </div>
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold text-secondary mb-2">
-                  {member.name}
-                </h3>
-                <p className="text-primary font-semibold mb-3">
-                  {member.position}
-                </p>
-                <p className="text-sm font-medium text-muted-foreground mb-2">
-                  {member.experience}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {member.expertise}
-                </p>
-              </div>
-            </Card>
+                <div className="p-6 text-center">
+                  <h3 className="text-2xl font-bold text-secondary mb-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary font-semibold mb-3">
+                    {member.position}
+                  </p>
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    {member.experience}
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    {member.expertise}
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       <button

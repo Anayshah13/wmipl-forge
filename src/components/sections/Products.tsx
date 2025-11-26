@@ -203,20 +203,33 @@ export const Products = () => {
           </div>
         ) : null}
       </AnimatePresence>
+
       <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-6 border-b border-gray-200 pb-4">
-          <div className="max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-2xl"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 uppercase tracking-tight mb-2">
               Product Portfolio
             </h2>
             <p className="text-lg text-gray-600 font-light">
               Precision-engineered aluminium solutions for global industries.
             </p>
-          </div>
-          <div className="hidden md:block">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="hidden md:block"
+          >
             <img src="/blue_bold_logo.png" alt="WMIPL Logo" className="h-16 w-auto object-contain" />
-          </div>
+          </motion.div>
         </div>
 
         {/* Main Grid Layout replicating the Image Structure */}
@@ -224,18 +237,28 @@ export const Products = () => {
 
           {/* COLUMN 1: Aluminium Slug Types (Span 4) */}
           <div className="lg:col-span-4 flex flex-col gap-4">
-            <div className="flex items-center gap-3 mb-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-3 mb-1"
+            >
               <div className="h-6 w-1 bg-blue-800 rounded-full"></div>
               <h3 className="text-xl font-bold text-gray-900 uppercase">
                 Aluminium Slug Types
               </h3>
-            </div>
+            </motion.div>
 
             <div className="space-y-3">
               {slugTypes.map((type, index) => (
                 <motion.div
                   layoutId={`card-${type.name}-${id}`}
                   key={type.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   onClick={() => setActive(type)}
                   className="group flex flex-row overflow-hidden h-28 border-0 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white ring-1 ring-gray-100 rounded-xl cursor-pointer"
                 >
@@ -271,7 +294,13 @@ export const Products = () => {
           </div>
 
           {/* COLUMN 2: End Products (Span 3) - The "Blue" Column */}
-          <div className="lg:col-span-3 flex flex-col h-full shadow-xl rounded-2xl overflow-hidden ring-1 ring-gray-100 bg-white">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="lg:col-span-3 flex flex-col h-full shadow-xl rounded-2xl overflow-hidden ring-1 ring-gray-100 bg-white"
+          >
             <div className="bg-blue-900 text-white p-4">
               <h3 className="font-bold uppercase text-lg tracking-wide">End-Products</h3>
               <p className="text-blue-200 text-xs mt-0.5">Key applications</p>
@@ -298,13 +327,19 @@ export const Products = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* COLUMN 3: Data & Charts (Span 5) */}
           <div className="lg:col-span-5 flex flex-col gap-4">
 
             {/* Table Section */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-1 overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-1 overflow-hidden"
+            >
               <div className="flex items-center gap-3 p-3 pb-1">
                 <div className="h-5 w-1 bg-blue-800 rounded-full"></div>
                 <h3 className="text-base font-bold text-gray-900 uppercase">
@@ -347,10 +382,16 @@ export const Products = () => {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </motion.div>
 
             {/* Chart Section */}
-            <div className="bg-white p-4 rounded-2xl border border-gray-100 shadow-lg relative overflow-hidden flex-grow flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-4 rounded-2xl border border-gray-100 shadow-lg relative overflow-hidden flex-grow flex flex-col justify-center"
+            >
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-12 -mt-12 opacity-50"></div>
               <h3 className="text-xs font-bold text-gray-500 uppercase mb-4 text-center tracking-widest">
                 Sales Utilisation by Product
@@ -403,7 +444,7 @@ export const Products = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

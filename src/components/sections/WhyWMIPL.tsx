@@ -1,5 +1,6 @@
 import { HexagonIcon } from "@/components/HexagonIcon";
 import { Trophy, Package, Building2, Users, Award, CheckCircle2, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const WhyWMIPL = () => {
   const features = [
@@ -43,12 +44,24 @@ export const WhyWMIPL = () => {
     <section id="why-wmipl" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center pt-10 pb-32 bg-[url('/grey_bg.avif')] bg-cover bg-center text-secondary relative overflow-hidden">
       <div className="section-container relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-secondary">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-secondary"
+          >
             Why Choose WMIPL?
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+          >
             Decades of expertise, cutting-edge infrastructure, and unwavering commitment to quality
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
@@ -57,8 +70,12 @@ export const WhyWMIPL = () => {
             {features.slice(0, 3).map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
+                <motion.div
                   key={index}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="group bg-white border border-gray-300 rounded-xl p-4 shadow-sm hover:shadow-xl transition-all hover:scale-110 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4">
@@ -74,13 +91,19 @@ export const WhyWMIPL = () => {
                       <p className="text-muted-foreground text-xs leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
 
           {/* Center Column */}
-          <div className="flex justify-center items-center py-12 lg:py-0">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center items-center py-12 lg:py-0"
+          >
             <div className="relative md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
@@ -89,15 +112,19 @@ export const WhyWMIPL = () => {
                 className="w-full h-full object-contain drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column */}
           <div className="space-y-6">
             {features.slice(3, 6).map((feature, index) => {
               const Icon = feature.icon;
               return (
-                <div
+                <motion.div
                   key={index + 3}
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="group bg-white border border-gray-300 rounded-xl p-4 shadow-sm hover:shadow-xl transition-all hover:scale-110 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-4 lg:flex-row-reverse lg:text-right">
@@ -113,7 +140,7 @@ export const WhyWMIPL = () => {
                       <p className="text-muted-foreground text-xs leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

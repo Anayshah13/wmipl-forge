@@ -1,5 +1,6 @@
 import { HexagonIcon } from "@/components/HexagonIcon";
 import { GraduationCap, Users, Sun, Leaf, ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const CSR = () => {
   const initiatives = [
@@ -29,91 +30,125 @@ export const CSR = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
-    <section id="csr" className="min-h-screen w-full overflow-x-hidden flex items-center py-12 relative bg-[url('/leaf.png')] bg-cover bg-center">
-      {/* Overlay to ensure text readability against the green background */}
-      <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] z-0" />
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
 
-      <div className="section-container relative z-10">
-        <div className="text-center mb-8">
-          <div className="inline-block bg-white/80 backdrop-blur-md px-8 py-4 rounded-2xl shadow-sm mb-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-2">
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+  };
+
+  return (
+    <section id="csr" className="h-screen w-full overflow-hidden flex flex-col justify-center items-center py-4 relative bg-[url('/leaf.png')] bg-cover bg-center">
+      {/* Overlay to ensure text readability against the green background */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0" />
+
+      <div className="section-container relative z-10 w-full max-w-6xl px-4 h-full flex flex-col justify-center">
+        <div className="text-center mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="inline-block bg-white/80 backdrop-blur-md px-6 py-2 rounded-2xl shadow-sm mb-2"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-1">
               CSR & Environment
             </h2>
-            <p className="text-lg text-green-800/80 max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-green-800/80 max-w-3xl mx-auto">
               Committed to sustainable growth and community development
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4"
+        >
           {initiatives.map((initiative, index) => (
-            <div
+            <motion.div
               key={index}
-              className="text-center group bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all border border-green-100"
+              variants={itemVariants}
+              className="text-center group bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg hover:shadow-xl transition-all border border-green-100"
             >
-              <div className="mb-4 flex justify-center">
+              <div className="mb-2 flex justify-center">
                 <HexagonIcon
                   icon={initiative.icon}
-                  size={80}
+                  size={48}
                   className="group-hover:scale-110 transition-transform from-green-600 to-green-800"
                 />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{initiative.title}</h3>
-              <p className="text-sm text-gray-600">{initiative.description}</p>
-            </div>
+              <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-1">{initiative.title}</h3>
+              <p className="text-[10px] md:text-xs text-gray-600 leading-tight">{initiative.description}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="bg-white/95 backdrop-blur-md border border-green-200 rounded-xl p-6 md:p-8 shadow-xl">
-          <div className="grid md:grid-cols-2 gap-6 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="bg-white/95 backdrop-blur-md border border-green-200 rounded-xl p-4 shadow-xl"
+        >
+          <div className="grid md:grid-cols-2 gap-4 items-center">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Our Environmental Commitment</h3>
-              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">Our Environmental Commitment</h3>
+              <p className="text-xs text-gray-700 leading-relaxed mb-3">
                 We believe in responsible manufacturing. Our solar power installations and sustainable practices
                 demonstrate our dedication to reducing environmental impact while maintaining operational excellence.
               </p>
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-xs text-gray-600">ISO 14001:2015 Environmental Management certified</p>
+                  <p className="text-[10px] md:text-xs text-gray-600">ISO 14001:2015 Environmental Management certified</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-xs text-gray-600">ISO 45001:2018 Occupational Health & Safety certified</p>
+                  <p className="text-[10px] md:text-xs text-gray-600">ISO 45001:2018 Occupational Health & Safety certified</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-xs text-gray-600">Continuous investment in green technologies</p>
+                  <p className="text-[10px] md:text-xs text-gray-600">Continuous investment in green technologies</p>
                 </div>
               </div>
             </div>
-            <div className="bg-green-50/50 rounded-xl p-6 border border-green-100">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4 text-center">Environmental Impact</h4>
-              <div className="space-y-3">
-                <div className="text-center pb-3 border-b border-green-200">
-                  <div className="text-3xl font-bold text-green-700 mb-0.5">2,235.85</div>
-                  <p className="text-xs text-gray-600">Carbon Credits (5 years)</p>
+            <div className="bg-green-50/50 rounded-xl p-3 border border-green-100">
+              <h4 className="text-sm md:text-base font-semibold text-gray-900 mb-2 text-center">Environmental Impact</h4>
+              <div className="space-y-2">
+                <div className="text-center pb-2 border-b border-green-200">
+                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">2,235.85</div>
+                  <p className="text-[10px] text-gray-600">Carbon Credits (5 years)</p>
                 </div>
-                <div className="text-center pb-3 border-b border-green-200">
-                  <div className="text-3xl font-bold text-green-700 mb-0.5">1.32 MW</div>
-                  <p className="text-xs text-gray-600">Solar Power Capacity</p>
+                <div className="text-center pb-2 border-b border-green-200">
+                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">1.32 MW</div>
+                  <p className="text-[10px] text-gray-600">Solar Power Capacity</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-green-700 mb-0.5">100%</div>
-                  <p className="text-xs text-gray-600">Commitment to Sustainability</p>
+                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">100%</div>
+                  <p className="text-[10px] text-gray-600">Commitment to Sustainability</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <button
         onClick={() => scrollToSection('contact')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white drop-shadow-lg animate-bounce"
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-green-700 drop-shadow-lg animate-bounce"
       >
-        <ChevronDown size={32} strokeWidth={3} />
+        <ChevronDown size={28} strokeWidth={3} />
       </button>
     </section>
   );

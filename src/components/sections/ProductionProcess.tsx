@@ -24,12 +24,24 @@ export const ProductionProcess = () => {
 
       <div className="relative z-10 w-full max-w-[95%] mx-auto flex flex-col h-full justify-center">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+          >
             Production Process
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+          >
             State-of-the-art manufacturing process ensuring consistent quality
-          </p>
+          </motion.p>
         </div>
 
         {/* Horizontal Timeline Container */}
@@ -69,11 +81,17 @@ export const ProductionProcess = () => {
         </div>
 
         <div className="mt-8 text-center">
-          <div className="inline-block bg-primary/10 border border-primary/30 rounded-lg px-8 py-4 backdrop-blur-md">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            viewport={{ once: true }}
+            className="inline-block bg-primary/10 border border-primary/30 rounded-lg px-8 py-4 backdrop-blur-md"
+          >
             <p className="text-gray-800 dark:text-gray-200 font-medium">
               <span className="font-bold text-primary">Quality Control</span> at every stage ensures world-class products
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
 

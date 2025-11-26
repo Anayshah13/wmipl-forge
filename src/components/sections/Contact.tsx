@@ -6,6 +6,7 @@ import { MapPin, Phone, Mail, Globe, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { motion } from "framer-motion";
 
 const containerStyle = {
   width: '100%',
@@ -80,65 +81,91 @@ export const Contact = () => {
     <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-[url('/light_smoke.avif')] bg-cover bg-center relative">
       <div className="section-container max-w-[90rem]">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-secondary mb-4"
+          >
             Get in Touch
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+          >
             Let's discuss how we can serve your aluminium slug requirements
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Contact Form */}
-          <Card className="p-8 h-full">
-            <h3 className="text-2xl font-semibold text-secondary mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-secondary mb-2">Full Name</label>
-                <Input
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-secondary mb-2">Email</label>
-                <Input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-secondary mb-2">Phone</label>
-                <Input
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  placeholder="+91 XXXXX XXXXX"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-secondary mb-2">Message</label>
-                <Textarea
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your requirements..."
-                  rows={4}
-                />
-              </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary-dark">
-                Send Message
-              </Button>
-            </form>
-          </Card>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="h-full"
+          >
+            <Card className="p-8 h-full">
+              <h3 className="text-2xl font-semibold text-secondary mb-6">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-secondary mb-2">Full Name</label>
+                  <Input
+                    required
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-secondary mb-2">Email</label>
+                  <Input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-secondary mb-2">Phone</label>
+                  <Input
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="+91 XXXXX XXXXX"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-secondary mb-2">Message</label>
+                  <Textarea
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    placeholder="Tell us about your requirements..."
+                    rows={4}
+                  />
+                </div>
+                <Button type="submit" className="w-full bg-primary hover:bg-primary-dark">
+                  Send Message
+                </Button>
+              </form>
+            </Card>
+          </motion.div>
 
           {/* Contact Information */}
-          <div className="space-y-6 h-full flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="space-y-6 h-full flex flex-col"
+          >
             <Card className="p-6 flex-grow">
               <h3 className="text-xl font-semibold text-secondary mb-4">Contact Information</h3>
               <div className="space-y-4">
@@ -186,10 +213,16 @@ export const Contact = () => {
                 </div>
               </Card>
             ))}
-          </div>
+          </motion.div>
 
           {/* Google Map */}
-          <div className="h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg border border-gray-200">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg border border-gray-200"
+          >
             <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
               <GoogleMap
                 mapContainerStyle={containerStyle}
@@ -200,7 +233,7 @@ export const Contact = () => {
                 <Marker position={bhandgaon} title="Second Unit (Bhandgaon)" />
               </GoogleMap>
             </LoadScript>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

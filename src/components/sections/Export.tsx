@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 const globeConfig = {
     pointSize: 2,
-    globeColor: "#0a2050",
+    globeColor: "hsla(221, 78%, 24%, 1.00)",
     showAtmosphere: true,
-    atmosphereColor: "rgba(114, 114, 114, 0.7)",
-    atmosphereAltitude: 0.2,
+    atmosphereColor: "rgba(255, 255, 255, 0.4)",
+    atmosphereAltitude: 0.25,
     emissive: "#062056",
-    emissiveIntensity: 0.5,
-    shininess: 1,
-    polygonColor: "rgba(255, 255, 255, 0.9)",
-    ambientLight: "#a0dbf5",
+    emissiveIntensity: 0.3,
+    shininess: 1.5,
+    polygonColor: "rgba(255, 255, 255, 1)",
+    ambientLight: "#38bdf8",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
     pointLight: "#ffffff",
@@ -21,14 +21,20 @@ const globeConfig = {
     arcLength: 0.7,
     rings: 1,
     maxRings: 3,
-    initialPosition: { lat: 18.52, lng: 73.88 },
+    initialPosition: { lat: 18.5204, lng: 73.8567 },
     autoRotate: true,
-    autoRotateSpeed: 0.1,
+    autoRotateSpeed: -0.5,
 };
 
 const colors = ["#06b6d4"];
 
 const countriesData = [
+    {
+        name: "New Zealand",
+        code: "nz",
+        lat: -40.9006,
+        lng: 174.8860,
+    },
     {
         name: "South Africa",
         code: "za",
@@ -46,12 +52,6 @@ const countriesData = [
         code: "ae",
         lat: 23.4241,
         lng: 53.8478,
-    },
-    {
-        name: "New Zealand",
-        code: "nz",
-        lat: -40.9006,
-        lng: 174.8860,
     },
     {
         name: "Saudi Arabia",
@@ -91,18 +91,34 @@ export const Export = () => {
                 {/* Left Side: List */}
                 <div className="space-y-8">
                     <div className="text-left">
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+                        <motion.h2
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"
+                        >
                             Global Export Network
-                        </h2>
-                        <p className="text-xl text-muted-foreground">
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="text-xl text-muted-foreground"
+                        >
                             Connecting India to the World
-                        </p>
+                        </motion.p>
                     </div>
 
                     <div className="grid gap-4">
-                        {countriesData.map((country) => (
+                        {countriesData.map((country, index) => (
                             <motion.div
                                 key={country.name}
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.4, delay: 0.1 * index }}
+                                viewport={{ once: true }}
                                 className={`p-4 rounded-xl border flex items-center gap-4 cursor-pointer transition-all duration-300 ${hoveredCountry === country.name
                                     ? "bg-primary/10 border-primary scale-105"
                                     : "bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 hover:border-primary/50"
@@ -131,7 +147,7 @@ export const Export = () => {
             </div>
 
             <button
-                onClick={() => scrollToSection("csr")}
+                onClick={() => scrollToSection("clients")}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce"
             >
                 <ChevronDown size={32} />
