@@ -46,7 +46,7 @@ export const CSR = () => {
   };
 
   return (
-    <section id="csr" className="h-screen w-full overflow-hidden flex flex-col justify-center items-center py-4 relative bg-[url('/leaf.png')] bg-cover bg-center">
+    <section id="csr" className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-4 relative bg-[url('/leaf.png')] bg-cover bg-center">
       {/* Overlay to ensure text readability against the green background */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0" />
 

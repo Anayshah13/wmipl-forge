@@ -84,7 +84,7 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="relative w-[85%] ml-auto aspect-[4/3] rounded-xl overflow-hidden shadow-2xl group"
+            className="relative w-full mx-auto md:w-[85%] md:ml-auto aspect-[4/3] rounded-xl overflow-hidden shadow-2xl group"
           >
             <img
               src="/factory-melting.png"

@@ -141,7 +141,7 @@ export const Export = () => {
                 </div>
 
                 {/* Right Side: Globe */}
-                <div className="w-full h-[600px] relative flex items-center justify-center">
+                <div className="w-full h-[300px] md:h-[600px] relative flex items-center justify-center">
                     <World globeConfig={globeConfig} data={data} />
                 </div>
             </div>

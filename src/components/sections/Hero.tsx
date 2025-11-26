@@ -1,8 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export const Hero = () => {
+  const [videoSrc, setVideoSrc] = useState("");
+
+  useEffect(() => {
+    setVideoSrc("/video1.mp4");
+  }, []);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -19,12 +26,12 @@ export const Hero = () => {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/video1.mp4" type="video/mp4" />
+          {videoSrc && <source src={videoSrc} type="video/mp4" />}
         </video>
       </div>
 
       {/* Hero Content */}
-      <main className="relative z-20 flex items-center justify-left w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full ml-10">
+      <main className="relative z-20 flex items-center justify-start w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full md:ml-10">
         <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-4 items-center w-full">

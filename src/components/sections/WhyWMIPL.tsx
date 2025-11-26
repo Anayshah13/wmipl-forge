@@ -104,7 +104,7 @@ export const WhyWMIPL = () => {
             viewport={{ once: true }}
             className="flex justify-center items-center py-12 lg:py-0"
           >
-            <div className="relative md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
+            <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
                 src="/hexagon.png"

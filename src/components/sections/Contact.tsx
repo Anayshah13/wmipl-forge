@@ -221,7 +221,7 @@ export const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="h-full min-h-[500px] rounded-xl overflow-hidden shadow-lg border border-gray-200"
+            className="h-full min-h-[300px] md:min-h-[500px] rounded-xl overflow-hidden shadow-lg border border-gray-200"
           >
             <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
               <GoogleMap

@@ -397,7 +397,7 @@ export const Products = () => {
                 Sales Utilisation by Product
               </h3>
 
-              <div className="flex flex-row items-center justify-center gap-6 h-40">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-6 h-auto md:h-40">
                 {/* Recharts Pie Chart */}
                 <div className="w-40 h-40">
                   <ResponsiveContainer width="100%" height="100%">

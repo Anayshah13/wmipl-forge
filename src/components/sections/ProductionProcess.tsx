@@ -48,9 +48,9 @@ export const ProductionProcess = () => {
         <div className="relative w-full pb-12">
           <div className="w-full px-4 relative">
             {/* Connecting Line */}
-            <div className="absolute top-[2rem] left-0 w-full h-1 bg-gray-300 dark:bg-gray-600 z-0" />
+            <div className="hidden lg:block absolute top-[2rem] left-0 w-full h-1 bg-gray-300 dark:bg-gray-600 z-0" />
 
-            <div className="grid grid-cols-8 gap-2 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-2 relative z-10">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
