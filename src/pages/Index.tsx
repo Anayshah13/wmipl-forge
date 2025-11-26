@@ -5,7 +5,8 @@ import { Products } from "@/components/sections/Products";
 import { ProductionProcess } from "@/components/sections/ProductionProcess";
 import { Infrastructure } from "@/components/sections/Infrastructure";
 import { Management } from "@/components/sections/Management";
-import { Clients } from "@/components/sections/Clients";
+import { Export } from "@/components/sections/Export";
+
 import { CSR } from "@/components/sections/CSR";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
@@ -20,6 +21,7 @@ const Index = () => {
       <ProductionProcess />
       <Infrastructure />
       <Management />
+      <Export />
       <CSR />
       <Contact />
       <Footer />
