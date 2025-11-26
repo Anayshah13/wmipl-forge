@@ -77,7 +77,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-gradient-subtle relative">
+    <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-[url('/light_smoke.avif')] bg-cover bg-center relative">
       <div className="section-container max-w-[90rem]">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-secondary mb-4">

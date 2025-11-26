@@ -66,6 +66,7 @@ export const Footer = () => {
             <div className="flex gap-6 text-sm text-white/70">
               <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors">Designed by Anay Shah</a>
             </div>
           </div>
         </div>
