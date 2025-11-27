@@ -9,13 +9,13 @@ export const About = () => {
   return (
     <section id="about" className="min-h-screen w-full overflow-x-hidden flex items-center py-16 bg-gradient-subtle relative">
       <div className="section-container">
-        <div className="text-center mb-10">
+        <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-secondary mb-6"
+            className="text-5xl md:text-6xl font-bold text-secondary mb-8"
           >
             About Western Metal Industries
           </motion.h2>
@@ -24,14 +24,14 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-2xl md:text-3xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             India's Largest Manufacturer of Aluminium Slugs
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -52,13 +52,13 @@ export const About = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold text-secondary mb-2">Today's Leadership</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Today, we stand as <span className="font-semibold text-primary">India's largest producer</span> of
+              <h3 className="text-3xl font-bold text-secondary mb-4">Today's Leadership</h3>
+              <p className="text-gray-800 text-lg md:text-xl leading-relaxed font-medium">
+                Today, we stand as <span className="font-bold text-primary">India's largest producer</span> of
                 aluminium slugs, commanding a remarkable 70% market share. Our work area spreads over
-                <span className="font-semibold text-primary"> 300,000 square feet</span> with a dedicated workforce of
-                <span className="font-semibold text-primary"> over 400 skilled employees</span>, having a turnover close to
-                <span className="font-semibold text-primary"> INR 7,500 Million</span>.
+                <span className="font-bold text-primary"> 300,000 square feet</span> with a dedicated workforce of
+                <span className="font-bold text-primary"> over 400 skilled employees</span>, having a turnover close to
+                <span className="font-bold text-primary"> INR 7,500 Million</span>.
               </p>
             </motion.div>
 
@@ -67,13 +67,13 @@ export const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-primary/5 border border-primary/20 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm hover:shadow-md"
+              className="bg-primary/5 border border-primary/20 rounded-xl p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
             >
-              <h4 className="font-semibold text-secondary mb-2">Performance Highlights</h4>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Annual Melting Capacity: <span className="font-semibold text-primary">70,000 MT</span></li>
-                <li>• Annual Sales: <span className="font-semibold text-primary">30,000 MT</span></li>
-                <li>• Turnover: <span className="font-semibold text-primary">INR 7,500 Million</span></li>
+              <h4 className="text-xl font-bold text-secondary mb-4">Performance Highlights</h4>
+              <ul className="space-y-3 text-gray-800 text-lg font-medium">
+                <li>• Annual Melting Capacity: <span className="font-bold text-primary">70,000 MT</span></li>
+                <li>• Annual Sales: <span className="font-bold text-primary">30,000 MT</span></li>
+                <li>• Turnover: <span className="font-bold text-primary">INR 7,500 Million</span></li>
                 <li>• Export Presence: South Africa, New Zealand, Saudi Arabia, Bangladesh & more</li>
               </ul>
             </motion.div>
@@ -84,7 +84,7 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="relative w-full mx-auto md:w-[85%] md:ml-auto aspect-[4/3] rounded-xl overflow-hidden shadow-2xl group"
+            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group"
           >
             <img
               src="/factory-melting.png"

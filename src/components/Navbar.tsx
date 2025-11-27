@@ -1,9 +1,11 @@
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -21,6 +23,7 @@ export const Navbar = () => {
     }, []);
 
     const scrollToSection = (id: string) => {
+        setIsMobileMenuOpen(false);
         if (location.pathname !== '/') {
             navigate('/', { state: { scrollTo: id } });
         } else {
@@ -46,7 +49,15 @@ export const Navbar = () => {
     }, [location]);
 
     const isHomePage = location.pathname === '/';
-    const showBackground = isScrolled || !isHomePage;
+    const showBackground = isScrolled || !isHomePage || isMobileMenuOpen;
+
+    const navLinks = [
+        { name: 'About Us', id: 'about' },
+        { name: 'Products', id: 'products' },
+        { name: 'Infrastructure', id: 'infrastructure' },
+        { name: 'Management', id: 'management' },
+        { name: 'Contact', id: 'contact' },
+    ];
 
     return (
         <header
@@ -57,37 +68,17 @@ export const Navbar = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex-1"></div>
 
+                    {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-12">
-                        <button
-                            onClick={() => scrollToSection('about')}
-                            className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                        >
-                            About Us
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('products')}
-                            className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                        >
-                            Products
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('infrastructure')}
-                            className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                        >
-                            Infrastructure
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('management')}
-                            className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                        >
-                            Management
-                        </button>
-                        <button
-                            onClick={() => scrollToSection('contact')}
-                            className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                        >
-                            Contact
-                        </button>
+                        {navLinks.map((link) => (
+                            <button
+                                key={link.name}
+                                onClick={() => scrollToSection(link.id)}
+                                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
+                            >
+                                {link.name}
+                            </button>
+                        ))}
                         <Link to="/certifications">
                             <button
                                 className="text-white/90 hover:text-white text-lg font-medium transition-colors"
@@ -97,11 +88,44 @@ export const Navbar = () => {
                         </Link>
                     </nav>
 
-                    <button className="lg:hidden text-white ml-auto">
-                        <Menu size={32} />
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="lg:hidden text-white ml-auto z-50 relative"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
                     </button>
                 </div>
             </div>
+
+            {/* Mobile Navigation Overlay */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className="absolute top-0 left-0 w-full bg-black/95 backdrop-blur-xl pt-24 pb-10 px-6 shadow-xl lg:hidden flex flex-col items-center gap-8 h-screen"
+                    >
+                        {navLinks.map((link) => (
+                            <button
+                                key={link.name}
+                                onClick={() => scrollToSection(link.id)}
+                                className="text-white/90 hover:text-white text-2xl font-medium transition-colors"
+                            >
+                                {link.name}
+                            </button>
+                        ))}
+                        <Link to="/certifications" onClick={() => setIsMobileMenuOpen(false)}>
+                            <button
+                                className="text-white/90 hover:text-white text-2xl font-medium transition-colors"
+                            >
+                                View Certifications
+                            </button>
+                        </Link>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </header>
     );
 };

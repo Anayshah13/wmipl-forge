@@ -50,19 +50,19 @@ export const CSR = () => {
       {/* Overlay to ensure text readability against the green background */}
       <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0" />
 
-      <div className="section-container relative z-10 w-full max-w-6xl px-4 h-full flex flex-col justify-center">
-        <div className="text-center mb-4">
+      <div className="section-container relative z-10 w-full max-w-7xl px-4 h-full flex flex-col justify-center">
+        <div className="text-center mb-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/80 backdrop-blur-md px-6 py-2 rounded-2xl shadow-sm mb-2"
+            className="inline-block bg-white/90 backdrop-blur-md px-8 py-3 rounded-2xl shadow-md mb-4"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-2">
               CSR & Environment
             </h2>
-            <p className="text-sm md:text-base text-green-800/80 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-green-900 font-medium max-w-4xl mx-auto">
               Committed to sustainable growth and community development
             </p>
           </motion.div>
@@ -73,23 +73,23 @@ export const CSR = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8"
         >
           {initiatives.map((initiative, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="text-center group bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-lg hover:shadow-xl transition-all border border-green-100"
+              className="text-center group bg-white/95 backdrop-blur-md p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-green-100"
             >
-              <div className="mb-2 flex justify-center">
+              <div className="mb-4 flex justify-center">
                 <HexagonIcon
                   icon={initiative.icon}
-                  size={48}
+                  size={64}
                   className="group-hover:scale-110 transition-transform from-green-600 to-green-800"
                 />
               </div>
-              <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-1">{initiative.title}</h3>
-              <p className="text-[10px] md:text-xs text-gray-600 leading-tight">{initiative.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{initiative.title}</h3>
+              <p className="text-base text-gray-800 leading-snug font-medium">{initiative.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -99,44 +99,44 @@ export const CSR = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/95 backdrop-blur-md border border-green-200 rounded-xl p-4 shadow-xl"
+          className="bg-white/95 backdrop-blur-md border border-green-200 rounded-2xl p-8 shadow-xl"
         >
-          <div className="grid md:grid-cols-2 gap-4 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">Our Environmental Commitment</h3>
-              <p className="text-xs text-gray-700 leading-relaxed mb-3">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Environmental Commitment</h3>
+              <p className="text-lg text-gray-800 leading-relaxed mb-6 font-medium">
                 We believe in responsible manufacturing. Our solar power installations and sustainable practices
                 demonstrate our dedication to reducing environmental impact while maintaining operational excellence.
               </p>
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-[10px] md:text-xs text-gray-600">ISO 14001:2015 Environmental Management certified</p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-green-600 rounded-full"></div>
+                  <p className="text-base md:text-lg text-gray-800 font-medium">ISO 14001:2015 Environmental Management certified</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-[10px] md:text-xs text-gray-600">ISO 45001:2018 Occupational Health & Safety certified</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-green-600 rounded-full"></div>
+                  <p className="text-base md:text-lg text-gray-800 font-medium">ISO 45001:2018 Occupational Health & Safety certified</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full"></div>
-                  <p className="text-[10px] md:text-xs text-gray-600">Continuous investment in green technologies</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-2.5 h-2.5 bg-green-600 rounded-full"></div>
+                  <p className="text-base md:text-lg text-gray-800 font-medium">Continuous investment in green technologies</p>
                 </div>
               </div>
             </div>
-            <div className="bg-green-50/50 rounded-xl p-3 border border-green-100">
-              <h4 className="text-sm md:text-base font-semibold text-gray-900 mb-2 text-center">Environmental Impact</h4>
-              <div className="space-y-2">
-                <div className="text-center pb-2 border-b border-green-200">
-                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">2,235.85</div>
-                  <p className="text-[10px] text-gray-600">Carbon Credits (5 years)</p>
+            <div className="bg-green-50/80 rounded-2xl p-6 border border-green-200">
+              <h4 className="text-xl font-bold text-gray-900 mb-4 text-center">Environmental Impact</h4>
+              <div className="space-y-4">
+                <div className="text-center pb-4 border-b border-green-300">
+                  <div className="text-3xl md:text-4xl font-bold text-green-800 mb-1">2,235.85</div>
+                  <p className="text-base text-gray-700 font-medium">Carbon Credits (5 years)</p>
                 </div>
-                <div className="text-center pb-2 border-b border-green-200">
-                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">1.32 MW</div>
-                  <p className="text-[10px] text-gray-600">Solar Power Capacity</p>
+                <div className="text-center pb-4 border-b border-green-300">
+                  <div className="text-3xl md:text-4xl font-bold text-green-800 mb-1">1.32 MW</div>
+                  <p className="text-base text-gray-700 font-medium">Solar Power Capacity</p>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl md:text-2xl font-bold text-green-700 mb-0.5">100%</div>
-                  <p className="text-[10px] text-gray-600">Commitment to Sustainability</p>
+                  <div className="text-3xl md:text-4xl font-bold text-green-800 mb-1">100%</div>
+                  <p className="text-base text-gray-700 font-medium">Commitment to Sustainability</p>
                 </div>
               </div>
             </div>

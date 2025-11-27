@@ -63,12 +63,12 @@ export const ClientsPage = () => {
             {/* White overlay for reduced contrast */}
             <div className="absolute inset-0 bg-white/85 z-0" />
 
-            <div className="w-full max-w-6xl flex flex-col gap-8 relative z-10">
+            <div className="w-full max-w-7xl flex flex-col gap-10 relative z-10">
                 <motion.h1
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-4xl md:text-5xl font-bold text-blue-900 text-left pl-2"
+                    className="text-5xl md:text-6xl font-bold text-blue-900 text-left pl-2"
                 >
                     CLIENTS & MARQUEE SUPPLIERS
                 </motion.h1>
@@ -79,13 +79,13 @@ export const ClientsPage = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
                 >
                     {/* ---------------------- TOP CUSTOMERS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} bg-black`}>Top Customers</motion.div>
-                        <div className="bg-white/30 backdrop-blur-sm p-3 rounded-b-lg flex-1 border border-white/20">
-                            <div className="grid grid-cols-2 gap-2">
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-black`}>Top Customers</motion.div>
+                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-3">
                                 {renderColumn(topCustCol1)}
                                 {renderColumn(topCustCol2)}
                             </div>
@@ -94,9 +94,9 @@ export const ClientsPage = () => {
 
                     {/* ---------------------- END USE CLIENTS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} bg-blue-700`}>End Use Clients</motion.div>
-                        <div className="bg-white/30 backdrop-blur-sm p-3 rounded-b-lg flex-1 border border-white/20">
-                            <div className="grid grid-cols-2 gap-2">
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-blue-700`}>End Use Clients</motion.div>
+                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-3">
                                 {renderColumn(endUseCol1)}
                                 {renderColumn(endUseCol2)}
                             </div>
@@ -105,11 +105,11 @@ export const ClientsPage = () => {
 
                     {/* ---------------------- MARQUEE SUPPLIERS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} bg-gray-400`}>
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-gray-500`}>
                             Marquee Suppliers
                         </motion.div>
-                        <div className="bg-white/30 backdrop-blur-sm p-3 rounded-b-lg flex-1 border border-white/20">
-                            <div className="grid grid-cols-2 gap-2">
+                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-3">
                                 {renderColumn(marqueeCol1)}
                                 {renderColumn(marqueeCol2)}
                             </div>

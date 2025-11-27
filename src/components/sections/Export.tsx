@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { World } from "@/components/ui/globe";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
@@ -63,6 +63,20 @@ const countriesData = [
 
 export const Export = () => {
     const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+    const [viewDistance, setViewDistance] = useState(300);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setViewDistance(500); // Zoom out on mobile
+            } else {
+                setViewDistance(300);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const scrollToSection = (id: string) => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -87,16 +101,16 @@ export const Export = () => {
             id="export"
             className="min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-center py-20 relative bg-white dark:bg-black"
         >
-            <div className="section-container w-full max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+            <div className="section-container w-full max-w-[90rem] mx-auto px-4 grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Side: List */}
-                <div className="space-y-8">
+                <div className="space-y-10">
                     <div className="text-left">
                         <motion.h2
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4"
+                            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
                         >
                             Global Export Network
                         </motion.h2>
@@ -105,13 +119,13 @@ export const Export = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="text-xl text-muted-foreground"
+                            className="text-2xl text-gray-700 font-medium"
                         >
                             Connecting India to the World
                         </motion.p>
                     </div>
 
-                    <div className="grid gap-4">
+                    <div className="grid gap-6">
                         {countriesData.map((country, index) => (
                             <motion.div
                                 key={country.name}
@@ -119,7 +133,7 @@ export const Export = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.4, delay: 0.1 * index }}
                                 viewport={{ once: true }}
-                                className={`p-4 rounded-xl border flex items-center gap-4 cursor-pointer transition-all duration-300 ${hoveredCountry === country.name
+                                className={`p-6 rounded-2xl border flex items-center gap-6 cursor-pointer transition-all duration-300 ${hoveredCountry === country.name
                                     ? "bg-primary/10 border-primary scale-105"
                                     : "bg-white dark:bg-zinc-900 border-gray-200 dark:border-zinc-800 hover:border-primary/50"
                                     }`}
@@ -130,9 +144,9 @@ export const Export = () => {
                                 <img
                                     src={`https://flagcdn.com/w80/${country.code}.png`}
                                     alt={`${country.name} flag`}
-                                    className="w-12 h-8 object-cover rounded shadow-sm"
+                                    className="w-16 h-10 object-cover rounded shadow-md"
                                 />
-                                <span className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                <span className="text-xl font-bold text-gray-800 dark:text-gray-200">
                                     {country.name}
                                 </span>
                             </motion.div>
@@ -141,8 +155,8 @@ export const Export = () => {
                 </div>
 
                 {/* Right Side: Globe */}
-                <div className="w-full h-[300px] md:h-[600px] relative flex items-center justify-center">
-                    <World globeConfig={globeConfig} data={data} />
+                <div className="w-full h-[600px] md:h-[700px] relative flex items-center justify-center overflow-hidden">
+                    <World globeConfig={{ ...globeConfig, viewDistance }} data={data} />
                 </div>
             </div>
 

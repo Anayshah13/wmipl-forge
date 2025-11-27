@@ -23,13 +23,13 @@ export const ProductionProcess = () => {
       <div className="absolute inset-0 bg-white/80 dark:bg-black/40 backdrop-blur-[2px]" />
 
       <div className="relative z-10 w-full max-w-[95%] mx-auto flex flex-col h-full justify-center">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
           >
             Production Process
           </motion.h2>
@@ -38,19 +38,19 @@ export const ProductionProcess = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
+            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto dark:text-gray-300"
           >
             State-of-the-art manufacturing process ensuring consistent quality
           </motion.p>
         </div>
 
         {/* Horizontal Timeline Container */}
-        <div className="relative w-full pb-12">
+        <div className="relative w-full pb-16">
           <div className="w-full px-4 relative">
             {/* Connecting Line */}
-            <div className="hidden lg:block absolute top-[2rem] left-0 w-full h-1 bg-gray-300 dark:bg-gray-600 z-0" />
+            <div className="hidden lg:block absolute top-[2.5rem] left-0 w-full h-1.5 bg-gray-300 dark:bg-gray-600 z-0" />
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-2 relative z-10">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 md:gap-4 relative z-10">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
@@ -61,16 +61,16 @@ export const ProductionProcess = () => {
                   className="flex flex-col items-center group"
                 >
                   {/* Step Number Circle */}
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg border-4 border-white dark:border-gray-800 transition-transform duration-300 group-hover:scale-110 mb-4 relative z-10">
+                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-xl border-4 border-white dark:border-gray-800 transition-transform duration-300 group-hover:scale-110 mb-6 relative z-10">
                     {index + 1}
                   </div>
 
                   {/* Content Card */}
-                  <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm p-3 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 w-full min-h-[120px] flex flex-col justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                    <h3 className="font-bold text-sm text-gray-900 dark:text-white mb-1 leading-tight">
+                  <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 w-full min-h-[160px] flex flex-col justify-center text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <h3 className="font-bold text-xl text-gray-900 dark:text-white mb-2 leading-tight">
                       {step.name}
                     </h3>
-                    <p className="text-[10px] text-gray-600 dark:text-gray-300 leading-tight">
+                    <p className="text-base font-medium text-gray-600 dark:text-gray-300 leading-snug">
                       {step.description}
                     </p>
                   </div>
@@ -78,20 +78,6 @@ export const ProductionProcess = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="mt-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            viewport={{ once: true }}
-            className="inline-block bg-primary/10 border border-primary/30 rounded-lg px-8 py-4 backdrop-blur-md"
-          >
-            <p className="text-gray-800 dark:text-gray-200 font-medium">
-              <span className="font-bold text-primary">Quality Control</span> at every stage ensures world-class products
-            </p>
-          </motion.div>
         </div>
       </div>
 

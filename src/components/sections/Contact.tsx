@@ -79,14 +79,14 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="min-h-screen w-full overflow-x-hidden flex items-center py-20 bg-[url('/light_smoke.avif')] bg-cover bg-center relative">
-      <div className="section-container max-w-[90rem]">
-        <div className="text-center mb-16">
+      <div className="section-container max-w-[95rem]">
+        <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-secondary mb-4"
+            className="text-5xl md:text-6xl font-bold text-secondary mb-6"
           >
             Get in Touch
           </motion.h2>
@@ -95,13 +95,13 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Let's discuss how we can serve your aluminium slug requirements
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-10">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -110,48 +110,52 @@ export const Contact = () => {
             viewport={{ once: true }}
             className="h-full"
           >
-            <Card className="p-8 h-full">
-              <h3 className="text-2xl font-semibold text-secondary mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <Card className="p-10 h-full shadow-xl">
+              <h3 className="text-3xl font-bold text-secondary mb-8">Send us a Message</h3>
+              <form onSubmit={handleSubmit} className="space-y-8">
                 <div>
-                  <label className="block text-sm font-medium text-secondary mb-2">Full Name</label>
+                  <label className="block text-lg font-bold text-secondary mb-3">Full Name</label>
                   <Input
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your name"
+                    className="h-12 text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-secondary mb-2">Email</label>
+                  <label className="block text-lg font-bold text-secondary mb-3">Email</label>
                   <Input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="your@email.com"
+                    className="h-12 text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-secondary mb-2">Phone</label>
+                  <label className="block text-lg font-bold text-secondary mb-3">Phone</label>
                   <Input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+91 XXXXX XXXXX"
+                    className="h-12 text-lg"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-secondary mb-2">Message</label>
+                  <label className="block text-lg font-bold text-secondary mb-3">Message</label>
                   <Textarea
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your requirements..."
-                    rows={4}
+                    rows={5}
+                    className="text-lg resize-none"
                   />
                 </div>
-                <Button type="submit" className="w-full bg-primary hover:bg-primary-dark">
+                <Button type="submit" className="w-full h-12 text-lg font-bold bg-primary hover:bg-primary-dark">
                   Send Message
                 </Button>
               </form>
@@ -164,51 +168,51 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="space-y-6 h-full flex flex-col"
+            className="space-y-8 h-full flex flex-col"
           >
-            <Card className="p-6 flex-grow">
-              <h3 className="text-xl font-semibold text-secondary mb-4">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="text-primary" size={20} />
+            <Card className="p-8 flex-grow shadow-lg">
+              <h3 className="text-2xl font-bold text-secondary mb-6">Contact Information</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Mail className="text-primary" size={24} />
                   </div>
                   <div>
-                    <p className="font-medium text-secondary">E-mail</p>
-                    <p className="text-muted-foreground text-sm">western@westernaluminium.com</p>
-                    <p className="text-muted-foreground text-sm">prashant@westernaluminium.com</p>
+                    <p className="text-lg font-bold text-secondary">E-mail</p>
+                    <p className="text-gray-700 text-lg font-medium">western@westernaluminium.com</p>
+                    <p className="text-gray-700 text-lg font-medium">prashant@westernaluminium.com</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="text-primary" size={20} />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Phone className="text-primary" size={24} />
                   </div>
                   <div>
-                    <p className="font-medium text-secondary">Phone</p>
-                    <p className="text-muted-foreground text-sm">+91-20-26870164 / 26875054 / 29805054</p>
+                    <p className="text-lg font-bold text-secondary">Phone</p>
+                    <p className="text-gray-700 text-lg font-medium">+91-20-26870164 / 26875054 / 29805054</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Globe className="text-primary" size={20} />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Globe className="text-primary" size={24} />
                   </div>
                   <div>
-                    <p className="font-medium text-secondary">Website</p>
-                    <p className="text-muted-foreground text-sm">www.westernaluminium.com</p>
+                    <p className="text-lg font-bold text-secondary">Website</p>
+                    <p className="text-gray-700 text-lg font-medium">www.westernaluminium.com</p>
                   </div>
                 </div>
               </div>
             </Card>
 
             {offices.map((office, index) => (
-              <Card key={index} className="p-6 flex-grow">
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-primary" size={20} />
+              <Card key={index} className="p-8 flex-grow shadow-lg">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <MapPin className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-secondary mb-1">{office.title}</h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{office.address}</p>
+                    <h4 className="text-xl font-bold text-secondary mb-2">{office.title}</h4>
+                    <p className="text-gray-700 text-lg leading-relaxed font-medium">{office.address}</p>
                   </div>
                 </div>
               </Card>

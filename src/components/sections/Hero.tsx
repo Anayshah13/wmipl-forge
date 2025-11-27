@@ -47,13 +47,13 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white/80 text-lg md:text-xl leading-relaxed font-light max-w-2xl"
+                className="text-white/90 text-2xl md:text-3xl leading-relaxed font-medium max-w-3xl drop-shadow-lg"
               >
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </motion.p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 mt-2">
+            <div className="flex flex-wrap justify-center gap-6 mt-6">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -62,7 +62,7 @@ export const Hero = () => {
                 <Button
                   size="lg"
                   onClick={() => scrollToSection('about')}
-                  className="bg-primary hover:bg-primary-dark text-white text-base px-6 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                  className="bg-primary hover:bg-primary-dark text-white text-xl font-bold px-8 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                 >
                   Discover Our Capabilities
                 </Button>
@@ -76,7 +76,7 @@ export const Hero = () => {
                   size="lg"
                   variant="secondary"
                   onClick={() => scrollToSection('contact')}
-                  className="bg-white text-secondary hover:bg-white/90 text-base px-6 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                  className="bg-white text-secondary hover:bg-white/90 text-xl font-bold px-8 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                 >
                   Get in Touch
                 </Button>

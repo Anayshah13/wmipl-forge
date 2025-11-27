@@ -52,6 +52,7 @@ export type GlobeConfig = {
   };
   autoRotate?: boolean;
   autoRotateSpeed?: number;
+  viewDistance?: number;
 };
 
 interface WorldProps {
@@ -248,8 +249,9 @@ export function World(props: WorldProps) {
   const { globeConfig } = props;
   const scene = new Scene();
   scene.fog = new Fog(0xffffff, 400, 2000);
+  const viewDistance = globeConfig.viewDistance || cameraZ;
   return (
-    <Canvas scene={scene} camera={{ fov: 50, near: 180, far: 1800, position: [0, 0, cameraZ] }}>
+    <Canvas scene={scene} camera={{ fov: 50, near: 180, far: 1800, position: [0, 0, viewDistance] }}>
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
@@ -269,8 +271,8 @@ export function World(props: WorldProps) {
       <OrbitControls
         enablePan={false}
         enableZoom={false}
-        minDistance={cameraZ}
-        maxDistance={cameraZ}
+        minDistance={viewDistance}
+        maxDistance={viewDistance}
         autoRotateSpeed={globeConfig.autoRotateSpeed || 1}
         autoRotate={globeConfig.autoRotate || true}
         minPolarAngle={Math.PI / 3.5}

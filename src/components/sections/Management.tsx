@@ -58,7 +58,7 @@ export const Management = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-secondary mb-4"
+            className="text-5xl md:text-6xl font-bold text-secondary mb-6"
           >
             Management Team
           </motion.h2>
@@ -67,7 +67,7 @@ export const Management = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Led by industry veterans with decades of experience
           </motion.p>
@@ -78,29 +78,29 @@ export const Management = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-10"
         >
           {team.map((member, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card
-                className="overflow-hidden hover:shadow-xl transition-all hover:-translate-y-2 h-full"
+                className="overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 h-full border-0 shadow-xl"
               >
-                <div className="bg-gradient-to-br from-primary to-primary-dark p-8 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center">
-                    <User className="text-white" size={64} />
+                <div className="bg-gradient-to-br from-primary to-primary-dark p-10 flex items-center justify-center">
+                  <div className="w-40 h-40 bg-white/20 rounded-full flex items-center justify-center">
+                    <User className="text-white" size={80} />
                   </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-secondary mb-2">
+                <div className="p-8 text-center">
+                  <h3 className="text-3xl font-bold text-secondary mb-3">
                     {member.name}
                   </h3>
-                  <p className="text-primary font-semibold mb-3">
+                  <p className="text-primary font-bold text-xl mb-4">
                     {member.position}
                   </p>
-                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                  <p className="text-lg font-medium text-gray-600 mb-3">
                     {member.experience}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-lg text-gray-600 font-medium leading-relaxed">
                     {member.expertise}
                   </p>
                 </div>

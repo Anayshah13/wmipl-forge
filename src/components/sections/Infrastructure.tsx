@@ -56,14 +56,14 @@ export const Infrastructure = () => {
         />
       </div>
 
-      <div className="section-container relative z-20">
-        <div className="text-center mb-8">
+      <div className="section-container relative z-20 max-w-7xl">
+        <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-secondary mb-2"
+            className="text-5xl md:text-6xl font-bold text-secondary mb-4"
           >
             Infrastructure & Capabilities
           </motion.h2>
@@ -72,7 +72,7 @@ export const Infrastructure = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-muted-foreground max-w-3xl mx-auto"
+            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Two world-class manufacturing facilities equipped with cutting-edge technology
           </motion.p>
@@ -83,64 +83,64 @@ export const Infrastructure = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-4 mb-8"
+          className="grid md:grid-cols-2 gap-8 mb-12"
         >
           {plants.map((plant, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <Card className="overflow-hidden hover:shadow-2xl transition-shadow h-full">
-                <div className="aspect-video overflow-hidden h-48 md:h-64">
+              <Card className="overflow-hidden hover:shadow-2xl transition-shadow h-full border-0 shadow-lg">
+                <div className="aspect-video overflow-hidden h-64 md:h-80">
                   <img
                     src={plant.image}
                     alt={plant.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-4">
-                  <div className="flex items-start justify-between mb-2">
+                <div className="p-8">
+                  <div className="flex items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-xl font-bold text-secondary mb-0.5">{plant.name}</h3>
-                      <p className="text-primary font-semibold text-sm">{plant.since}</p>
+                      <h3 className="text-3xl font-bold text-secondary mb-1">{plant.name}</h3>
+                      <p className="text-primary font-bold text-lg">{plant.since}</p>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Square className="text-primary" size={16} />
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Square className="text-primary" size={24} />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">Total Plot Area</p>
-                        <p className="font-semibold text-secondary text-sm">{plant.plotArea}</p>
+                        <p className="text-base font-medium text-gray-600">Total Plot Area</p>
+                        <p className="text-xl font-bold text-secondary">{plant.plotArea}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Home className="text-primary" size={16} />
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Home className="text-primary" size={24} />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">Built-up Area</p>
-                        <p className="font-semibold text-secondary text-sm">{plant.builtUpArea}</p>
+                        <p className="text-base font-medium text-gray-600">Built-up Area</p>
+                        <p className="text-xl font-bold text-secondary">{plant.builtUpArea}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Sun className="text-primary" size={16} />
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <Sun className="text-primary" size={24} />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">Solar Plant Capacity</p>
-                        <p className="font-semibold text-secondary text-sm">{plant.solarCapacity}</p>
+                        <p className="text-base font-medium text-gray-600">Solar Plant Capacity</p>
+                        <p className="text-xl font-bold text-secondary">{plant.solarCapacity}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <MapPin className="text-primary" size={16} />
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
+                        <MapPin className="text-primary" size={24} />
                       </div>
                       <div>
-                        <p className="text-xs text-muted-foreground">Location</p>
-                        <p className="font-semibold text-secondary text-sm">{plant.location}</p>
+                        <p className="text-base font-medium text-gray-600">Location</p>
+                        <p className="text-xl font-bold text-secondary">{plant.location}</p>
                       </div>
                     </div>
                   </div>
