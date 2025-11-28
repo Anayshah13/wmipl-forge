@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 export const Management = () => {
   const team = [
     {
-      name: "Prashant Shah",
-      position: "Executive Director",
-      experience: "30 years of Experience",
-      expertise: "Production Administration, Exports and Domestic Sales",
-    },
-    {
       name: "Anuj Gandhi",
       position: "MD & CEO",
       experience: "50 years of Experience",
       expertise: "Purchase, Finance and Strategic Management",
+    },
+    {
+      name: "Prashant Shah",
+      position: "Executive Director",
+      experience: "30 years of Experience",
+      expertise: "Production Administration, Exports and Domestic Sales",
     },
     {
       name: "Rakesh Shah",

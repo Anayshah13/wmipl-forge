@@ -47,7 +47,7 @@ export const ClientsPage = () => {
                     key={index}
                     variants={itemVariants}
                     whileHover={{ scale: 1.25, zIndex: 10 }}
-                    className="flex items-center justify-center h-12 cursor-default bg-white/50 rounded-lg p-1.5 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="flex items-center justify-center h-20 cursor-default bg-white/50 rounded-lg p-1.5 shadow-sm hover:shadow-md transition-shadow duration-200"
                 >
                     <img src={item} alt="Client Logo" className="max-h-full max-w-full object-contain" />
                 </motion.div>
@@ -58,12 +58,12 @@ export const ClientsPage = () => {
     return (
         <div
             id="clients"
-            className="w-full min-h-screen bg-[url('/wavy.jpg')] bg-cover bg-center px-3 py-10 relative flex flex-col items-center justify-center"
+            className="min-h-screen bg-[url('/wavy.jpg')] bg-cover bg-center px-3 py-10 relative flex flex-col items-center justify-center"
         >
             {/* White overlay for reduced contrast */}
             <div className="absolute inset-0 bg-white/85 z-0" />
 
-            <div className="w-full max-w-7xl flex flex-col gap-10 relative z-10">
+            <div className="w-full max-w-[87%] flex flex-col gap-10 relative z-10">
                 <motion.h1
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}

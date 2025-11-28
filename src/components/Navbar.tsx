@@ -74,14 +74,14 @@ export const Navbar = () => {
                             <button
                                 key={link.name}
                                 onClick={() => scrollToSection(link.id)}
-                                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
+                                className="text-white/90 hover:text-white text-xl font-bold transition-colors"
                             >
                                 {link.name}
                             </button>
                         ))}
                         <Link to="/certifications">
                             <button
-                                className="text-white/90 hover:text-white text-lg font-medium transition-colors"
+                                className="text-white/90 hover:text-white text-xl font-bold transition-colors"
                             >
                                 View Certifications
                             </button>

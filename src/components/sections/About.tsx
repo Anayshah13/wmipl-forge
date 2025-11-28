@@ -8,23 +8,23 @@ export const About = () => {
 
   return (
     <section id="about" className="min-h-screen w-full overflow-x-hidden flex items-center py-16 bg-gradient-subtle relative">
-      <div className="section-container">
-        <div className="text-center mb-12">
+      <div className="w-[80%] mx-auto px-6">
+        <div className="text-center mb-20 text-4xl">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-secondary mb-8"
+            className="text-5xl md:text-6xl font-bold text-secondary mb-4"
           >
-            About Western Metal Industries
+            About Us
           </motion.h2>
-          <motion.p
+          <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl text-gray-700 font-medium max-w-4xl mx-auto"
+            className="text-2xl md:text-3xl text-gray-700 font-medium"
           >
             India's Largest Manufacturer of Aluminium Slugs
           </motion.p>
@@ -38,10 +38,10 @@ export const About = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold text-secondary mb-2">Our Journey</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-primary">Western Metal Industries was established in 1978</span> producing
-                Aluminium Sheets. We started production of Aluminium Slugs in <span className="font-semibold text-primary">1985</span>,
+              <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Our Journey</h3>
+              <p className="text-gray-800 text-base md:text-lg leading-relaxed">
+                <span className="font-bold text-primary">Western Metal Industries was established in 1978</span> producing
+                Aluminium Sheets. We started production of Aluminium Slugs in <span className="font-bold text-primary">1985</span>,
                 responding to the growing demand of this product in India's manufacturing sector.
               </p>
             </motion.div>
@@ -52,8 +52,8 @@ export const About = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-secondary mb-4">Today's Leadership</h3>
-              <p className="text-gray-800 text-lg md:text-xl leading-relaxed font-medium">
+              <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-4">Today's Leadership</h3>
+              <p className="text-gray-800 text-base md:text-lg leading-relaxed">
                 Today, we stand as <span className="font-bold text-primary">India's largest producer</span> of
                 aluminium slugs, commanding a remarkable 70% market share. Our work area spreads over
                 <span className="font-bold text-primary"> 300,000 square feet</span> with a dedicated workforce of
@@ -69,8 +69,8 @@ export const About = () => {
               viewport={{ once: true }}
               className="bg-primary/5 border border-primary/20 rounded-xl p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
             >
-              <h4 className="text-xl font-bold text-secondary mb-4">Performance Highlights</h4>
-              <ul className="space-y-3 text-gray-800 text-lg font-medium">
+              <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Performance Highlights</h4>
+              <ul className="space-y-3 text-gray-800 text-base md:text-lg">
                 <li>• Annual Melting Capacity: <span className="font-bold text-primary">70,000 MT</span></li>
                 <li>• Annual Sales: <span className="font-bold text-primary">30,000 MT</span></li>
                 <li>• Turnover: <span className="font-bold text-primary">INR 7,500 Million</span></li>

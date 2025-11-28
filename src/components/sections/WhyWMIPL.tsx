@@ -42,7 +42,7 @@ export const WhyWMIPL = () => {
 
   return (
     <section id="why-wmipl" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center pt-10 pb-32 bg-[url('/grey_bg.avif')] bg-cover bg-center text-secondary relative overflow-hidden">
-      <div className="section-container relative z-10 max-w-[95rem]">
+      <div className="w-full max-w-[87%] mx-auto relative z-10">
         <div className="text-center mb-20">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
@@ -64,7 +64,7 @@ export const WhyWMIPL = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 items-center">
           {/* Left Column */}
           <div className="space-y-8">
             {features.slice(0, 3).map((feature, index) => {
@@ -76,13 +76,13 @@ export const WhyWMIPL = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-white border border-gray-300 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-6">
                     <div className="shrink-0">
                       <HexagonIcon
                         icon={Icon}
-                        size={64}
+                        size={72}
                         className="group-hover:scale-110 transition-transform text-primary"
                       />
                     </div>
@@ -104,12 +104,12 @@ export const WhyWMIPL = () => {
             viewport={{ once: true }}
             className="flex justify-center items-center py-12 lg:py-0"
           >
-            <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
+            <div className="relative md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
                 src="/hexagon.png"
                 alt="WMIPL Icon"
-                className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                className="w-90vw h-90vw object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
               />
             </div>
           </motion.div>
@@ -125,13 +125,13 @@ export const WhyWMIPL = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-white border border-gray-300 rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-6 lg:flex-row-reverse lg:text-right">
                     <div className="shrink-0">
                       <HexagonIcon
                         icon={Icon}
-                        size={64}
+                        size={72}
                         className="group-hover:scale-110 transition-transform text-primary"
                       />
                     </div>

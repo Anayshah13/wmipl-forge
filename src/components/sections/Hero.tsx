@@ -34,7 +34,7 @@ export const Hero = () => {
       <main className="relative z-20 flex items-center justify-start w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full md:ml-10">
         <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
           <div className="flex flex-col gap-6 items-center">
-            <div className="flex flex-col gap-4 items-center w-full">
+            <div className="flex flex-col gap-3 items-center w-full">
               <motion.img
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -47,7 +47,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white/90 text-2xl md:text-3xl leading-relaxed font-medium max-w-3xl drop-shadow-lg"
+                className="text-white/80 text-2xl md:text-3xl leading-relaxed max-w-3xl drop-shadow-lg"
               >
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </motion.p>
@@ -61,7 +61,7 @@ export const Hero = () => {
               >
                 <Button
                   size="lg"
-                  onClick={() => scrollToSection('about')}
+                  onClick={() => scrollToSection('products')}
                   className="bg-primary hover:bg-primary-dark text-white text-xl font-bold px-8 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                 >
                   Discover Our Capabilities
@@ -94,7 +94,7 @@ export const Hero = () => {
         onClick={() => scrollToSection('about')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
       >
-        <ChevronDown size={32} />
+        <ChevronDown size={48} />
       </motion.button>
     </div>
   );
