@@ -110,7 +110,7 @@ export const Export = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
-                            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+                            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
                         >
                             Global Export Network
                         </motion.h2>
@@ -119,7 +119,7 @@ export const Export = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="text-2xl text-gray-700 font-medium"
+                            className="text-xl md:text-2xl text-gray-700 font-medium"
                         >
                             Connecting India to the World
                         </motion.p>
@@ -155,7 +155,7 @@ export const Export = () => {
                 </div>
 
                 {/* Right Side: Globe */}
-                <div className="w-full h-[600px] md:h-[700px] relative flex items-center justify-center overflow-hidden">
+                <div className="w-full h-[400px] md:h-[700px] relative flex items-center justify-center overflow-hidden">
                     <World globeConfig={{ ...globeConfig, viewDistance }} data={data} />
                 </div>
             </div>

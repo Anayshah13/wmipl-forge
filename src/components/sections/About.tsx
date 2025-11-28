@@ -1,5 +1,6 @@
 import { Factory, TrendingUp, Users, Award, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import TiltedCard from "@/components/TiltedCard";
 
 export const About = () => {
   const scrollToSection = (id: string) => {
@@ -7,30 +8,30 @@ export const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen w-full overflow-x-hidden flex items-center py-16 bg-gradient-subtle relative">
-      <div className="w-[80%] mx-auto px-6">
-        <div className="text-center mb-20 text-4xl">
+    <section id="about" className="min-h-screen w-full overflow-x-hidden flex items-center py-12 md:py-16 bg-gradient-subtle relative">
+      <div className="w-[95%] md:w-[80%] mx-auto px-4 md:px-6">
+        <div className="text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-secondary mb-4"
+            className="text-4xl md:text-6xl font-bold text-secondary mb-4"
           >
             About Us
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl md:text-3xl text-gray-700 font-medium"
+            className="text-xl md:text-3xl text-gray-700 font-medium"
           >
             India's Largest Manufacturer of Aluminium Slugs
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="space-y-8">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -67,10 +68,10 @@ export const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               viewport={{ once: true }}
-              className="bg-primary/5 border border-primary/20 rounded-xl p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
+              className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
             >
               <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Performance Highlights</h4>
-              <ul className="space-y-3 text-gray-800 text-base md:text-lg">
+              <ul className="space-y-3 text-gray-800 text-sm md:text-base lg:text-lg">
                 <li>• Annual Melting Capacity: <span className="font-bold text-primary">70,000 MT</span></li>
                 <li>• Annual Sales: <span className="font-bold text-primary">30,000 MT</span></li>
                 <li>• Turnover: <span className="font-bold text-primary">INR 7,500 Million</span></li>
@@ -84,12 +85,18 @@ export const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group"
+            className="relative w-full h-[300px] md:h-[500px]"
           >
-            <img
-              src="/factory-melting.png"
-              alt="Modern aluminium manufacturing facility melting metal"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            <TiltedCard
+              imageSrc="/factory-melting.png"
+              altText="Modern aluminium manufacturing facility melting metal"
+              containerHeight="100%"
+              imageHeight="100%"
+              imageWidth="100%"
+              scaleOnHover={1.05}
+              rotateAmplitude={12}
+              showMobileWarning={false}
+              showTooltip={false}
             />
           </motion.div>
         </div>

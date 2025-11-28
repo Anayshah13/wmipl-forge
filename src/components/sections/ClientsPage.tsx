@@ -63,12 +63,12 @@ export const ClientsPage = () => {
             {/* White overlay for reduced contrast */}
             <div className="absolute inset-0 bg-white/85 z-0" />
 
-            <div className="w-full max-w-[87%] flex flex-col gap-10 relative z-10">
+            <div className="w-[95%] md:w-[87%] flex flex-col gap-10 relative z-10">
                 <motion.h1
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-5xl md:text-6xl font-bold text-blue-900 text-left pl-2"
+                    className="text-4xl md:text-6xl font-bold text-blue-900 text-left pl-2"
                 >
                     CLIENTS & MARQUEE SUPPLIERS
                 </motion.h1>

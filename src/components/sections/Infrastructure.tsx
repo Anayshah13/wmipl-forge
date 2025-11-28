@@ -63,7 +63,7 @@ export const Infrastructure = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-secondary mb-4"
+            className="text-4xl md:text-6xl font-bold text-secondary mb-4"
           >
             Infrastructure & Capabilities
           </motion.h2>
@@ -72,7 +72,7 @@ export const Infrastructure = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Two world-class manufacturing facilities equipped with cutting-edge technology
           </motion.p>
@@ -83,7 +83,7 @@ export const Infrastructure = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 mb-12"
+          className="grid md:grid-cols-2 gap-8 mb-12 px-4 md:px-0"
         >
           {plants.map((plant, index) => (
             <motion.div key={index} variants={itemVariants}>
@@ -95,10 +95,10 @@ export const Infrastructure = () => {
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-8">
+                <div className="p-6 md:p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-3xl font-bold text-secondary mb-1">{plant.name}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-1">{plant.name}</h3>
                       <p className="text-primary font-bold text-lg">{plant.since}</p>
                     </div>
                   </div>

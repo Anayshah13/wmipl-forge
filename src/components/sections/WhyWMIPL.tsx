@@ -42,14 +42,14 @@ export const WhyWMIPL = () => {
 
   return (
     <section id="why-wmipl" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center pt-10 pb-32 bg-[url('/grey_bg.avif')] bg-cover bg-center text-secondary relative overflow-hidden">
-      <div className="w-full max-w-[87%] mx-auto relative z-10">
-        <div className="text-center mb-20">
+      <div className="w-[95%] md:w-[87%] mx-auto relative z-10">
+        <div className="text-center mb-12 md:mb-20">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-secondary"
+            className="text-4xl md:text-6xl font-bold mb-6 text-secondary"
           >
             Why Choose WMIPL?
           </motion.h2>
@@ -58,15 +58,15 @@ export const WhyWMIPL = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Decades of expertise, cutting-edge infrastructure, and unwavering commitment to quality
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-20 items-center">
           {/* Left Column */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {features.slice(0, 3).map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -76,19 +76,19 @@ export const WhyWMIPL = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-white border border-gray-300 rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-2xl p-6 md:p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-6">
                     <div className="shrink-0">
                       <HexagonIcon
                         icon={Icon}
-                        size={72}
+                        size={64}
                         className="group-hover:scale-110 transition-transform text-primary"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-gray-600 text-lg leading-relaxed font-medium">{feature.description}</p>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -102,20 +102,20 @@ export const WhyWMIPL = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex justify-center items-center py-12 lg:py-0"
+            className="flex justify-center items-center py-8 lg:py-0 order-first lg:order-none"
           >
-            <div className="relative md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
+            <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
               <img
                 src="/hexagon.png"
                 alt="WMIPL Icon"
-                className="w-90vw h-90vw object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
               />
             </div>
           </motion.div>
 
           {/* Right Column */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {features.slice(3, 6).map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -125,19 +125,19 @@ export const WhyWMIPL = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group bg-white border border-gray-300 rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
+                  className="group bg-white border border-gray-300 rounded-2xl p-6 md:p-8 shadow-md hover:shadow-2xl transition-all hover:scale-105 hover:border-primary/50"
                 >
                   <div className="flex items-start gap-6 lg:flex-row-reverse lg:text-right">
                     <div className="shrink-0">
                       <HexagonIcon
                         icon={Icon}
-                        size={72}
+                        size={64}
                         className="group-hover:scale-110 transition-transform text-primary"
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="text-gray-600 text-lg leading-relaxed font-medium">{feature.description}</p>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>

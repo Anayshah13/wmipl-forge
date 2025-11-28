@@ -47,22 +47,23 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white/80 text-2xl md:text-3xl leading-relaxed max-w-3xl drop-shadow-lg"
+                className="text-white/80 text-lg md:text-3xl leading-relaxed max-w-3xl drop-shadow-lg"
               >
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </motion.p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-6 mt-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-6 w-full px-4 sm:px-0">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                className="w-full sm:w-auto"
               >
                 <Button
                   size="lg"
                   onClick={() => scrollToSection('products')}
-                  className="bg-primary hover:bg-primary-dark text-white text-xl font-bold px-8 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
+                  className="w-full sm:w-auto bg-primary hover:bg-primary-dark text-white text-lg md:text-xl font-bold px-6 py-6 md:px-8 md:py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                 >
                   Discover Our Capabilities
                 </Button>
@@ -71,12 +72,13 @@ export const Hero = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
+                className="w-full sm:w-auto"
               >
                 <Button
                   size="lg"
                   variant="secondary"
                   onClick={() => scrollToSection('contact')}
-                  className="bg-white text-secondary hover:bg-white/90 text-xl font-bold px-8 py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
+                  className="w-full sm:w-auto bg-white text-secondary hover:bg-white/90 text-lg md:text-xl font-bold px-6 py-6 md:px-8 md:py-7 rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                 >
                   Get in Touch
                 </Button>

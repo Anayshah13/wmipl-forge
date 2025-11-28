@@ -204,7 +204,7 @@ export const Products = () => {
         ) : null}
       </AnimatePresence>
 
-      <div className="w-full max-w-[87%] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+      <div className="w-[95%] md:w-[87%] mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-200 pb-6">
           <motion.div

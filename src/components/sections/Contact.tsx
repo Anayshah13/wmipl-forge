@@ -86,7 +86,7 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-secondary mb-6"
+            className="text-4xl md:text-6xl font-bold text-secondary mb-6"
           >
             Get in Touch
           </motion.h2>
@@ -95,13 +95,13 @@ export const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Let's discuss how we can serve your aluminium slug requirements
           </motion.p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 gap-10 px-4 md:px-0">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -110,7 +110,7 @@ export const Contact = () => {
             viewport={{ once: true }}
             className="h-full"
           >
-            <Card className="p-10 h-full shadow-xl">
+            <Card className="p-6 md:p-10 h-full shadow-xl">
               <h3 className="text-3xl font-bold text-secondary mb-8">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-8">
                 <div>

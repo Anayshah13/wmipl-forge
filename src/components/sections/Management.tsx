@@ -58,7 +58,7 @@ export const Management = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-secondary mb-6"
+            className="text-4xl md:text-6xl font-bold text-secondary mb-6"
           >
             Management Team
           </motion.h2>
@@ -67,7 +67,7 @@ export const Management = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto"
           >
             Led by industry veterans with decades of experience
           </motion.p>
@@ -78,16 +78,16 @@ export const Management = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-10"
+          className="grid md:grid-cols-3 gap-10 px-4 md:px-0"
         >
           {team.map((member, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card
                 className="overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 h-full border-0 shadow-xl"
               >
-                <div className="bg-gradient-to-br from-primary to-primary-dark p-10 flex items-center justify-center">
-                  <div className="w-40 h-40 bg-white/20 rounded-full flex items-center justify-center">
-                    <User className="text-white" size={80} />
+                <div className="bg-gradient-to-br from-primary to-primary-dark p-6 md:p-10 flex items-center justify-center">
+                  <div className="w-32 h-32 md:w-40 md:h-40 bg-white/20 rounded-full flex items-center justify-center">
+                    <User className="text-white" size={64} />
                   </div>
                 </div>
                 <div className="p-8 text-center">

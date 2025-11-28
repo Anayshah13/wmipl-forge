@@ -18,18 +18,18 @@ export const ProductionProcess = () => {
   };
 
   return (
-    <section id="production-process" className="h-screen w-full overflow-hidden flex flex-col justify-center relative bg-[url('/wavy.jpg')] bg-cover bg-center bg-no-repeat">
+    <section id="production-process" className="min-h-screen w-full overflow-hidden flex flex-col justify-center relative bg-[url('/wavy.jpg')] bg-cover bg-center bg-no-repeat py-16 md:py-0">
       {/* Overlay for better text readability if needed */}
       <div className="absolute inset-0 bg-white/80 dark:bg-black/40 backdrop-blur-[2px]" />
 
       <div className="relative z-10 w-full max-w-[95%] mx-auto flex flex-col h-full justify-center">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6"
           >
             Production Process
           </motion.h2>
@@ -38,7 +38,7 @@ export const ProductionProcess = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-2xl text-gray-700 font-medium max-w-4xl mx-auto dark:text-gray-300"
+            className="text-xl md:text-2xl text-gray-700 font-medium max-w-4xl mx-auto dark:text-gray-300"
           >
             State-of-the-art manufacturing process ensuring consistent quality
           </motion.p>
