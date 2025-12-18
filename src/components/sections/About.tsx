@@ -1,6 +1,6 @@
 import { Factory, TrendingUp, Users, Award, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import TiltedCard from "@/components/TiltedCard";
+
 
 export const About = () => {
   const scrollToSection = (id: string) => {
@@ -87,16 +87,10 @@ export const About = () => {
             viewport={{ once: true }}
             className="relative w-full h-[300px] md:h-[500px]"
           >
-            <TiltedCard
-              imageSrc="/factory-melting.png"
-              altText="Modern aluminium manufacturing facility melting metal"
-              containerHeight="100%"
-              imageHeight="100%"
-              imageWidth="100%"
-              scaleOnHover={1.05}
-              rotateAmplitude={12}
-              showMobileWarning={false}
-              showTooltip={false}
+            <img
+              src="/factory-melting.png"
+              alt="Modern aluminium manufacturing facility melting metal"
+              className="w-full h-full object-cover rounded-xl shadow-lg border border-primary/20"
             />
           </motion.div>
         </div>

@@ -10,9 +10,10 @@ export const ClientsPage = () => {
     };
 
     // Generate arrays for images
-    const topCustomers = Array.from({ length: 13 }, (_, i) => `/z${i + 1}.png`);
-    const endUseClients = Array.from({ length: 9 }, (_, i) => `/y${i + 1}.png`);
-    const marqueeSuppliers = Array.from({ length: 4 }, (_, i) => `/x${i + 1}.png`);
+    // Generate arrays for images
+    const topCustomers = Array.from({ length: 13 }, (_, i) => `/clients/z${i + 1}.png`);
+    const endUseClients = Array.from({ length: 9 }, (_, i) => `/clients/y${i + 1}.png`);
+    const marqueeSuppliers = Array.from({ length: 4 }, (_, i) => `/clients/x${i + 1}.png`);
 
     // Helper to split array into two columns
     const splitData = (data: string[], splitIndex?: number) => {
