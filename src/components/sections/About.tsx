@@ -75,7 +75,6 @@ export const About = () => {
                 <li>• Annual Melting Capacity: <span className="font-bold text-primary">70,000 MT</span></li>
                 <li>• Annual Sales: <span className="font-bold text-primary">30,000 MT</span></li>
                 <li>• Turnover: <span className="font-bold text-primary">INR 7,500 Million</span></li>
-                <li>• Export Presence: South Africa, New Zealand, Saudi Arabia, Bangladesh & more</li>
               </ul>
             </motion.div>
           </div>

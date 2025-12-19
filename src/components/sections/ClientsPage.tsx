@@ -42,13 +42,13 @@ export const ClientsPage = () => {
     };
 
     const renderColumn = (items: string[]) => (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-y-4">
             {items.map((item, index) => (
                 <motion.div
                     key={index}
                     variants={itemVariants}
                     whileHover={{ scale: 1.25, zIndex: 10 }}
-                    className="flex items-center justify-center h-20 cursor-default bg-white/50 rounded-lg p-1.5 shadow-sm hover:shadow-md transition-shadow duration-200"
+                    className="flex items-center justify-center h-20 cursor-default bg-white/50 rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-shadow duration-200"
                 >
                     <img src={item} alt="Client Logo" className="max-h-full max-w-full object-contain" />
                 </motion.div>
@@ -110,7 +110,7 @@ export const ClientsPage = () => {
                             Marquee Suppliers
                         </motion.div>
                         <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-2 gap-4">
                                 {renderColumn(marqueeCol1)}
                                 {renderColumn(marqueeCol2)}
                             </div>

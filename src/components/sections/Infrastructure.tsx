@@ -44,7 +44,7 @@ export const Infrastructure = () => {
   };
 
   return (
-    <section id="infrastructure" className="min-h-screen w-full overflow-x-hidden flex items-center py-12 relative">
+    <section id="infrastructure" className="min-h-screen w-full overflow-x-hidden flex items-center py-4 relative">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-white/10 z-0"></div>
@@ -57,7 +57,7 @@ export const Infrastructure = () => {
       </div>
 
       <div className="section-container relative z-20 max-w-5xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -83,19 +83,19 @@ export const Infrastructure = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-5 mb-12 px-4 md:px-0"
+          className="grid md:grid-cols-2 gap-5 mb-6 px-4 md:px-0"
         >
           {plants.map((plant, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="overflow-hidden hover:shadow-2xl transition-shadow h-full border-0 shadow-lg">
-                <div className="aspect-video overflow-hidden h-56 md:h-64">
+                <div className="aspect-video overflow-hidden">
                   <img
                     src={plant.image}
                     alt={plant.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-4 md:p-6">
+                <div className="p-4">
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-1">{plant.name}</h3>
@@ -103,44 +103,44 @@ export const Infrastructure = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                        <Square className="text-primary" size={24} />
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-6">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                        <Square className="text-primary" size={20} />
                       </div>
                       <div>
-                        <p className="text-base font-medium text-gray-600">Total Plot Area</p>
-                        <p className="text-xl font-bold text-secondary">{plant.plotArea}</p>
+                        <p className="text-sm font-medium text-gray-600">Total Plot Area</p>
+                        <p className="text-base font-bold text-secondary">{plant.plotArea}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                        <Home className="text-primary" size={24} />
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                        <Home className="text-primary" size={20} />
                       </div>
                       <div>
-                        <p className="text-base font-medium text-gray-600">Built-up Area</p>
-                        <p className="text-xl font-bold text-secondary">{plant.builtUpArea}</p>
+                        <p className="text-sm font-medium text-gray-600">Built-up Area</p>
+                        <p className="text-base font-bold text-secondary">{plant.builtUpArea}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                        <Sun className="text-primary" size={24} />
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                        <Sun className="text-primary" size={20} />
                       </div>
                       <div>
-                        <p className="text-base font-medium text-gray-600">Solar Plant Capacity</p>
-                        <p className="text-xl font-bold text-secondary">{plant.solarCapacity}</p>
+                        <p className="text-sm font-medium text-gray-600">Solar Capacity</p>
+                        <p className="text-base font-bold text-secondary">{plant.solarCapacity}</p>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                        <MapPin className="text-primary" size={24} />
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+                        <MapPin className="text-primary" size={20} />
                       </div>
                       <div>
-                        <p className="text-base font-medium text-gray-600">Location</p>
-                        <p className="text-xl font-bold text-secondary">{plant.location}</p>
+                        <p className="text-sm font-medium text-gray-600">Location</p>
+                        <p className="text-base font-bold text-secondary">{plant.location}</p>
                       </div>
                     </div>
                   </div>

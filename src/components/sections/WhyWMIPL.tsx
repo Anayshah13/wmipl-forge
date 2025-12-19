@@ -43,13 +43,13 @@ export const WhyWMIPL = () => {
   return (
     <section id="why-wmipl" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center pt-10 pb-32 bg-[url('/grey_bg.avif')] bg-cover bg-center text-secondary relative overflow-hidden">
       <div className="w-[95%] md:w-[87%] mx-auto relative z-10">
-        <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-0 md:mb-5">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold mb-6 text-secondary"
+            className="text-4xl md:text-6xl font-bold mb-4 text-secondary"
           >
             Why Choose WMIPL?
           </motion.h2>
@@ -64,7 +64,7 @@ export const WhyWMIPL = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12 items-center">
           {/* Left Column */}
           <div className="space-y-6 md:space-y-8">
             {features.slice(0, 3).map((feature, index) => {
@@ -136,7 +136,7 @@ export const WhyWMIPL = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold mb-2 text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <h3 className="text-xl md:text-2xl font-bold text-secondary group-hover:text-primary transition-colors">{feature.title}</h3>
                       <p className="text-gray-600 text-base md:text-lg leading-relaxed font-medium">{feature.description}</p>
                     </div>
                   </div>

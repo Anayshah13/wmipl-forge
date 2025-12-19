@@ -47,9 +47,13 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center py-20 px-8 md:px-20 lg:px-32 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative gap-12 mx-auto">
+        <section id="contact" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center py-10 px-8 md:px-20 lg:px-32 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative gap-12 mx-auto">
 
-            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-[36vh] ">
+            <div className="text-center">
+                <h2 className="text-4xl md:text-6xl font-bold text-black">Contact Us</h2>
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-8 w-full lg:h-[30vh] ">
 
                 {/* Contact Info (Flex 3) */}
                 <motion.div
@@ -59,8 +63,8 @@ export const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="flex-[3] h-full"
                 >
-                    <Card className="h-full p-10 shadow-xl bg-white text-secondary border-none flex flex-col justify-center">
-                        <div className="space-y-6">
+                    <Card className="h-full p-6 shadow-xl bg-white text-secondary border-none flex flex-col justify-center">
+                        <div className="space-y-2">
                             <div className="flex items-center gap-6">
                                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                                     <Mail className="text-primary w-6 h-6" />
@@ -107,16 +111,16 @@ export const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="flex-[5] h-full"
                 >
-                    <Card className="p-10 h-full shadow-xl bg-white border-none flex items-center gap-10">
+                    <Card className="p-6 h-full shadow-xl bg-white border-none flex items-center gap-6">
                         {/* Big Flat Icon */}
-                        <div className="hidden lg:flex flex-col items-center justify-center h-full w-1/4 border-r border-gray-100 pr-10">
-                            <div className="w-28 h-28 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                                <MapPin className="w-12 h-12 text-primary" />
+                        <div className="hidden lg:flex flex-col items-center justify-center h-full w-1/4 border-r border-gray-100 pr-6">
+                            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                                <MapPin className="w-10 h-10 text-primary" />
                             </div>
                         </div>
 
                         {/* Locations List */}
-                        <div className="flex-1 grid md:grid-cols-2 gap-10 h-full items-center">
+                        <div className="flex-1 grid md:grid-cols-2 gap-4 h-full items-center">
                             <div className="space-y-4">
                                 <h4 className="text-2xl font-bold text-secondary flex items-center gap-3">
                                     <MapPin className="w-6 h-6 text-primary lg:hidden" />
@@ -155,9 +159,7 @@ export const Contact = () => {
                     transition={{ duration: 0.6 }}
                     className="flex-[3] w-full"
                 >
-                    <Card className="p-8 md:p-12 h-full shadow-2xl flex flex-col justify-center border-none bg-white/90 backdrop-blur-sm">
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-8">Get in Touch</h2>
-
+                    <Card className="p-8 md:px-12 h-full shadow-2xl flex flex-col justify-center border-none bg-white/90 backdrop-blur-sm">
                         <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-center">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -200,7 +202,7 @@ export const Contact = () => {
                                     required
                                     value={formData.message}
                                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    placeholder="your enquiry"
+                                    placeholder="Your Enquiry"
                                     className="h-[150px] bg-white/50 border-gray-300 focus:border-primary resize-none p-4 text-lg h-1"
                                 />
                             </div>

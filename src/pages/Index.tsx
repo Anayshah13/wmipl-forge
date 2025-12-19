@@ -10,7 +10,6 @@ import { ClientsPage } from "@/components/sections/ClientsPage";
 import { CSR } from "@/components/sections/CSR";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
-import { Test } from "@/components/sections/Test";
 
 const Index = () => {
   return (
@@ -19,8 +18,13 @@ const Index = () => {
       <About />
       <WhyWMIPL />
       <Products />
+      <br />
+      <br />
       <ProductionProcess />
-      <Test />
+      <br />
+      <br />
+      <br />
+      <br />
       <Infrastructure />
       <Management />
       <Export />

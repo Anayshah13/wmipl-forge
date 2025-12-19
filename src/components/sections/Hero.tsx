@@ -31,7 +31,7 @@ export const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <main className="relative z-20 flex items-center justify-start w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full md:ml-12 lg:ml-28">
+      <main className="relative z-20 flex items-center justify-start w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full md:ml-8 lg:ml-16">
         <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-8 items-center w-full">
