@@ -5,17 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isPastHero, setIsPastHero] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+            setIsScrolled(window.scrollY > 50);
+            setIsPastHero(window.scrollY > window.innerHeight);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -49,7 +47,13 @@ export const Navbar = () => {
     }, [location]);
 
     const isHomePage = location.pathname === '/';
-    const showBackground = isScrolled || !isHomePage || isMobileMenuOpen;
+
+    const getNavbarStyles = () => {
+        if (!isHomePage) return "bg-[#0b2555EF] py-4";
+        if (isPastHero) return "bg-[#0b2555EF] py-4";
+        if (isScrolled) return "py-4";
+        return "py-6";
+    };
 
     const navLinks = [
         { name: 'About Us', id: 'about' },
@@ -61,8 +65,7 @@ export const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showBackground ? "bg-secondary/30 backdrop-blur-md shadow-md py-4" : "bg-transparent py-6"
-                }`}
+            className={`fixed top-0 left-0 right-0 z-50 ${getNavbarStyles()}`}
         >
             <div className="w-full px-4 sm:px-6 lg:px-12 font-bold">
                 <div className="flex items-center justify-between">

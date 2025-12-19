@@ -41,7 +41,7 @@ export const Footer = () => {
           className="flex flex-col md:flex-row gap-8 mb-12 items-start"
         >
           {/* Column 1 (Flex 1.5): Logo + Links Grid */}
-          <motion.div variants={itemVariants} className="flex-[1.5] w-full flex flex-col items-center md:items-start text-center md:text-left space-y-8">
+          <motion.div variants={itemVariants} className="flex-[2] w-full flex flex-col items-center md:items-start text-center md:text-left space-y-8">
             {/* Row 1: Logo */}
             <div className="w-full flex justify-center md:justify-center">
               <img src="logo2.png" alt="Western Metal Industries" className="h-32 w-auto object-contain filter drop-shadow-xl" />

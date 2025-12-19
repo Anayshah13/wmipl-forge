@@ -8,19 +8,23 @@ interface HexagonIconProps {
   size?: number;
 }
 
-export const HexagonIcon = ({ 
-  icon: Icon, 
-  className, 
+export const HexagonIcon = ({
+  icon: Icon,
+  className,
   iconClassName,
-  size = 64 
+  size = 100
 }: HexagonIconProps) => {
   return (
-    <div 
+    <div
       className={cn(
-        "hexagon bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center",
+        "bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center",
         className
       )}
-      style={{ width: size, height: size }}
+      style={{
+        width: size,
+        height: size,
+        clipPath: "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)"
+      }}
     >
       <Icon className={cn("text-white", iconClassName)} size={size * 0.45} />
     </div>

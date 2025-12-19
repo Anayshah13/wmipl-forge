@@ -56,7 +56,7 @@ export const CSR = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-green-900 mb-6"
+            className="text-4xl md:text-6xl font-bold text-green-900 dark:text-white"
           >
             CSR and Environment
           </motion.h2>
@@ -67,23 +67,23 @@ export const CSR = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
           {initiatives.map((initiative, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="text-center group bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all border border-green-100 hover:-translate-y-1"
+              className="text-center group backdrop-blur-md p-4 rounded-2xl transition-all"
             >
               <div className="mb-3 flex justify-center">
                 <HexagonIcon
                   icon={initiative.icon}
-                  size={40}
+                  size={90}
                   className="group-hover:scale-110 transition-transform from-green-600 to-green-800"
                 />
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1.5">{initiative.title}</h3>
-              <p className="text-sm text-gray-800 leading-relaxed font-medium">{initiative.description}</p>
+              <h3 className="text-2xl font-bold text-gray-800 mb-1.5">{initiative.title}</h3>
+              <p className="text-base text-gray-600 mt-2">{initiative.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -93,7 +93,7 @@ export const CSR = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/95 backdrop-blur-md border border-green-200 rounded-2xl p-5 shadow-xl"
+          className="bg-white/50 backdrop-blur-md border border-green-200 rounded-2xl p-5 shadow-xl h-[400px]"
         >
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>

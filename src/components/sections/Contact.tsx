@@ -15,10 +15,14 @@ const containerStyle = {
 };
 
 const center = {
+    lat: 18.49,
+    lng: 74.13
+};
+
+const hadapsar = {
     lat: 18.5105,
     lng: 73.9356
 };
-
 const bhandgaon = {
     lat: 18.4609,
     lng: 74.3085
@@ -45,109 +49,7 @@ export const Contact = () => {
     return (
         <section id="contact" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center py-20 px-8 md:px-20 lg:px-32 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative gap-12 mx-auto">
 
-            {/* ROW 1: Message Form (3) : Map (2) - 90vh */}
-            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-auto items-stretch">
-
-                {/* Contact Form (Flex 3) */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="flex-[3] w-full"
-                >
-                    <Card className="p-8 md:p-12 h-full shadow-2xl flex flex-col justify-center border-none bg-white/90 backdrop-blur-sm">
-                        <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-8">Get in Touch</h2>
-
-                        <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-center">
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-lg font-bold text-secondary mb-2">Full Name</label>
-                                    <Input
-                                        required
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        placeholder="Name"
-                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
-                                    />
-                                </div>
-                                <div>
-                                    <label className="block text-lg font-bold text-secondary mb-2">Email Address</label>
-                                    <Input
-                                        type="email"
-                                        required
-                                        value={formData.email}
-                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        placeholder="name@example.com"
-                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
-                                    />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label className="block text-lg font-bold text-secondary mb-2">Phone Number</label>
-                                <Input
-                                    type="tel"
-                                    value={formData.phone}
-                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    placeholder="+91 XXXXX XXXXX"
-                                    className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-lg font-bold text-secondary mb-2">Message</label>
-                                <Textarea
-                                    required
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    placeholder="How can we help you?"
-                                    className="h-[150px] bg-white/50 border-gray-300 focus:border-primary resize-none p-4 text-lg"
-                                />
-                            </div>
-
-                            <Button type="submit" className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary-dark shadow-lg mt-4 rounded-xl">
-                                Send Message
-                            </Button>
-                        </form>
-                    </Card>
-                </motion.div>
-
-                {/* Google Map (Flex 2) - Square Aspect Ratio */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="flex-[2] w-full"
-                >
-                    <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                        <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={center}
-                                zoom={10}
-                                options={{
-                                    disableDefaultUI: false,
-                                    styles: [
-                                        {
-                                            featureType: "all",
-                                            elementType: "labels.text.fill",
-                                            stylers: [{ color: "#7c93a3" }, { lightness: "-10" }],
-                                        },
-                                    ],
-                                }}
-                            >
-                                <Marker position={center} title="Main Factory" />
-                                <Marker position={bhandgaon} title="Second Unit" />
-                            </GoogleMap>
-                        </LoadScript>
-                    </div>
-                </motion.div>
-            </div>
-
-            {/* ROW 2: Contact Info (3) : Locations (5) - 30vh */}
-            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-[32vh]">
+            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-[36vh] ">
 
                 {/* Contact Info (Flex 3) */}
                 <motion.div
@@ -158,7 +60,6 @@ export const Contact = () => {
                     className="flex-[3] h-full"
                 >
                     <Card className="h-full p-10 shadow-xl bg-white text-secondary border-none flex flex-col justify-center">
-                        <h3 className="text-3xl font-bold text-primary mb-8">Contact Details</h3>
                         <div className="space-y-6">
                             <div className="flex items-center gap-6">
                                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -243,6 +144,108 @@ export const Contact = () => {
                     </Card>
                 </motion.div>
             </div>
+            {/* ROW 1: Message Form (3) : Map (2) - 90vh */}
+            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-auto items-stretch">
+
+                {/* Contact Form (Flex 3) */}
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="flex-[3] w-full"
+                >
+                    <Card className="p-8 md:p-12 h-full shadow-2xl flex flex-col justify-center border-none bg-white/90 backdrop-blur-sm">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-secondary mb-8">Get in Touch</h2>
+
+                        <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-center">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="block text-lg font-bold text-secondary mb-2">Full Name</label>
+                                    <Input
+                                        required
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                        placeholder="Name"
+                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-lg font-bold text-secondary mb-2">Email Address</label>
+                                    <Input
+                                        type="email"
+                                        required
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                        placeholder="name@example.com"
+                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
+                                    />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label className="block text-lg font-bold text-secondary mb-2">Phone Number</label>
+                                <Input
+                                    type="tel"
+                                    value={formData.phone}
+                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                    placeholder="+91 XXXXX XXXXX"
+                                    className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-lg font-bold text-secondary mb-2">Message</label>
+                                <Textarea
+                                    required
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                    placeholder="your enquiry"
+                                    className="h-[150px] bg-white/50 border-gray-300 focus:border-primary resize-none p-4 text-lg h-1"
+                                />
+                            </div>
+
+                            <Button type="submit" className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary-dark shadow-lg mt-4 rounded-xl">
+                                Send Message
+                            </Button>
+                        </form>
+                    </Card>
+                </motion.div>
+
+                {/* Google Map (Flex 2) - Square Aspect Ratio */}
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="flex-[2] w-full"
+                >
+                    <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+                        <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
+                            <GoogleMap
+                                mapContainerStyle={containerStyle}
+                                center={center}
+                                zoom={10}
+                                options={{
+                                    disableDefaultUI: false,
+                                    styles: [
+                                        {
+                                            featureType: "all",
+                                            elementType: "labels.text.fill",
+                                            stylers: [{ color: "#7c93a3" }, { lightness: "-10" }],
+                                        },
+                                    ],
+                                }}
+                            >
+                                <Marker position={hadapsar} title="Main Factory" />
+                                <Marker position={bhandgaon} title="Second Unit" />
+                            </GoogleMap>
+                        </LoadScript>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* ROW 2: Contact Info (3) : Locations (5) - 30vh */}
         </section>
     );
 };
