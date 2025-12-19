@@ -46,26 +46,20 @@ export const CSR = () => {
   };
 
   return (
-    <section id="csr" className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-2 relative bg-[url('/leaf.png')] bg-cover bg-center">
-      {/* Overlay to ensure text readability against the green background */}
-      <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-0" />
+    <section id="csr" className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-2 relative bg-[url('/csr1.jpg')] bg-cover bg-center">
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-[4px] z-0" />
 
       <div className="section-container relative z-10 w-full max-w-7xl px-4 h-full flex flex-col justify-center">
         <div className="text-center mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/90 backdrop-blur-md px-6 py-2 rounded-2xl shadow-lg mb-3"
+            className="text-4xl md:text-6xl font-bold text-green-900 mb-6"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-green-900 mb-1">
-              CSR & Environment
-            </h2>
-            <p className="text-base md:text-lg text-green-900 font-bold max-w-3xl mx-auto">
-              Committed to sustainable growth and community development
-            </p>
-          </motion.div>
+            CSR and Environment
+          </motion.h2>
         </div>
 
         <motion.div

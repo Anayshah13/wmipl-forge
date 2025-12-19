@@ -228,7 +228,6 @@ export const Products = () => {
             viewport={{ once: true }}
             className="hidden md:block"
           >
-            <img src="/blue_bold_logo.png" alt="WMIPL Logo" className="h-24 w-auto object-contain" />
           </motion.div>
         </div>
 

@@ -56,7 +56,7 @@ export const Infrastructure = () => {
         />
       </div>
 
-      <div className="section-container relative z-20 max-w-7xl">
+      <div className="section-container relative z-20 max-w-5xl">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
@@ -83,19 +83,19 @@ export const Infrastructure = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 mb-12 px-4 md:px-0"
+          className="grid md:grid-cols-2 gap-5 mb-12 px-4 md:px-0"
         >
           {plants.map((plant, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="overflow-hidden hover:shadow-2xl transition-shadow h-full border-0 shadow-lg">
-                <div className="aspect-video overflow-hidden h-64 md:h-80">
+                <div className="aspect-video overflow-hidden h-56 md:h-64">
                   <img
                     src={plant.image}
                     alt={plant.name}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 md:p-8">
+                <div className="p-4 md:p-6">
                   <div className="flex items-start justify-between mb-6">
                     <div>
                       <h3 className="text-2xl md:text-3xl font-bold text-secondary mb-1">{plant.name}</h3>

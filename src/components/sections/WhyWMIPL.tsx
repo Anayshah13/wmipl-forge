@@ -105,11 +105,11 @@ export const WhyWMIPL = () => {
             className="flex justify-center items-center py-8 lg:py-0 order-first lg:order-none"
           >
             <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] lg:w-[600px] lg:h-[600px]">
-              <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+
               <img
                 src="/hexagon.png"
                 alt="WMIPL Icon"
-                className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.6)]"
+                className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]"
               />
             </div>
           </motion.div>
