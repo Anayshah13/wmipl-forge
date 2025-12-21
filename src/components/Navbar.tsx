@@ -69,7 +69,18 @@ export const Navbar = () => {
         >
             <div className="w-full px-4 sm:px-6 lg:px-12 font-bold">
                 <div className="flex items-center justify-between">
-                    <div className="flex-1"></div>
+                    <div className="flex items-center py-0 flex-row">
+                        {(!isHomePage || isPastHero) && (
+                            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-1">
+                                <img
+                                    src="/logo5.png"
+                                    alt="WMIPL Logo"
+                                    className="h-12 w-auto object-contain cursor-pointer"
+                                />
+                                <h2 className="text-white/90 hover:text-white text-l font-bold transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
+                            </Link>
+                        )}
+                    </div>
 
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex items-center gap-12">

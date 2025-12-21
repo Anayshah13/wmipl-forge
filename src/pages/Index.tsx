@@ -15,20 +15,30 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <br />
+      <br />
       <About />
+      <br />
+      <br />
       <WhyWMIPL />
+      <br />
+      <br />
       <Products />
       <br />
       <br />
       <ProductionProcess />
       <br />
       <br />
-      <br />
-      <br />
       <Infrastructure />
       <Management />
+      <br />
+      <br />
       <Export />
+      <br />
+      <br />
       <ClientsPage />
+      <br />
+      <br />
       <CSR />
       <Contact />
       <Footer />

@@ -12,18 +12,18 @@ const timelineData = [
     { id: '08', name: "Packaging and Dispatch", color: 'bg-[#003B95]', dotColor: '#003B95' },
 ];
 
-const TimelineNode = ({ item, index, width, centerY, radius }) => {
+const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
     const isUp = (index + 1) % 2 !== 0;
-    const centerX = (index * width) + (width / 2);
+    const centerX = startX + (index * width) + (width / 2);
     const nodeY = centerY;
 
-    // ADJUSTED: Stem length slightly increased for bigger nodes
-    const stemLength = radius + 20;
+    // ADJUSTED: Stem length scaled down
+    const stemLength = radius + 16;
     const stemEndY = isUp ? centerY - stemLength : centerY + stemLength;
 
-    // INCREASED: Card dimensions to fit w-48 images better
-    const cardWidth = 190;
-    const cardHeight = 250;
+    // SCALED DOWN: Card dimensions by ~20% (190->152, 250->200)
+    const cardWidth = 300;
+    const cardHeight = 260;
     const cardY = isUp ? stemEndY - cardHeight - 10 : stemEndY + 30;
 
     return (
@@ -37,17 +37,17 @@ const TimelineNode = ({ item, index, width, centerY, radius }) => {
                 className="stroke-zinc-300 stroke-[4px] transition-all duration-300 group-hover:stroke-zinc-800 group-hover:stroke-[6px]"
             />
 
-            {/* 2. Tiny Dot at the tip */}
+            {/* 2. Tiny Dot at the tip - Scaled down (r=8 -> r=6) */}
             <circle
                 cx={centerX}
                 cy={stemEndY}
-                r="8"
+                r="6"
                 fill={item.dotColor}
                 style={{ transformOrigin: `${centerX}px ${stemEndY}px` }}
                 className="transition-transform duration-300 group-hover:scale-[1.5] group-hover:brightness-110 group-hover:shadow-[0_0_15px_rgba(0,0,0,0.1)]"
             />
 
-            {/* 3. Main Circle Housing the Number - Normal Size */}
+            {/* 3. Main Circle Housing the Number - Scaled down (80px -> 64px) */}
             <foreignObject
                 x={centerX - 40}
                 y={nodeY - 40}
@@ -58,8 +58,8 @@ const TimelineNode = ({ item, index, width, centerY, radius }) => {
                 <div
                     className={`
             w-20 h-20 rounded-full flex items-center justify-center
-            text-white font-bold text-3xl transition-all duration-300
-            group-hover:scale-110 cursor-pointer
+            text-white font-bold text-2xl transition-all duration-300
+            group-hover:scale-[1.07] cursor-pointer
             ${item.color}
             border-[3px] border-white shadow-xl
           `}
@@ -68,7 +68,7 @@ const TimelineNode = ({ item, index, width, centerY, radius }) => {
                 </div>
             </foreignObject>
 
-            {/* 4. Content Card */}
+            {/* 4. Content Card - Scaled down */}
             <foreignObject
                 x={centerX - (cardWidth / 2)}
                 y={cardY}
@@ -76,11 +76,12 @@ const TimelineNode = ({ item, index, width, centerY, radius }) => {
                 height={cardHeight}
                 className="overflow-visible"
             >
-                <div className="flex flex-col items-center justify-center text-center h-full transition-all duration-300 hover:scale-105">
-                    <h3 className="font-bold text-2xl text-gray-900 mb-3 leading-tight drop-shadow-sm">
+                <div className="w-full flex flex-col items-center justify-center text-center h-full transition-all duration-300 group-hover:scale-[1.07]">
+                    <h3 className="font-bold text-xl text-gray-900 mb-2 leading-tight drop-shadow-sm">
                         {item.name}
                     </h3>
-                    <div className="w-48 h-48 overflow-hidden rounded-full border-[8px] border-white shadow-2xl mx-auto flex-shrink-0">
+                    {/* Image scaled down (w-48->~154px), border reduced (8px->6px) */}
+                    <div className="w-[180px] h-[180px] overflow-hidden rounded-full border-[8px] border-white shadow-2xl mx-auto flex-shrink-0">
                         <img
                             src={`/steps/${index + 1}.png`}
                             alt={item.name}
@@ -110,22 +111,28 @@ export const ProductionProcess = () => {
 
     const totalSteps = timelineData.length;
     const containerWidth = dimensions.width;
-    const nodeWidth = containerWidth / totalSteps;
 
-    const centerY = dimensions.height * 0.55;
+    // SCALE DOWN: Effective width is 80% of container
+    const effectiveWidth = containerWidth * 0.85;
+    // Center the 80% width in the container
+    const startX = (containerWidth - effectiveWidth) / 2;
+
+    const nodeWidth = effectiveWidth / totalSteps;
+
+    const centerY = dimensions.height * 0.5;
     const radius = nodeWidth / 2;
 
     const pathData = useMemo(() => {
         if (dimensions.width === 0) return "";
-        let d = `M 0 ${centerY}`;
+        let d = `M ${startX} ${centerY}`;
         timelineData.forEach((_, i) => {
             const isUp = (i + 1) % 2 !== 0;
-            const x = (i + 1) * nodeWidth;
+            const x = startX + (i + 1) * nodeWidth;
             const sweep = isUp ? 0 : 1;
             d += ` A ${radius} ${radius} 0 0 ${sweep} ${x} ${centerY}`;
         });
         return d;
-    }, [containerWidth, nodeWidth, centerY, radius, dimensions.width]);
+    }, [containerWidth, nodeWidth, centerY, radius, dimensions.width, startX]);
 
     if (dimensions.width === 0) return null;
 
@@ -143,19 +150,19 @@ export const ProductionProcess = () => {
                 </motion.div>
             </div>
 
-            <div style={{ width: containerWidth }} className="relative h-[80vh] flex items-center mt-10 mr-5">
+            <div style={{ width: containerWidth }} className="relative h-[80vh] flex items-center mt-14">
                 <svg
                     width={containerWidth}
                     height={dimensions.height}
                     viewBox={`0 0 ${containerWidth} ${dimensions.height}`}
                     className="w-full h-full overflow-visible"
                 >
-                    {/* The Continuous Semicircle Path - Thicker */}
+                    {/* The Continuous Semicircle Path - Thicker but scaled down (32->26) */}
                     <path
                         d={pathData}
                         fill="none"
                         stroke="#f2f2f2ff"
-                        strokeWidth="32"
+                        strokeWidth="28"
                         strokeLinecap="butt"
                     />
 
@@ -168,6 +175,7 @@ export const ProductionProcess = () => {
                             width={nodeWidth}
                             centerY={centerY}
                             radius={radius}
+                            startX={startX}
                         />
                     ))}
                 </svg>

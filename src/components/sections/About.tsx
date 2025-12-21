@@ -58,25 +58,46 @@ export const About = () => {
                 Today, we stand as <span className="font-bold text-primary">India's largest producer</span> of
                 aluminium slugs, commanding a remarkable 70% market share. Our work area spreads over
                 <span className="font-bold text-primary"> 300,000 square feet</span> with a dedicated workforce of
-                <span className="font-bold text-primary"> over 400 skilled employees</span>, having a turnover close to
-                <span className="font-bold text-primary"> INR 7,500 Million</span>.
+                <span className="font-bold text-primary"> over 400 skilled employees.</span>
               </p>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true }}
-              className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
-            >
-              <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Performance Highlights</h4>
-              <ul className="space-y-3 text-gray-800 text-sm md:text-base lg:text-lg">
-                <li>• Annual Melting Capacity: <span className="font-bold text-primary">70,000 MT</span></li>
-                <li>• Annual Sales: <span className="font-bold text-primary">30,000 MT</span></li>
-                <li>• Turnover: <span className="font-bold text-primary">INR 7,500 Million</span></li>
-              </ul>
-            </motion.div>
+            <div className="flex flex-row gap-4 h-40">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
+              >
+                <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Annual Melting Capacity</h4>
+                <ul className="space-y-3 text-gray-800 text-sm md:text-base lg:text-lg">
+                  <li><span className="font-bold text-primary">70,000 MT</span></li>
+                </ul>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
+              >
+                <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Annual Sales</h4>
+                <ul className="space-y-3 text-gray-800 text-sm md:text-base lg:text-lg">
+                  <li><span className="font-bold text-primary">30,000 MT</span></li>
+                </ul>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8 hover:scale-105 transition-transform duration-300 shadow-md hover:shadow-lg"
+              >
+                <h4 className="text-lg md:text-xl font-bold text-secondary mb-4">Turnover</h4>
+                <span className="font-bold text-primary">INR 7,500 Million</span>
+              </motion.div>
+            </div>
           </div>
 
           <motion.div
