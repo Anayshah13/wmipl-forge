@@ -1,5 +1,7 @@
+
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const timelineData = [
     { id: '01', name: "Melting", description: "High-quality aluminium melting", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
@@ -27,7 +29,13 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
     const cardY = isUp ? stemEndY - cardHeight - 10 : stemEndY + 30;
 
     return (
-        <g className="group">
+        <motion.g
+            className="group"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+        >
             {/* 1. Vertical Stretched Node (Stem) */}
             <line
                 x1={centerX}
@@ -90,7 +98,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                     </div>
                 </div>
             </foreignObject>
-        </g>
+        </motion.g>
     );
 };
 
@@ -134,6 +142,10 @@ export const ProductionProcess = () => {
         return d;
     }, [containerWidth, nodeWidth, centerY, radius, dimensions.width, startX]);
 
+    const scrollToSection = (id: string) => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     if (dimensions.width === 0) return null;
 
     return (
@@ -158,12 +170,16 @@ export const ProductionProcess = () => {
                     className="w-full h-full overflow-visible"
                 >
                     {/* The Continuous Semicircle Path - Thicker but scaled down (32->26) */}
-                    <path
+                    <motion.path
                         d={pathData}
                         fill="none"
                         stroke="#f2f2f2ff"
                         strokeWidth="28"
                         strokeLinecap="butt"
+                        initial={{ pathLength: 0 }}
+                        whileInView={{ pathLength: 1 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        viewport={{ once: true }}
                     />
 
                     {/* Nodes */}
@@ -180,6 +196,13 @@ export const ProductionProcess = () => {
                     ))}
                 </svg>
             </div>
+
+            <button
+                onClick={() => scrollToSection('infrastructure')}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
+            >
+                <ChevronDown size={32} />
+            </button>
         </section>
     );
 };

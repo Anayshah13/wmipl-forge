@@ -50,9 +50,9 @@ export const Navbar = () => {
 
     const getNavbarStyles = () => {
         if (!isHomePage) return "bg-[#0b2555EF] py-4";
-        if (isPastHero) return "bg-[#0b2555EF] py-4";
-        if (isScrolled) return "py-4";
-        return "py-6";
+        if (isPastHero) return "bg-[#0b2555EF] py-2";
+        if (isScrolled) return "py-2";
+        return "py-4";
     };
 
     const navLinks = [
@@ -77,7 +77,7 @@ export const Navbar = () => {
                                     alt="WMIPL Logo"
                                     className="h-12 w-auto object-contain cursor-pointer"
                                 />
-                                <h2 className="text-white/90 hover:text-white text-l font-bold transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
+                                <h2 className="pt-1.5 text-white/90 hover:text-white text-xl font-bold font-montserrat transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
                             </Link>
                         )}
                     </div>
@@ -88,14 +88,14 @@ export const Navbar = () => {
                             <button
                                 key={link.name}
                                 onClick={() => scrollToSection(link.id)}
-                                className="text-white/90 hover:text-white text-xl font-bold transition-colors"
+                                className="text-white/90 hover:text-white text-l font-bold transition-colors"
                             >
                                 {link.name}
                             </button>
                         ))}
                         <Link to="/certifications">
                             <button
-                                className="text-white/90 hover:text-white text-xl font-bold transition-colors"
+                                className="text-white/90 hover:text-white text-l font-bold transition-colors"
                             >
                                 View Certifications
                             </button>

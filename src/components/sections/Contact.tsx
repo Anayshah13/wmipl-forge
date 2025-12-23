@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const containerStyle = {
     width: '100%',
     height: '100%',
-    borderRadius: '50px'
+    borderRadius: '16px'
 };
 
 const center = {
@@ -47,207 +47,179 @@ export const Contact = () => {
     };
 
     return (
-        <section id="contact" className="min-h-screen w-full overflow-x-hidden flex flex-col justify-center py-10 px-8 md:px-20 lg:px-32 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative gap-12 mx-auto">
+        <section id="contact" className="min-h-screen w-full overflow-hidden flex flex-col justify-center py-10 px-4 md:px-8 lg:px-16 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative">
 
-            <div className="text-center">
-                <h2 className="text-4xl md:text-6xl font-bold text-black">Contact Us</h2>
-            </div>
+            <div className="max-w-[95%] mx-auto w-full flex flex-col h-full lg:h-[85vh]">
+                <div className="text-center mb-6 lg:mb-8 flex-none">
+                    <h2 className="text-4xl lg:text-6xl font-bold text-black">Contact Us</h2>
+                    <p className="mt-3 text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+                        Get in touch with us for any inquiries or assistance.
+                    </p>
+                </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 w-full lg:h-[30vh] ">
-
-                {/* Contact Info (Flex 3) */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="flex-[3] h-full"
-                >
-                    <Card className="h-full p-6 shadow-xl bg-white text-secondary border-none flex flex-col justify-center">
-                        <div className="space-y-2">
-                            <div className="flex items-center gap-6">
-                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <Mail className="text-primary w-6 h-6" />
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex-grow lg:overflow-hidden">
+                    {/* Left Column */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="flex flex-col gap-4 h-full"
+                    >
+                        {/* Contact Details Row */}
+                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none h-[116px] flex items-center">
+                            <div className="grid grid-cols-1 md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 w-[98%] mx-auto">
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                        <Mail className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <div className="overflow-hidden">
+                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Email</p>
+                                        <a href="mailto:western@westernaluminium.com" className="text-sm font-bold text-secondary hover:text-primary truncate block transition-colors">
+                                            western@westernaluminium.com
+                                        </a>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-base text-gray-500 font-semibold uppercase tracking-wide">Email</p>
-                                    <a
-                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=western@westernaluminium.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-xl font-bold text-secondary hover:text-primary transition-colors cursor-pointer"
-                                    >
-                                        western@westernaluminium.com
-                                    </a>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                        <Phone className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
+                                        <p className="text-sm font-bold text-secondary text-nowrap">+91-20-26870164</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                        <Globe className="w-5 h-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Website</p>
+                                        <p className="text-sm font-bold text-secondary truncate">www.westernaluminium.com</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-6">
-                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <Phone className="text-primary w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-base text-gray-500 font-semibold uppercase tracking-wide">Phone</p>
-                                    <p className="text-xl font-bold text-secondary">+91-20-26870164</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-6">
-                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                                    <Globe className="text-primary w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-base text-gray-500 font-semibold uppercase tracking-wide">Website</p>
-                                    <p className="text-xl font-bold text-secondary">www.westernaluminium.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </Card>
-                </motion.div>
+                        </Card>
 
-                {/* Locations (Flex 5) - Clean list with 1 icon */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="flex-[5] h-full"
-                >
-                    <Card className="p-6 h-full shadow-xl bg-white border-none flex items-center gap-6">
-                        {/* Big Flat Icon */}
-                        <div className="hidden lg:flex flex-col items-center justify-center h-full w-1/4 border-r border-gray-100 pr-6">
-                            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                                <MapPin className="w-10 h-10 text-primary" />
-                            </div>
-                        </div>
-
-                        {/* Locations List */}
-                        <div className="flex-1 grid md:grid-cols-2 gap-4 h-full items-center">
-                            <div className="space-y-4">
-                                <h4 className="text-2xl font-bold text-secondary flex items-center gap-3">
-                                    <MapPin className="w-6 h-6 text-primary lg:hidden" />
-                                    Head Office
-                                </h4>
-                                <p className="text-gray-600 leading-relaxed text-lg font-medium">
-                                    251/1 A, B Hadapsar Industrial Estate,<br />
-                                    Hadapsar, Pune - 411013<br />
-                                    Maharashtra, India
-                                </p>
-                            </div>
-
-                            <div className="space-y-4">
-                                <h4 className="text-2xl font-bold text-secondary flex items-center gap-3">
-                                    <MapPin className="w-6 h-6 text-primary lg:hidden" />
-                                    Manufacturing Unit
-                                </h4>
-                                <p className="text-gray-600 leading-relaxed text-lg font-medium">
-                                    294 Khor Road, Bhandgaon,<br />
-                                    Pune-Solapur Road, Pune - 412214<br />
-                                    Maharashtra, India
-                                </p>
-                            </div>
-                        </div>
-                    </Card>
-                </motion.div>
-            </div>
-            {/* ROW 1: Message Form (3) : Map (2) - 90vh */}
-            <div className="flex flex-col lg:flex-row gap-12 w-full lg:h-auto items-stretch">
-
-                {/* Contact Form (Flex 3) */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="flex-[3] w-full"
-                >
-                    <Card className="p-8 md:px-12 h-full shadow-2xl flex flex-col justify-center border-none bg-white/90 backdrop-blur-sm">
-                        <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-center">
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label className="block text-lg font-bold text-secondary mb-2">Full Name</label>
-                                    <Input
+                        {/* Contact Form */}
+                        <Card className="p-6 md:p-8 shadow-xl bg-white/90 backdrop-blur-sm border-none flex-grow flex flex-col">
+                            <h2 className="text-sm font-bold text-secondary mb-5 uppercase tracking-wider border-b border-gray-100 pb-3">
+                                Send us a Message
+                            </h2>
+                            <form onSubmit={handleSubmit} className="flex-grow flex flex-col gap-5">
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div className="space-y-1.5">
+                                        <label className="text-xs font-semibold text-gray-600">Full Name</label>
+                                        <Input
+                                            required
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            placeholder="John Doe"
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                        />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <label className="text-xs font-semibold text-gray-600">Email</label>
+                                        <Input
+                                            type="email"
+                                            required
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            placeholder="name@ex.com"
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                        />
+                                    </div>
+                                    <div className="space-y-1.5">
+                                        <label className="text-xs font-semibold text-gray-600">Phone</label>
+                                        <Input
+                                            type="tel"
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            placeholder="+91..."
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-1.5 flex-grow flex flex-col">
+                                    <label className="text-xs font-semibold text-gray-600">Message</label>
+                                    <Textarea
                                         required
-                                        value={formData.name}
-                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        placeholder="Name"
-                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                        placeholder="Your Enquiry"
+                                        className="bg-white/50 border-gray-200 focus:border-primary resize-none flex-grow min-h-[100px]"
                                     />
                                 </div>
-                                <div>
-                                    <label className="block text-lg font-bold text-secondary mb-2">Email Address</label>
-                                    <Input
-                                        type="email"
-                                        required
-                                        value={formData.email}
-                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        placeholder="name@example.com"
-                                        className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
-                                    />
+                                <Button type="submit" className="w-full bg-primary hover:bg-primary-dark font-bold shadow-md rounded-lg h-11 transition-all duration-200">
+                                    Send Message
+                                </Button>
+                            </form>
+                        </Card>
+                    </motion.div>
+
+                    {/* Right Column */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="flex flex-col gap-4 h-full"
+                    >
+                        {/* Address Details */}
+                        {/* Address Details */}
+                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[116px] flex items-center justify-center">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div className="flex items-center justify-center gap-3">
+                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
+                                        <MapPin className="text-primary w-6 h-6" />
+                                    </div>
+                                    <div className="text-left">
+                                        <h3 className="text-lg font-bold text-secondary mb-1">Head Office</h3>
+                                        <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                                            251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex items-center justify-center gap-3">
+                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
+                                        <MapPin className="text-primary w-6 h-6" />
+                                    </div>
+                                    <div className="text-left">
+                                        <h3 className="text-lg font-bold text-secondary mb-1">Mfg. Unit</h3>
+                                        <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                                            254 Khor Road, Bhandgaon,<br />Pune - 412214
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
+                        </Card>
 
-                            <div>
-                                <label className="block text-lg font-bold text-secondary mb-2">Phone Number</label>
-                                <Input
-                                    type="tel"
-                                    value={formData.phone}
-                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                    placeholder="+91 XXXXX XXXXX"
-                                    className="h-14 bg-white/50 border-gray-300 focus:border-primary text-lg"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-lg font-bold text-secondary mb-2">Message</label>
-                                <Textarea
-                                    required
-                                    value={formData.message}
-                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                    placeholder="Your Enquiry"
-                                    className="h-[150px] bg-white/50 border-gray-300 focus:border-primary resize-none p-4 text-lg h-1"
-                                />
-                            </div>
-
-                            <Button type="submit" className="w-full h-16 text-xl font-bold bg-primary hover:bg-primary-dark shadow-lg mt-4 rounded-xl">
-                                Send Message
-                            </Button>
-                        </form>
-                    </Card>
-                </motion.div>
-
-                {/* Google Map (Flex 2) - Square Aspect Ratio */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="flex-[2] w-full"
-                >
-                    <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                        <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
-                            <GoogleMap
-                                mapContainerStyle={containerStyle}
-                                center={center}
-                                zoom={10}
-                                options={{
-                                    disableDefaultUI: false,
-                                    styles: [
-                                        {
-                                            featureType: "all",
-                                            elementType: "labels.text.fill",
-                                            stylers: [{ color: "#7c93a3" }, { lightness: "-10" }],
-                                        },
-                                    ],
-                                }}
-                            >
-                                <Marker position={hadapsar} title="Main Factory" />
-                                <Marker position={bhandgaon} title="Second Unit" />
-                            </GoogleMap>
-                        </LoadScript>
-                    </div>
-                </motion.div>
+                        {/* Map */}
+                        <div className="flex-grow rounded-xl overflow-hidden shadow-xl border border-white/20 min-h-[250px] relative bg-gray-100">
+                            <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
+                                <GoogleMap
+                                    mapContainerStyle={containerStyle}
+                                    center={center}
+                                    zoom={10}
+                                    options={{
+                                        disableDefaultUI: false,
+                                        styles: [
+                                            {
+                                                featureType: "all",
+                                                elementType: "labels.text.fill",
+                                                stylers: [{ color: "#7c93a3" }, { lightness: "-10" }],
+                                            },
+                                        ],
+                                    }}
+                                >
+                                    <Marker position={hadapsar} title="Main Factory" />
+                                    <Marker position={bhandgaon} title="Second Unit" />
+                                </GoogleMap>
+                            </LoadScript>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
-
-            {/* ROW 2: Contact Info (3) : Locations (5) - 30vh */}
         </section>
     );
 };

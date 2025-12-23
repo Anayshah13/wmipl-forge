@@ -42,7 +42,7 @@ export const WhyWMIPL = () => {
     const getHexagonColor = (index: number) => {
         // Indices for Black: 0, 2, 4
         // Indices for Dark Blue: 1, 3, 5
-        const blackIndices = [1 ,3 ,5];
+        const blackIndices = [1, 3, 5];
         return blackIndices.includes(index) ? "bg-[#262626]" : "bg-[#003498]";
     };
 
@@ -55,7 +55,7 @@ export const WhyWMIPL = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-bold mb-3 text-secondary"
+                        className="text-4xl lg:text-6xl font-bold mb-3 text-secondary"
                     >
                         Why Choose WMIPL?
                     </motion.h2>
@@ -175,7 +175,7 @@ export const WhyWMIPL = () => {
 
             <button
                 onClick={() => scrollToSection('products')}
-                className="absolute bottom-16 left-1/2 -translate-x-1/2 text-primary animate-bounce"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-primary animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
             >
                 <ChevronDown size={32} />
             </button>

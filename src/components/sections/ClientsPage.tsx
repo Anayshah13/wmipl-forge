@@ -42,13 +42,13 @@ export const ClientsPage = () => {
     };
 
     const renderColumn = (items: string[]) => (
-        <div className="flex flex-col gap-y-4">
+        <div className="flex flex-col gap-y-3.5">
             {items.map((item, index) => (
                 <motion.div
                     key={index}
                     variants={itemVariants}
                     whileHover={{ scale: 1.25, zIndex: 10 }}
-                    className="flex items-center justify-center h-20 cursor-default bg-white/50 rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-shadow duration-200"
+                    className="flex items-center justify-center h-16 cursor-default bg-white/50 rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-shadow duration-100"
                 >
                     <img src={item} alt="Client Logo" className="max-h-full max-w-full object-contain" />
                 </motion.div>
@@ -64,20 +64,29 @@ export const ClientsPage = () => {
             {/* White overlay for reduced contrast */}
             <div className="absolute inset-0 bg-white/85 z-0" />
 
-            <div className="w-[95%] md:w-[87%] flex flex-col gap-10 relative z-10">
+            <div className="w-[92%] md:w-[85%] flex flex-col gap-6 relative z-10">
+                <motion.h2
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-4xl lg:text-6xl font-bold text-center mb-4 text-black drop-shadow-sm"
+                >
+                    Our Clients and Partners
+                </motion.h2>
+
                 {/* Main Grid */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
+                    className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start"
                 >
                     {/* ---------------------- TOP CUSTOMERS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-black`}>Top Customers</motion.div>
-                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
-                            <div className="grid grid-cols-2 gap-3">
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-2.5 bg-black`}>Top Customers</motion.div>
+                        <div className="bg-white/40 backdrop-blur-md p-3.5 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-2.5">
                                 {renderColumn(topCustCol1)}
                                 {renderColumn(topCustCol2)}
                             </div>
@@ -86,9 +95,9 @@ export const ClientsPage = () => {
 
                     {/* ---------------------- END USE CLIENTS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-blue-700`}>End Use Clients</motion.div>
-                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
-                            <div className="grid grid-cols-2 gap-3">
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-2.5 bg-blue-700`}>End Use Clients</motion.div>
+                        <div className="bg-white/40 backdrop-blur-md p-3.5 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-2.5">
                                 {renderColumn(endUseCol1)}
                                 {renderColumn(endUseCol2)}
                             </div>
@@ -97,11 +106,11 @@ export const ClientsPage = () => {
 
                     {/* ---------------------- MARQUEE SUPPLIERS ---------------------- */}
                     <div className="h-full flex flex-col">
-                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-3 bg-gray-500`}>
+                        <motion.div variants={itemVariants} className={`${sectionHeader} text-xl font-bold py-2.5 bg-gray-500`}>
                             Marquee Suppliers
                         </motion.div>
-                        <div className="bg-white/40 backdrop-blur-md p-4 rounded-b-xl flex-1 border border-white/30">
-                            <div className="grid grid-cols-2 gap-4">
+                        <div className="bg-white/40 backdrop-blur-md p-3.5 rounded-b-xl flex-1 border border-white/30">
+                            <div className="grid grid-cols-2 gap-3.5">
                                 {renderColumn(marqueeCol1)}
                                 {renderColumn(marqueeCol2)}
                             </div>
@@ -112,9 +121,9 @@ export const ClientsPage = () => {
 
             <button
                 onClick={() => scrollToSection("csr")}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-blue-900 animate-bounce"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-blue-900 animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
             >
-                <ChevronDown size={28} />
+                <ChevronDown size={32} />
             </button>
         </div>
     );

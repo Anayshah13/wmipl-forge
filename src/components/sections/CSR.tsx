@@ -140,9 +140,9 @@ export const CSR = () => {
 
       <button
         onClick={() => scrollToSection('contact')}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-green-700 drop-shadow-lg animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-green-700 animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
       >
-        <ChevronDown size={28} strokeWidth={3} />
+        <ChevronDown size={32} strokeWidth={3} />
       </button>
     </section>
   );

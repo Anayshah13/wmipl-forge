@@ -10,7 +10,7 @@ import { ClientsPage } from "@/components/sections/ClientsPage";
 import { CSR } from "@/components/sections/CSR";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
-
+import { Export2 } from "@/components/sections/Export2";
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -33,7 +33,7 @@ const Index = () => {
       <Management />
       <br />
       <br />
-      <Export />
+      <Export2 />
       <br />
       <br />
       <ClientsPage />
