@@ -176,10 +176,8 @@ export const ProductionProcess = () => {
                         stroke="#f2f2f2ff"
                         strokeWidth="28"
                         strokeLinecap="butt"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        transition={{ duration: 1.5, ease: "easeInOut" }}
-                        viewport={{ once: true }}
+                        animate={{ pathLength: [0, 1] }}
+                        transition={{ duration: 7, ease: "linear", repeat: Infinity }}
                     />
 
                     {/* Nodes */}

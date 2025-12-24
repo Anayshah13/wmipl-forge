@@ -67,7 +67,7 @@ export const Navbar = () => {
         <header
             className={`fixed top-0 left-0 right-0 z-50 ${getNavbarStyles()}`}
         >
-            <div className="w-full px-4 sm:px-6 lg:px-12 font-bold">
+            <div className="w-full px-4 sm:px-6 lg:px-12">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center py-0 flex-row">
                         {(!isHomePage || isPastHero) && (
@@ -77,29 +77,34 @@ export const Navbar = () => {
                                     alt="WMIPL Logo"
                                     className="h-12 w-auto object-contain cursor-pointer"
                                 />
-                                <h2 className="pt-1.5 text-white/90 hover:text-white text-xl font-bold font-montserrat transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
+                                <h2 className="pt-1.5 text-white/90 hover:text-white text-2xl font-montserrat transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
                             </Link>
                         )}
                     </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center gap-12">
-                        {navLinks.map((link) => (
-                            <button
-                                key={link.name}
-                                onClick={() => scrollToSection(link.id)}
-                                className="text-white/90 hover:text-white text-l font-bold transition-colors"
-                            >
-                                {link.name}
-                            </button>
+                    <nav className="hidden lg:flex items-center gap-6">
+                        {navLinks.map((link, index) => (
+                            <div key={link.name} className="flex items-center">
+                                {index > 0 && <div className="h-4 w-[1px] bg-white/30 mr-6" />}
+                                <button
+                                    onClick={() => scrollToSection(link.id)}
+                                    className="text-white/90 hover:text-white text-lg font-medium transition-colors"
+                                >
+                                    {link.name}
+                                </button>
+                            </div>
                         ))}
-                        <Link to="/certifications">
-                            <button
-                                className="text-white/90 hover:text-white text-l font-bold transition-colors"
-                            >
-                                View Certifications
-                            </button>
-                        </Link>
+                        <div className="flex items-center">
+                            <div className="h-4 w-[1px] bg-white/30 mr-6" />
+                            <Link to="/certifications">
+                                <button
+                                    className="text-white/90 hover:text-white text-lg font-medium transition-colors"
+                                >
+                                    View Certifications
+                                </button>
+                            </Link>
+                        </div>
                     </nav>
 
                     {/* Mobile Menu Button */}

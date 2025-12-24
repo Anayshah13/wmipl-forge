@@ -120,7 +120,7 @@ export const ClientsPage = () => {
             </div>
 
             <button
-                onClick={() => scrollToSection("csr")}
+                onClick={() => scrollToSection("csr2")}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-blue-900 animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
             >
                 <ChevronDown size={32} />

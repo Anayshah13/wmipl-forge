@@ -13,7 +13,7 @@ export const Footer = () => {
     <footer id="footer" className="bg-[#1a1a1a] text-white py-16 font-sans relative overflow-hidden">
       {/* Decorative Dome Effect */}
       <div
-        className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[95%] bg-[#0b2555] rounded-t-[100%] opacity-85 blur-[120px] pointer-events-none z-0"
+        className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[92%] bg-[#25488a] rounded-t-[100%] opacity-85 blur-[120px] pointer-events-none z-0"
       />
 
       <div className="relative z-10 max-w-[85%] mx-auto px-4 md:px-8">

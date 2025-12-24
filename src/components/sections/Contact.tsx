@@ -108,17 +108,27 @@ export const Contact = () => {
                             </h2>
                             <form onSubmit={handleSubmit} className="flex-grow flex flex-col gap-5">
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    <div className="space-y-1.5">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.1, duration: 0.4 }}
+                                        className="space-y-1.5"
+                                    >
                                         <label className="text-xs font-semibold text-gray-600">Full Name</label>
                                         <Input
                                             required
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             placeholder="John Doe"
-                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10 transition-all hover:bg-white/80"
                                         />
-                                    </div>
-                                    <div className="space-y-1.5">
+                                    </motion.div>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.2, duration: 0.4 }}
+                                        className="space-y-1.5"
+                                    >
                                         <label className="text-xs font-semibold text-gray-600">Email</label>
                                         <Input
                                             type="email"
@@ -126,33 +136,49 @@ export const Contact = () => {
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             placeholder="name@ex.com"
-                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10 transition-all hover:bg-white/80"
                                         />
-                                    </div>
-                                    <div className="space-y-1.5">
+                                    </motion.div>
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3, duration: 0.4 }}
+                                        className="space-y-1.5"
+                                    >
                                         <label className="text-xs font-semibold text-gray-600">Phone</label>
                                         <Input
                                             type="tel"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                             placeholder="+91..."
-                                            className="bg-white/50 border-gray-200 focus:border-primary h-10"
+                                            className="bg-white/50 border-gray-200 focus:border-primary h-10 transition-all hover:bg-white/80"
                                         />
-                                    </div>
+                                    </motion.div>
                                 </div>
-                                <div className="space-y-1.5 flex-grow flex flex-col">
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4, duration: 0.4 }}
+                                    className="space-y-1.5 flex-grow flex flex-col"
+                                >
                                     <label className="text-xs font-semibold text-gray-600">Message</label>
                                     <Textarea
                                         required
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         placeholder="Your Enquiry"
-                                        className="bg-white/50 border-gray-200 focus:border-primary resize-none flex-grow min-h-[100px]"
+                                        className="bg-white/50 border-gray-200 focus:border-primary resize-none flex-grow min-h-[100px] transition-all hover:bg-white/80"
                                     />
-                                </div>
-                                <Button type="submit" className="w-full bg-primary hover:bg-primary-dark font-bold shadow-md rounded-lg h-11 transition-all duration-200">
-                                    Send Message
-                                </Button>
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5, duration: 0.4 }}
+                                >
+                                    <Button type="submit" className="w-full bg-primary hover:bg-primary-dark font-bold shadow-md rounded-lg h-11 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                                        Send Message
+                                    </Button>
+                                </motion.div>
                             </form>
                         </Card>
                     </motion.div>

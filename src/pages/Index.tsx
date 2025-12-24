@@ -11,6 +11,8 @@ import { CSR } from "@/components/sections/CSR";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { Export2 } from "@/components/sections/Export2";
+import { CertificatesSection } from "@/components/sections/CertificatesSection";
+import { CSR2 } from "@/components/sections/CSR2";
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -39,7 +41,13 @@ const Index = () => {
       <ClientsPage />
       <br />
       <br />
-      <CSR />
+      {/* <CSR /> */}
+      <CSR2 />
+      <br />
+      <br />
+      <CertificatesSection />
+      <br />
+      <br />
       <Contact />
       <Footer />
     </div>
