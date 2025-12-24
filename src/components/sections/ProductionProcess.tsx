@@ -4,14 +4,15 @@ import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
 const timelineData = [
-    { id: '01', name: "Melting", description: "High-quality aluminium melting", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
-    { id: '02', name: "Casting", description: "Precision casting process", color: 'bg-[#003B95]', dotColor: '#003B95' },
-    { id: '03', name: "Hot & Cold Rolling", description: "Rolling to specifications", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
-    { id: '04', name: "Coiling", description: "Material coiling", color: 'bg-[#003B95]', dotColor: '#003B95' },
-    { id: '05', name: "Decoiling and Punching", description: "Slug formation", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
-    { id: '06', name: "Annealing", color: 'bg-[#003B95]', dotColor: '#003B95' },
-    { id: '07', name: "Vibratory Processing", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
-    { id: '08', name: "Packaging and Dispatch", color: 'bg-[#003B95]', dotColor: '#003B95' },
+    { id: '01', name: "Melting", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
+    { id: '02', name: "Casting", color: 'bg-[#003B95]', dotColor: '#003B95' },
+    { id: '03', name: "Hot & Cold Rolling", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
+    // { id: '04', name: "Coiling", description: "Material coiling", color: 'bg-[#003B95]', dotColor: '#003B95' },
+    { id: '04', name: "Punching", color: 'bg-[#003B95]', dotColor: '#003B95' },
+    { id: '05', name: "Annealing", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
+    { id: '06', name: "Vibratory Processing", color: 'bg-[#003B95]', dotColor: '#003B95' },
+    { id: '07', name: "Packaging", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
+    { id: '08', name: "Dispatch", color: 'bg-[#003B95]', dotColor: '#003B95' },
 ];
 
 const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
