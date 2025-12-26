@@ -67,15 +67,15 @@ export const Contact = () => {
                         className="flex flex-col gap-4 h-full"
                     >
                         {/* Contact Details Row */}
-                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none h-[116px] flex items-center">
+                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[7.25rem] flex items-center">
                             <div className="grid grid-cols-1 md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 w-[98%] mx-auto">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
                                         <Mail className="w-5 h-5 text-primary" />
                                     </div>
                                     <div className="overflow-hidden">
-                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Email</p>
-                                        <a href="mailto:western@westernaluminium.com" className="text-sm font-bold text-secondary hover:text-primary truncate block transition-colors">
+                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Email</p>
+                                        <a href="mailto:western@westernaluminium.com" className="text-xs lg:text-sm font-bold text-secondary hover:text-primary truncate block transition-colors">
                                             western@westernaluminium.com
                                         </a>
                                     </div>
@@ -84,18 +84,18 @@ export const Contact = () => {
                                     <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
                                         <Phone className="w-5 h-5 text-primary" />
                                     </div>
-                                    <div>
-                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
-                                        <p className="text-sm font-bold text-secondary text-nowrap">+91-20-26870164</p>
+                                    <div className="overflow-hidden">
+                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
+                                        <p className="text-xs lg:text-sm font-bold text-secondary truncate">+91-20-26870164</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
                                         <Globe className="w-5 h-5 text-primary" />
                                     </div>
-                                    <div>
-                                        <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Website</p>
-                                        <p className="text-sm font-bold text-secondary truncate">www.westernaluminium.com</p>
+                                    <div className="overflow-hidden">
+                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
+                                        <p className="text-xs lg:text-sm font-bold text-secondary truncate">www.westernaluminium.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ export const Contact = () => {
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                         placeholder="Your Enquiry"
-                                        className="bg-white/50 border-gray-200 focus:border-primary resize-none flex-grow min-h-[100px] transition-all hover:bg-white/80"
+                                        className="bg-white/50 border-gray-200 focus:border-primary resize-none flex-grow min-h-[6.25rem] transition-all hover:bg-white/80"
                                     />
                                 </motion.div>
                                 <motion.div
@@ -192,8 +192,7 @@ export const Contact = () => {
                         className="flex flex-col gap-4 h-full"
                     >
                         {/* Address Details */}
-                        {/* Address Details */}
-                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[116px] flex items-center justify-center">
+                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[7.25rem] flex items-center justify-center">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                                 <div className="flex items-center justify-center gap-3">
                                     <div className="h-12 w-12 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
@@ -221,7 +220,7 @@ export const Contact = () => {
                         </Card>
 
                         {/* Map */}
-                        <div className="flex-grow rounded-xl overflow-hidden shadow-xl border border-white/20 min-h-[250px] relative bg-gray-100">
+                        <div className="flex-grow rounded-xl overflow-hidden shadow-xl border border-white/20 min-h-[15.625rem] relative bg-gray-100">
                             <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
                                 <GoogleMap
                                     mapContainerStyle={containerStyle}

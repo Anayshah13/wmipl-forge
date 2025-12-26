@@ -114,7 +114,7 @@ export const Export2 = () => {
                     </div>
 
                     {/* Right Side: Map */}
-                    <div className="w-full h-full relative flex items-center justify-center order-1 lg:order-2 min-h-[400px]">
+                    <div className="w-full h-full relative flex items-center justify-center order-1 lg:order-2 min-h-[25rem]">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}

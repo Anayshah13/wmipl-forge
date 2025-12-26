@@ -79,7 +79,7 @@ export const About = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: item.delay }}
                   viewport={{ once: true }}
-                  className="bg-primary/15 hover:bg-primary/30 rounded-2xl p-2 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg min-h-[160px] cursor-default border border-primary/10"
+                  className="bg-primary/15 hover:bg-primary/30 rounded-2xl p-2 flex flex-col items-center justify-center text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg min-h-[10rem] cursor-default border border-primary/10"
                 >
                   <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 font-sans">
                     {item.label}
@@ -94,7 +94,7 @@ export const About = () => {
 
           {/* Image Column */}
           <motion.div
-            className="flex-1 w-full h-[500px]"
+            className="flex-1 w-full h-[20rem] lg:h-[31.25rem]"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}

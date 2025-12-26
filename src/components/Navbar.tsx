@@ -61,6 +61,7 @@ export const Navbar = () => {
         { name: 'Infrastructure', id: 'infrastructure' },
         { name: 'Management', id: 'management' },
         { name: 'Contact', id: 'contact' },
+        { name: 'View Certifications', id: 'certificatesect'}
     ];
 
     return (
@@ -86,7 +87,7 @@ export const Navbar = () => {
                     <nav className="hidden lg:flex items-center gap-6">
                         {navLinks.map((link, index) => (
                             <div key={link.name} className="flex items-center">
-                                {index > 0 && <div className="h-4 w-[1px] bg-white/30 mr-6" />}
+                                {index > 0 && <div className="h-4 w-px bg-white/30 mr-6" />}
                                 <button
                                     onClick={() => scrollToSection(link.id)}
                                     className="text-white/90 hover:text-white text-lg font-medium transition-colors"
@@ -95,16 +96,6 @@ export const Navbar = () => {
                                 </button>
                             </div>
                         ))}
-                        <div className="flex items-center">
-                            <div className="h-4 w-[1px] bg-white/30 mr-6" />
-                            <Link to="/certifications">
-                                <button
-                                    className="text-white/90 hover:text-white text-lg font-medium transition-colors"
-                                >
-                                    View Certifications
-                                </button>
-                            </Link>
-                        </div>
                     </nav>
 
                     {/* Mobile Menu Button */}

@@ -155,7 +155,7 @@ export const Export = () => {
                 </div>
 
                 {/* Right Side: Globe */}
-                <div className="w-full h-[400px] md:h-[700px] relative flex items-center justify-center overflow-hidden">
+                <div className="w-full h-[25rem] md:h-[43.75rem] relative flex items-center justify-center overflow-hidden">
                     <World globeConfig={{ ...globeConfig, viewDistance }} data={data} />
                 </div>
             </div>

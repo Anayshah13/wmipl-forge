@@ -47,7 +47,7 @@ export const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="text-white/80 text-lg md:text-3xl leading-relaxed max-w-3xl drop-shadow-lg"
+                className="text-white/80 text-l md:text-2xl leading-relaxed max-w-3xl drop-shadow-lg"
               >
                 India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
               </motion.p>
@@ -96,7 +96,7 @@ export const Hero = () => {
         onClick={() => scrollToSection('about')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
       >
-        <ChevronDown size={48} />
+        <ChevronDown className="w-12 h-12" />
       </motion.button>
     </div>
   );

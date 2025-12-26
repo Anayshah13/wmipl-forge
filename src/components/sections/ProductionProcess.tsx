@@ -43,7 +43,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                 y1={nodeY}
                 x2={centerX}
                 y2={stemEndY}
-                className="stroke-zinc-300 stroke-[4px] transition-all duration-300 group-hover:stroke-zinc-800 group-hover:stroke-[6px]"
+                className="stroke-zinc-300 stroke-[0.25rem] transition-all duration-300 group-hover:stroke-zinc-800 group-hover:stroke-[0.375rem]"
             />
 
             {/* 2. Tiny Dot at the tip - Scaled down (r=8 -> r=6) */}
@@ -53,7 +53,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                 r="6"
                 fill={item.dotColor}
                 style={{ transformOrigin: `${centerX}px ${stemEndY}px` }}
-                className="transition-transform duration-300 group-hover:scale-[1.5] group-hover:brightness-110 group-hover:shadow-[0_0_15px_rgba(0,0,0,0.1)]"
+                className="transition-transform duration-300 group-hover:scale-[1.5] group-hover:brightness-110 group-hover:shadow-[0_0_1rem_rgba(0,0,0,0.1)]"
             />
 
             {/* 3. Main Circle Housing the Number - Scaled down (80px -> 64px) */}
@@ -90,7 +90,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                         {item.name}
                     </h3>
                     {/* Image scaled down (w-48->~154px), border reduced (8px->6px) */}
-                    <div className="w-[180px] h-[180px] overflow-hidden rounded-full border-[8px] border-white shadow-2xl mx-auto flex-shrink-0">
+                    <div className="w-[11.25rem] h-[11.25rem] overflow-hidden rounded-full border-[0.5rem] border-white shadow-2xl mx-auto flex-shrink-0">
                         <img
                             src={`/steps/${index + 1}.png`}
                             alt={item.name}
@@ -150,7 +150,7 @@ export const ProductionProcess = () => {
     if (dimensions.width === 0) return null;
 
     return (
-        <section id="production-process" className="min-h-screen w-full relative bg-cover bg-center flex flex-col items-center justify-center overflow-hidden">
+        <section className="min-h-screen w-full relative bg-cover bg-center flex flex-col items-center justify-center overflow-hidden">
             {/* Title Section */}
             <div className="absolute top-0 pt-6 left-0 w-full text-center z-10 px-4">
                 <motion.div

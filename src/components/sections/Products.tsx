@@ -156,7 +156,7 @@ export const Products = () => {
             <motion.div
               layoutId={`card-${active.name}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden shadow-2xl"
+              className="w-full max-w-[31.25rem] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden shadow-2xl"
             >
               <motion.div layoutId={`image-${active.name}-${id}`}>
                 <img

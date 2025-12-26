@@ -98,7 +98,7 @@ export const WhyWMIPL = () => {
                                                 <img
                                                     src={feature.image}
                                                     alt={feature.title}
-                                                    className="w-full h-full object-contain p-[12px] invert brightness-0 filter"
+                                                    className="w-full h-full object-contain p-3 invert brightness-0 filter"
                                                 />
                                             </div>
                                         </div>
@@ -157,7 +157,7 @@ export const WhyWMIPL = () => {
                                                 <img
                                                     src={feature.image}
                                                     alt={feature.title}
-                                                    className="w-full h-full object-contain p-[12px] invert brightness-0 filter"
+                                                    className="w-full h-full object-contain p-3 invert brightness-0 filter"
                                                 />
                                             </div>
                                         </div>

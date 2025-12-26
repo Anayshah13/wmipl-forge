@@ -31,9 +31,9 @@ export const CSR2 = () => {
     ];
 
     return (
-        <section id="csr2" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[url('/csr1.jpg')] bg-cover bg-center">
+        <section className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[url('/csr1.jpg')] bg-cover bg-center">
             {/* Original Background Overlay */}
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-[4px] z-0" />
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-0" />
 
             <div className="flex flex-col lg:flex-row w-full h-full relative z-10">
 

@@ -46,8 +46,8 @@ export const CSR = () => {
   };
 
   return (
-    <section id="csr" className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-2 relative bg-[url('/csr1.jpg')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-[4px] z-0" />
+    <section className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-2 relative bg-[url('/csr1.jpg')] bg-cover bg-center">
+      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm z-0" />
 
       <div className="section-container relative z-10 w-full max-w-7xl px-4 h-full flex flex-col justify-center">
         <div className="text-center mb-12">
@@ -93,7 +93,7 @@ export const CSR = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-white/50 backdrop-blur-md border border-green-200 rounded-2xl p-5 shadow-xl h-[400px]"
+          className="bg-white/50 backdrop-blur-md border border-green-200 rounded-2xl p-5 shadow-xl h-auto md:h-[25rem]"
         >
           <div className="grid md:grid-cols-2 gap-6 items-center">
             <div>
@@ -139,7 +139,7 @@ export const CSR = () => {
       </div>
 
       <button
-        onClick={() => scrollToSection('contact')}
+        onClick={() => scrollToSection('certificates')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-green-700 animate-bounce bg-white/50 p-2 rounded-full backdrop-blur-sm hover:bg-white/80 transition-colors"
       >
         <ChevronDown size={32} strokeWidth={3} />
