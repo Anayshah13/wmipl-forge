@@ -25,8 +25,8 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
     const stemEndY = isUp ? centerY - stemLength : centerY + stemLength;
 
     // SCALED DOWN: Card dimensions by ~20% (190->152, 250->200)
-    const cardWidth = 300;
-    const cardHeight = 260;
+    const cardWidth = 270;
+    const cardHeight = 220;
     const cardY = isUp ? stemEndY - cardHeight - 10 : stemEndY + 30;
 
     return (

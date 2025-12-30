@@ -47,18 +47,18 @@ export const CertificatesSection = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
     return (
-        <section id="certificates" className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[url('/dblue.jpg')] bg-cover bg-center">
+        <section id="certificates" className="min-h-screen lg:h-screen w-full relative flex flex-col items-center justify-center overflow-y-auto lg:overflow-hidden bg-[url('/dblue.jpg')] bg-cover bg-center">
             {/* Background Overlay */}
             <div className="absolute inset-0 z-0" />
 
-            <div className="flex flex-col lg:flex-row w-full h-full relative z-10">
+            <div className="flex flex-col lg:flex-row w-full h-full relative z-10 min-h-screen lg:min-h-0">
 
                 {/* Left Panel: Certificates Grid - Transparent to show background */}
-                <div className="w-full lg:w-[60%] h-full p-6 lg:p-10 flex flex-col justify-center relative">
+                <div className="w-full lg:w-[60%] h-full p-6 lg:p-10 flex flex-col justify-center relative order-2 lg:order-1">
                     {/* Background Grid Pattern */}
                     <div className="absolute inset-0 bg-white/50 pointer-events-none" />
 
-                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 h-full max-h-[90vh] auto-rows-fr">
+                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 h-auto lg:h-full lg:max-h-[90vh] auto-rows-fr py-8 lg:py-0">
                         {certificatesData.map((cert, index) => (
                             <motion.div
                                 key={index}
@@ -94,7 +94,7 @@ export const CertificatesSection = () => {
                 </div>
 
                 {/* Right Panel: Quality Assurance Text - Solid/Opaque to sit "ahead" */}
-                <div className="w-full lg:w-[40%] bg-[#0A4DAA] h-full flex flex-col justify-center p-8 lg:p-12 text-white relative z-20 shadow-2xl">
+                <div className="w-full lg:w-[40%] bg-[#0A4DAA] h-auto lg:h-full flex flex-col justify-center p-8 lg:p-12 text-white relative z-20 shadow-2xl order-1 lg:order-2">
                     {/* Decorative background element */}
                     <div className="absolute top-0 left-0 w-64 h-64 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
                     <div className="absolute bottom-0 right-0 w-96 h-96 bg-black/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />

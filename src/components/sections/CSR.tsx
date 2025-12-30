@@ -46,7 +46,7 @@ export const CSR = () => {
   };
 
   return (
-    <section className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-2 relative bg-[url('/csr1.jpg')] bg-cover bg-center">
+    <section className="min-h-screen w-full overflow-hidden flex flex-col justify-center items-center py-12 md:py-16 relative bg-[url('/csr1.jpg')] bg-cover bg-center">
       <div className="absolute inset-0 bg-white/60 backdrop-blur-sm z-0" />
 
       <div className="section-container relative z-10 w-full max-w-7xl px-4 h-full flex flex-col justify-center">

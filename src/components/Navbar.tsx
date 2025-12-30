@@ -61,7 +61,7 @@ export const Navbar = () => {
         { name: 'Infrastructure', id: 'infrastructure' },
         { name: 'Management', id: 'management' },
         { name: 'Contact', id: 'contact' },
-        { name: 'View Certifications', id: 'certificatesect'}
+        { name: 'View Certifications', id: 'certificates' }
     ];
 
     return (
@@ -126,13 +126,6 @@ export const Navbar = () => {
                                 {link.name}
                             </button>
                         ))}
-                        <Link to="/certifications" onClick={() => setIsMobileMenuOpen(false)}>
-                            <button
-                                className="text-white/90 hover:text-white text-2xl font-medium transition-colors"
-                            >
-                                View Certifications
-                            </button>
-                        </Link>
                     </motion.div>
                 )}
             </AnimatePresence>

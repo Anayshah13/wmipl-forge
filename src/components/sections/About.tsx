@@ -1,7 +1,17 @@
+import React from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const About = () => {
+  const [currentImage, setCurrentImage] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % 4);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -61,12 +71,13 @@ export const About = () => {
               <p className="text-lg text-gray-800 leading-relaxed font-medium">
                 Today, we stand as <span className="text-primary font-bold">India's largest producer</span> of
                 aluminium slugs, commanding a remarkable 70% market share with ou 99.7% pure aluminium products. Our work area spreads over
-                <span className="text-primary font-bold"> 300,000 square feet</span> with a dedicated workforce of
+                <span className="text-primary font-bold"> 3,00,000 square feet</span> with a dedicated workforce of
                 <span className="text-primary font-bold"> over 400 skilled employees.</span>
               </p>
             </motion.div>
 
             {/* Statistics Boxes */}
+            {/*
             <div className="grid grid-cols-3 gap-4">
               {[
                 { label: "Melting Capacity", value: "70,000 MT", delay: 0.2 },
@@ -90,21 +101,33 @@ export const About = () => {
                 </motion.div>
               ))}
             </div>
+            */}
           </div>
 
-          {/* Image Column */}
+
           <motion.div
-            className="flex-1 w-full h-[20rem] lg:h-[31.25rem]"
+            className="flex-1 w-full h-[15rem] lg:h-[25rem] relative overflow-hidden rounded-2xl shadow-xl border border-primary/20"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <img
-              src="/factory-melting.png"
-              alt="Factory Melting"
-              className="w-full h-full object-cover rounded-2xl shadow-xl border border-primary/20"
-            />
+            {[
+              "/fact1.png",
+              "/fact2.png",
+              "/hadapsar2.jpg",
+              "/coil.jpg"
+            ].map((src, index) => (
+              <motion.img
+                key={src}
+                src={src}
+                alt={`Slide ${index + 1}`}
+                className="absolute inset-0 w-full h-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: currentImage === index ? 1 : 0 }}
+                transition={{ duration: 1 }} // Smooth crossfade
+              />
+            ))}
           </motion.div>
 
         </div>

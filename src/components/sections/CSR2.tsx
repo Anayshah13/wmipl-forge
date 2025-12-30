@@ -31,14 +31,14 @@ export const CSR2 = () => {
     ];
 
     return (
-        <section className="h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-[url('/csr1.jpg')] bg-cover bg-center">
+        <section className="min-h-screen lg:h-screen w-full relative flex flex-col items-center justify-center overflow-y-auto lg:overflow-hidden bg-[url('/csr1.jpg')] bg-cover bg-center">
             {/* Original Background Overlay */}
             <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-0" />
 
-            <div className="flex flex-col lg:flex-row w-full h-full relative z-10">
+            <div className="flex flex-col lg:flex-row w-full h-full relative z-10 min-h-screen lg:min-h-0">
 
                 {/* Left Panel: Text Content - Elevated z-index */}
-                <div className="w-full lg:w-[40%] bg-[rgb(21,116,57)] h-full flex flex-col justify-center p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl z-20 backdrop-blur-sm">
+                <div className="w-full lg:w-[40%] bg-[rgb(21,116,57)] h-auto lg:h-full flex flex-col justify-center p-8 lg:p-12 text-white relative overflow-hidden shadow-2xl z-20 backdrop-blur-sm">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +92,7 @@ export const CSR2 = () => {
 
                 {/* Right Panel: Hexagon Grid - Transparent to show background */}
                 <div className="w-full lg:w-[60%] h-full p-6 lg:p-10 flex flex-col justify-center relative z-10">
-                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-full max-h-[80vh] content-center p-8">
+                    <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 h-auto lg:h-full lg:max-h-[80vh] content-center p-4 lg:p-8 py-10 lg:py-0">
                         {initiatives.map((item, index) => (
                             <motion.div
                                 key={index}

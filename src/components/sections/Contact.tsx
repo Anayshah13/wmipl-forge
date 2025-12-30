@@ -46,6 +46,14 @@ export const Contact = () => {
         setFormData({ name: "", email: "", phone: "", message: "" });
     };
 
+    const copyToClipboard = (text: string, label: string) => {
+        navigator.clipboard.writeText(text);
+        toast({
+            title: "Copied!",
+            description: `${label} copied to clipboard.`,
+        });
+    };
+
     return (
         <section id="contact" className="min-h-screen w-full overflow-hidden flex flex-col justify-center py-10 px-4 md:px-8 lg:px-16 bg-[url('/light_smoke.avif')] bg-cover bg-center text-secondary relative">
 
@@ -57,8 +65,92 @@ export const Contact = () => {
                     </p>
                 </div>
 
+                {/* Combined Contact Info & Address Box - The "1 Box" */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="mb-5"
+                >
+                    <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none flex flex-col lg:flex-row items-center gap-6 justify-between">
+                        {/* Contact Methods */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full lg:w-[60%] border-b lg:border-b-0 lg:border-r border-gray-200 pb-4 lg:pb-0 lg:pr-6">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                    <Mail className="w-5 h-5 text-primary" />
+                                </div>
+                                <div className="overflow-hidden">
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Email</p>
+                                    <a
+                                        href="mailto:western@westernaluminium.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xs lg:text-sm font-bold text-secondary hover:text-primary block transition-colors break-words"
+                                    >
+                                        western@westernaluminium.com
+                                    </a>
+                                </div>
+                            </div>
+                            <div
+                                className="flex items-center gap-3 cursor-pointer group"
+                                onClick={() => copyToClipboard("+91-20-26870164", "Phone number")}
+                            >
+                                <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                    <Phone className="w-5 h-5 text-primary" />
+                                </div>
+                                <div className="overflow-hidden">
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
+                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
+                                    <Globe className="w-5 h-5 text-primary" />
+                                </div>
+                                <div className="overflow-hidden">
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
+                                    <p className="text-xs lg:text-sm font-bold text-secondary overflow-wrap-anywhere">westernaluminium.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Addresses */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full lg:w-[40%]">
+                            <div
+                                className="flex items-center gap-3 cursor-pointer group"
+                                onClick={() => copyToClipboard("251/1 A, B Hadapsar Ind. Estate, Hadapsar, Pune - 411013", "Head Office Address")}
+                            >
+                                <div className="h-10 w-10 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
+                                    <MapPin className="text-primary w-5 h-5" />
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Head Office</h3>
+                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                        251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                className="flex items-center gap-3 cursor-pointer group"
+                                onClick={() => copyToClipboard("254 Khor Road, Bhandgaon, Pune - 412214", "Mfg. Unit Address")}
+                            >
+                                <div className="h-10 w-10 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
+                                    <MapPin className="text-primary w-5 h-5" />
+                                </div>
+                                <div className="text-left">
+                                    <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Mfg. Unit</h3>
+                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                        254 Khor Road, Bhandgaon,<br />Pune - 412214
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                </motion.div>
+
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex-grow lg:overflow-hidden">
-                    {/* Left Column */}
+                    {/* Left Column: Form */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -66,41 +158,6 @@ export const Contact = () => {
                         transition={{ duration: 0.5 }}
                         className="flex flex-col gap-4 h-full"
                     >
-                        {/* Contact Details Row */}
-                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[7.25rem] flex items-center">
-                            <div className="grid grid-cols-1 md:grid-cols-[2fr_1.5fr_1.5fr] gap-4 w-[98%] mx-auto">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
-                                        <Mail className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <div className="overflow-hidden">
-                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Email</p>
-                                        <a href="mailto:western@westernaluminium.com" className="text-xs lg:text-sm font-bold text-secondary hover:text-primary truncate block transition-colors">
-                                            western@westernaluminium.com
-                                        </a>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
-                                        <Phone className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <div className="overflow-hidden">
-                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
-                                        <p className="text-xs lg:text-sm font-bold text-secondary truncate">+91-20-26870164</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
-                                        <Globe className="w-5 h-5 text-primary" />
-                                    </div>
-                                    <div className="overflow-hidden">
-                                        <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
-                                        <p className="text-xs lg:text-sm font-bold text-secondary truncate">www.westernaluminium.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card>
-
                         {/* Contact Form */}
                         <Card className="p-6 md:p-8 shadow-xl bg-white/90 backdrop-blur-sm border-none flex-grow flex flex-col">
                             <h2 className="text-sm font-bold text-secondary mb-5 uppercase tracking-wider border-b border-gray-100 pb-3">
@@ -183,7 +240,7 @@ export const Contact = () => {
                         </Card>
                     </motion.div>
 
-                    {/* Right Column */}
+                    {/* Right Column: Map */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -191,34 +248,6 @@ export const Contact = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col gap-4 h-full"
                     >
-                        {/* Address Details */}
-                        <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none min-h-[7.25rem] flex items-center justify-center">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                                <div className="flex items-center justify-center gap-3">
-                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
-                                        <MapPin className="text-primary w-6 h-6" />
-                                    </div>
-                                    <div className="text-left">
-                                        <h3 className="text-lg font-bold text-secondary mb-1">Head Office</h3>
-                                        <p className="text-sm text-gray-600 leading-relaxed font-medium">
-                                            251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center justify-center gap-3">
-                                    <div className="h-12 w-12 rounded-full bg-primary/10 flex flex-shrink-0 items-center justify-center">
-                                        <MapPin className="text-primary w-6 h-6" />
-                                    </div>
-                                    <div className="text-left">
-                                        <h3 className="text-lg font-bold text-secondary mb-1">Mfg. Unit</h3>
-                                        <p className="text-sm text-gray-600 leading-relaxed font-medium">
-                                            254 Khor Road, Bhandgaon,<br />Pune - 412214
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Card>
-
                         {/* Map */}
                         <div className="flex-grow rounded-xl overflow-hidden shadow-xl border border-white/20 min-h-[15.625rem] relative bg-gray-100">
                             <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">

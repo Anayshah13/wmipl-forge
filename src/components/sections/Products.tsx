@@ -214,10 +214,10 @@ export const Products = () => {
             viewport={{ once: true }}
             className="max-w-3xl"
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-gray-900 uppercase tracking-tight mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 uppercase tracking-tight mb-3">
               Product Portfolio
             </h2>
-            <p className="text-2xl text-gray-700 font-medium">
+            <p className="text-xl text-gray-700 font-medium">
               Precision-engineered aluminium solutions for global industries.
             </p>
           </motion.div>
@@ -241,10 +241,10 @@ export const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex items-center gap-4 mb-2"
+              className="flex items-center gap-3 mb-2"
             >
-              <div className="h-8 w-1.5 bg-blue-800 rounded-full"></div>
-              <h3 className="text-2xl font-bold text-gray-900 uppercase">
+              <div className="h-6 w-1 bg-blue-800 rounded-full"></div>
+              <h3 className="text-lg font-bold text-gray-900 uppercase">
                 Aluminium Slug Types
               </h3>
             </motion.div>
@@ -259,7 +259,7 @@ export const Products = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   onClick={() => setActive(type)}
-                  className="group flex flex-row overflow-hidden h-40 border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white ring-1 ring-gray-100 rounded-2xl cursor-pointer"
+                  className="group flex flex-row overflow-hidden h-28 border-0 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 bg-white ring-1 ring-gray-100 rounded-2xl cursor-pointer"
                 >
                   <motion.div layoutId={`image-${type.name}-${id}`} className="w-1/3 relative overflow-hidden">
                     <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors z-10" />
@@ -269,23 +269,23 @@ export const Products = () => {
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </motion.div>
-                  <div className="w-2/3 p-5 flex flex-col justify-center relative">
+                  <div className="w-2/3 p-4 flex flex-col justify-center relative">
                     <motion.h3
                       layoutId={`title-${type.name}-${id}`}
-                      className="font-bold text-gray-900 text-xl leading-tight mb-2 group-hover:text-blue-800 transition-colors"
+                      className="font-bold text-gray-900 text-lg leading-tight mb-1 group-hover:text-blue-800 transition-colors"
                     >
                       {type.name}
                     </motion.h3>
-                    <div className="flex flex-col gap-1">
-                      <span className="text-xs font-bold text-blue-700 uppercase tracking-wider">Application</span>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[10px] font-bold text-blue-700 uppercase tracking-wider">Application</span>
                       <motion.p
                         layoutId={`description-${type.desc}-${id}`}
-                        className="text-base text-gray-600 leading-snug font-medium"
+                        className="text-sm text-gray-600 leading-snug font-medium line-clamp-2"
                       >
                         {type.application}
                       </motion.p>
                     </div>
-                    <ArrowRight className="absolute bottom-4 right-4 w-5 h-5 text-gray-300 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="absolute bottom-3 right-3 w-4 h-4 text-gray-300 group-hover:text-blue-800 group-hover:translate-x-1 transition-all" />
                   </div>
                 </motion.div>
               ))}
@@ -300,27 +300,27 @@ export const Products = () => {
             viewport={{ once: true }}
             className="lg:col-span-3 flex flex-col h-full shadow-2xl rounded-3xl overflow-hidden ring-1 ring-gray-100 bg-white"
           >
-            <div className="bg-blue-900 text-white p-6">
-              <h3 className="font-bold uppercase text-xl tracking-wide">End-Products</h3>
-              <p className="text-blue-200 text-sm mt-1 font-medium">Key applications</p>
+            <div className="bg-blue-900 text-white p-4">
+              <h3 className="font-bold uppercase text-lg tracking-wide">End-Products</h3>
+              <p className="text-blue-200 text-xs mt-1 font-medium">Key applications</p>
             </div>
             <div className="flex-grow flex flex-col bg-white">
               {endProducts.map((product, index) => (
                 <div
                   key={index}
-                  className="flex-1 flex items-center border-b border-gray-100 last:border-0 p-6 hover:bg-blue-50 transition-all duration-300 group cursor-default"
+                  className="flex-1 flex items-center border-b border-gray-100 last:border-0 p-4 hover:bg-blue-50 transition-all duration-300 group cursor-default"
                   onMouseEnter={() => setActiveIndex(index)}
                   onMouseLeave={() => setActiveIndex(-1)}
                 >
-                  <div className="w-20 h-16 rounded-xl mr-5 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-14 h-12 rounded-lg mr-4 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform duration-300">
                     <img src={product.icon} alt={product.name} className="w-full h-full rounded object-contain" />
                   </div>
                   <div className="flex flex-col">
-                    <span className={`text-xl font-bold text-gray-700 group-hover:text-blue-800 transition-all duration-300 ${activeIndex === index ? 'scale-110 origin-left text-blue-800 font-bold' : ''}`}>
+                    <span className={`text-lg font-bold text-gray-700 group-hover:text-blue-800 transition-all duration-300 ${activeIndex === index ? 'scale-110 origin-left text-blue-800 font-bold' : ''}`}>
                       {product.name}
                     </span>
-                    <span className="text-base text-gray-500 font-medium group-hover:text-blue-600 transition-colors">
-                      {product.metricTons} Metric Tons
+                    <span className="text-sm text-gray-500 font-medium group-hover:text-blue-600 transition-colors">
+                      {product.metricTons} MT
                     </span>
                   </div>
                 </div>
@@ -339,44 +339,44 @@ export const Products = () => {
               viewport={{ once: true }}
               className="bg-white rounded-3xl shadow-lg border border-gray-100 p-2 overflow-hidden"
             >
-              <div className="flex items-center gap-4 p-4 pb-2">
-                <div className="h-6 w-1.5 bg-blue-800 rounded-full"></div>
-                <h3 className="text-xl font-bold text-gray-900 uppercase">
+              <div className="flex items-center gap-3 p-3 pb-2">
+                <div className="h-5 w-1 bg-blue-800 rounded-full"></div>
+                <h3 className="text-lg font-bold text-gray-900 uppercase">
                   Technical Specifications
                 </h3>
               </div>
               <div className="overflow-x-auto p-2">
-                <table className="w-full text-base text-center">
+                <table className="w-full text-sm text-center">
                   <thead className="bg-blue-900 text-white">
                     <tr>
-                      <th className="p-3 text-left font-bold rounded-tl-lg">Range Type</th>
-                      <th className="p-3 font-bold">Min Dia.</th>
-                      <th className="p-3 font-bold">Max Dia.</th>
-                      <th className="p-3 font-bold">Min Thick.</th>
-                      <th className="p-3 font-bold rounded-tr-lg">Max Thick.</th>
+                      <th className="p-2 text-left font-bold rounded-tl-lg">Range Type</th>
+                      <th className="p-2 font-bold">Min Dia.</th>
+                      <th className="p-2 font-bold">Max Dia.</th>
+                      <th className="p-2 font-bold">Min Thick.</th>
+                      <th className="p-2 font-bold rounded-tr-lg">Max Thick.</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
                     <tr className="hover:bg-blue-50 transition-colors">
-                      <td className="p-3 text-left font-bold text-blue-900">Without Center Hole</td>
-                      <td className="p-3 text-gray-700 font-medium">9.8</td>
-                      <td className="p-3 text-gray-700 font-medium">135.8</td>
-                      <td className="p-3 text-gray-700 font-medium">2</td>
-                      <td className="p-3 text-gray-700 font-medium">15.4</td>
+                      <td className="p-2 text-left font-bold text-blue-900">Without Center Hole</td>
+                      <td className="p-2 text-gray-700 font-medium">9.8</td>
+                      <td className="p-2 text-gray-700 font-medium">135.8</td>
+                      <td className="p-2 text-gray-700 font-medium">2</td>
+                      <td className="p-2 text-gray-700 font-medium">15.4</td>
                     </tr>
                     <tr className="hover:bg-blue-50 transition-colors">
-                      <td className="p-3 text-left font-bold text-blue-900">Domed / Taper</td>
-                      <td className="p-3 text-gray-700 font-medium">9.8</td>
-                      <td className="p-3 text-gray-700 font-medium">135.8</td>
-                      <td className="p-3 text-gray-700 font-medium">2</td>
-                      <td className="p-3 text-gray-700 font-medium">15.4</td>
+                      <td className="p-2 text-left font-bold text-blue-900">Domed / Taper</td>
+                      <td className="p-2 text-gray-700 font-medium">9.8</td>
+                      <td className="p-2 text-gray-700 font-medium">135.8</td>
+                      <td className="p-2 text-gray-700 font-medium">2</td>
+                      <td className="p-2 text-gray-700 font-medium">15.4</td>
                     </tr>
                     <tr className="hover:bg-blue-50 transition-colors">
-                      <td className="p-3 text-left font-bold text-blue-900">With Center Hole</td>
-                      <td className="p-3 text-gray-700 font-medium">12.5</td>
-                      <td className="p-3 text-gray-700 font-medium">56.7</td>
-                      <td className="p-3 text-gray-700 font-medium">2</td>
-                      <td className="p-3 text-gray-700 font-medium">7</td>
+                      <td className="p-2 text-left font-bold text-blue-900">With Center Hole</td>
+                      <td className="p-2 text-gray-700 font-medium">12.5</td>
+                      <td className="p-2 text-gray-700 font-medium">56.7</td>
+                      <td className="p-2 text-gray-700 font-medium">2</td>
+                      <td className="p-2 text-gray-700 font-medium">7</td>
                     </tr>
                   </tbody>
                 </table>
@@ -396,58 +396,56 @@ export const Products = () => {
                 Sales Utilisation by Product
               </h3>
 
-              <div className="flex flex-col md:flex-row items-center justify-center gap-10 h-auto md:h-48">
-                {/* Recharts Pie Chart */}
-                <div className="w-48 h-48">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        activeIndex={activeIndex}
-                        activeShape={renderActiveShape}
-                        data={endProducts}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={55}
-                        outerRadius={80}
-                        dataKey="percentage"
-                        onMouseEnter={onPieEnter}
-                        onMouseLeave={onPieLeave}
-                        stroke="white"
-                        strokeWidth={2}
-                      >
-                        {endProducts.map((entry, index) => (
-                          <Cell key={`cell-${index}`} fill={entry.color} />
-                        ))}
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-
-                {/* Legend */}
-                <div className="grid grid-cols-1 gap-3">
-                  {endProducts.map((product, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 cursor-pointer transition-all duration-300"
-                      onMouseEnter={() => setActiveIndex(idx)}
-                      onMouseLeave={() => setActiveIndex(-1)}
+              {/* Recharts Pie Chart */}
+              <div className="w-32 h-32 md:w-36 md:h-36">
+                <ResponsiveContainer width="100%" height="100%">
+                  <PieChart>
+                    <Pie
+                      activeIndex={activeIndex}
+                      activeShape={renderActiveShape}
+                      data={endProducts}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={38}
+                      outerRadius={56}
+                      dataKey="percentage"
+                      onMouseEnter={onPieEnter}
+                      onMouseLeave={onPieLeave}
+                      stroke="white"
+                      strokeWidth={2}
                     >
-                      <div
-                        className={`w-4 h-4 rounded-full shadow-sm ring-1 ring-black/5 transition-all duration-300 ${activeIndex === idx ? 'scale-125 ring-2 ring-offset-1' : ''}`}
-                        style={{ backgroundColor: product.color }}
-                      />
-                      <span className={`text-gray-700 font-medium text-base transition-all duration-300 ${activeIndex === idx ? 'scale-110 origin-left text-blue-800 font-bold' : ''}`}>
-                        {product.name} <span className="text-gray-400 text-sm ml-1">({product.percentage}%)</span>
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                      {endProducts.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+
+              {/* Legend */}
+              <div className="grid grid-cols-1 gap-2">
+                {endProducts.map((product, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 cursor-pointer transition-all duration-300"
+                    onMouseEnter={() => setActiveIndex(idx)}
+                    onMouseLeave={() => setActiveIndex(-1)}
+                  >
+                    <div
+                      className={`w-3 h-3 rounded-full shadow-sm ring-1 ring-black/5 transition-all duration-300 ${activeIndex === idx ? 'scale-125 ring-2 ring-offset-1' : ''}`}
+                      style={{ backgroundColor: product.color }}
+                    />
+                    <span className={`text-gray-700 font-medium text-sm transition-all duration-300 ${activeIndex === idx ? 'scale-110 origin-left text-blue-800 font-bold' : ''}`}>
+                      {product.name} <span className="text-gray-400 text-xs ml-1">({product.percentage}%)</span>
+                    </span>
+                  </div>
+                ))}
               </div>
             </motion.div>
 
           </div>
         </div>
-      </div>
+      </div >
 
       <button
         onClick={() => scrollToSection('production-process')}
@@ -455,7 +453,7 @@ export const Products = () => {
       >
         <ChevronDown size={32} />
       </button>
-    </section>
+    </section >
   );
 };
 

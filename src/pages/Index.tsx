@@ -14,6 +14,7 @@ import { Footer } from "@/components/sections/Footer";
 import { Export2 } from "@/components/sections/Export2";
 import { CertificatesSection } from "@/components/sections/certificatesect";
 import { CSR2 } from "@/components/sections/CSR2";
+import { ClientsPage2 } from "@/components/sections/ClientsPage2";
 
 const Index = () => {
   return (
@@ -45,10 +46,7 @@ const Index = () => {
       <br />
       <br />
       <Export2 />
-      <br />
-      <br />
-      <ClientsPage />
-      <br />
+      <ClientsPage2 />
       <br />
       <div id="csr-section">
         <div className="block md:hidden">
@@ -58,7 +56,6 @@ const Index = () => {
           <CSR2 />
         </div>
       </div>
-      <br />
       <br />
       <CertificatesSection />
       <br />

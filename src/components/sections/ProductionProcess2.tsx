@@ -26,8 +26,8 @@ export const ProductionProcess2 = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-10"
             >
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">Production Process</h2>
-                <p className="text-base text-gray-500 font-medium max-w-md mx-auto">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">Production Process</h2>
+                <p className="text-xl text-gray-500 font-medium max-w-md mx-auto">
                     State-of-the-art manufacturing process ensuring consistent quality
                 </p>
             </motion.div>
@@ -49,7 +49,7 @@ export const ProductionProcess2 = () => {
                         </div>
 
                         {/* Image */}
-                        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-gray-100 shadow-inner mb-4">
+                        <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-gray-100 shadow-inner mb-4">
                             <img
                                 src={`/steps/${index + 1}.png`}
                                 alt={item.name}
