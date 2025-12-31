@@ -198,10 +198,10 @@ export const Products = () => {
 
           {/* COLUMN 1: Aluminium Slug Types (Span 8) - CAROUSEL INTEGRATION */}
           <div className="lg:col-span-8 flex flex-col h-full">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold flex items-center text-gray-800">
-                <span className="w-2 h-6 bg-blue-600 rounded-sm mr-2"></span>
-                Raw Materials
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-5 w-1 bg-blue-800 rounded-full"></div>
+              <h3 className="text-lg font-bold text-gray-900 uppercase">
+                WHAT WE PRODUCE
               </h3>
             </div>
 
@@ -215,13 +215,17 @@ export const Products = () => {
 
               {/* Previous Item Preview (Left) */}
               <div className="hidden md:block w-1/5 opacity-60 scale-95 select-none grayscale transition-all duration-500 hover:opacity-80">
-                <div className="bg-white rounded-xl border border-gray-200 h-[400px] flex flex-col shadow-sm overflow-hidden">
-                  <div className="h-full bg-gray-50 flex items-center justify-center p-4">
+                <div className="bg-white rounded-xl border border-gray-200 h-64 flex flex-col shadow-sm overflow-hidden">
+                  <div className="h-2/3 bg-gray-50 flex items-center justify-center p-4">
                     <img
                       src={rawProducts[(carouselIndex - 1 + rawProducts.length) % rawProducts.length].image}
                       alt="prev"
-                      className="h-2/3 w-full object-contain mix-blend-multiply opacity-50"
+                      className="h-full w-full object-contain mix-blend-multiply opacity-50"
                     />
+                  </div>
+                  <div className="flex-1 p-3 flex flex-col gap-2 justify-center bg-white">
+                    <div className="h-2 w-3/4 bg-gray-100 rounded-full"></div>
+                    <div className="h-2 w-1/2 bg-gray-100 rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -264,13 +268,17 @@ export const Products = () => {
 
               {/* Next Item Preview (Right) */}
               <div className="hidden md:block w-1/5 opacity-60 scale-95 select-none grayscale transition-all duration-500 hover:opacity-80">
-                <div className="bg-white rounded-xl border border-gray-200 h-[400px] flex flex-col shadow-sm overflow-hidden">
-                  <div className="h-full bg-gray-50 flex items-center justify-center p-4">
+                <div className="bg-white rounded-xl border border-gray-200 h-64 flex flex-col shadow-sm overflow-hidden">
+                  <div className="h-2/3 bg-gray-50 flex items-center justify-center p-4">
                     <img
                       src={rawProducts[(carouselIndex + 1) % rawProducts.length].image}
                       alt="next"
-                      className="h-2/3 w-full object-contain mix-blend-multiply opacity-50"
+                      className="h-full w-full object-contain mix-blend-multiply opacity-50"
                     />
+                  </div>
+                  <div className="flex-1 p-3 flex flex-col gap-2 justify-center bg-white">
+                    <div className="h-2 w-3/4 bg-gray-100 rounded-full"></div>
+                    <div className="h-2 w-1/2 bg-gray-100 rounded-full"></div>
                   </div>
                 </div>
               </div>
@@ -368,7 +376,7 @@ export const Products = () => {
                     <div className={`w-full aspect-square rounded-xl flex items-center justify-center transition-all duration-300 overflow-hidden ${activeIndex === index ? 'bg-blue-100 scale-110' : 'bg-gray-50 group-hover:bg-blue-50'}`}>
                       <img src={product.icon} alt={product.name} className="w-full h-full object-cover" />
                     </div>
-                    <span className={`text-xs font-bold transition-colors ${activeIndex === index ? 'text-blue-800' : 'text-gray-700 group-hover:text-blue-700'}`}>
+                    <span className={`text-sm font-bold transition-colors ${activeIndex === index ? 'text-blue-800' : 'text-gray-700 group-hover:text-blue-700'}`}>
                       {product.name}
                     </span>
                   </div>
