@@ -70,19 +70,19 @@ export const ClientsPage2 = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             className="text-4xl md:text-6xl font-bold text-gray-800 tracking-tighter flex items-center gap-4 xl:justify-start whitespace-nowrap"
                         >
-                            <span className="w-16 h-1 bg-blue-600"></span>
+                            <span className="w-16 h-1 bg-blue-600 shrink-0"></span>
                             Marquee Suppliers
                         </motion.h3>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 w-[80%] aspect-square max-h-[40vh] xl:max-h-none">
+                    <div className="grid grid-cols-2 gap-8 w-full max-w-[400px] aspect-square max-h-[40vh] xl:max-h-none mx-auto xl:mx-0">
                         {marqueeSuppliers.map((supplier, index) => (
                             <motion.div
                                 key={`marquee-${index}`}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 whileHover={{ scale: 1.05, zIndex: 10 }}
-                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group"
+                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group flex items-center justify-center"
                             >
                                 <img src={supplier} alt={`Supplier ${index + 1}`} className="w-full h-full object-contain p-6" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />

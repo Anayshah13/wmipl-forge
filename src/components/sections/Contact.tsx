@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 const containerStyle = {
     width: '100%',
@@ -39,11 +40,36 @@ export const Contact = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        toast({
-            title: "Message Sent!",
-            description: "Thank you for contacting us. We'll get back to you soon.",
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
+
+        // Replace these with your actual Service ID, Template ID, and Public Key from EmailJS
+        const serviceId = 'western_test';
+        const templateId = 'template_tqx2geq';
+        const publicKey = 'qrcgKzfnNgDSru5Ee';
+
+        const templateParams = {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            message: formData.message,
+            to_email: 'anayshah10@gmail.com'
+        };
+
+        emailjs.send(serviceId, templateId, templateParams, publicKey)
+            .then((response) => {
+                toast({
+                    title: "Message Sent!",
+                    description: "Thank you for contacting us. We'll get back to you soon.",
+                });
+                setFormData({ name: "", email: "", phone: "", message: "" });
+            })
+            .catch((error) => {
+                console.error("FAILED...", error);
+                toast({
+                    title: "Error",
+                    description: "Failed to send message. Please try again later.",
+                    variant: "destructive",
+                });
+            });
     };
 
     const copyToClipboard = (text: string, label: string) => {
@@ -76,20 +102,16 @@ export const Contact = () => {
                     <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none flex flex-col lg:flex-row items-center gap-6 justify-between">
                         {/* Contact Methods */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full lg:w-[60%] border-b lg:border-b-0 lg:border-r border-gray-200 pb-4 lg:pb-0 lg:pr-6">
-                            <div className="flex items-center gap-3">
+                            <div
+                                className="flex items-center gap-3 cursor-pointer group"
+                                onClick={() => window.open('mailto:western@westernaluminium.com', '_blank')}
+                            >
                                 <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
                                     <Mail className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Email</p>
-                                    <a
-                                        href="mailto:western@westernaluminium.com"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-sm lg:text-base font-bold text-secondary hover:text-primary block transition-colors break-words"
-                                    >
-                                        western@westernaluminium.com
-                                    </a>
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Email</p>
+                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors break-words">western@westernaluminium.com</p>
                                 </div>
                             </div>
                             <div
@@ -100,17 +122,20 @@ export const Contact = () => {
                                     <Phone className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Phone</p>
-                                    <p className="text-sm lg:text-base font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
+                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-3">
+                            <div
+                                className="flex items-center gap-3 cursor-pointer group"
+                                onClick={() => copyToClipboard("westernaluminium.com", "Website URL")}
+                            >
                                 <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
                                     <Globe className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Website</p>
-                                    <p className="text-sm lg:text-base font-bold text-secondary overflow-wrap-anywhere">westernaluminium.com</p>
+                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
+                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors overflow-wrap-anywhere">westernaluminium.com</p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +151,7 @@ export const Contact = () => {
                                 </div>
                                 <div className="text-left">
                                     <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Head Office</h3>
-                                    <p className="text-sm lg:text-base text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
                                     </p>
                                 </div>
@@ -140,7 +165,7 @@ export const Contact = () => {
                                 </div>
                                 <div className="text-left">
                                     <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Mfg. Unit</h3>
-                                    <p className="text-sm lg:text-base text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         254 Khor Road, Bhandgaon,<br />Pune - 412214
                                     </p>
                                 </div>

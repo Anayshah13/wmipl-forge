@@ -21,15 +21,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Hero />
       <br />
-      <br />
       <About />
-      <br />
       <br />
       <Products />
       <br />
-      <br />
       <WhyWMIPL />
-      <br />
       <br />
       <div id="production-process">
         <div className="hidden md:block">
@@ -40,12 +36,12 @@ const Index = () => {
         </div>
       </div>
       <br />
-      <br />
       <Infrastructure />
+      <br />
       <Management />
       <br />
-      <br />
       <Export2 />
+      <br />
       <ClientsPage2 />
       <br />
       <div id="csr-section">
@@ -58,7 +54,6 @@ const Index = () => {
       </div>
       <br />
       <CertificatesSection />
-      <br />
       <br />
       <Contact />
       <Footer />
