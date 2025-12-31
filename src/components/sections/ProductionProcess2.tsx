@@ -19,7 +19,7 @@ export const ProductionProcess2 = () => {
     };
 
     return (
-        <section className="min-h-screen w-full relative bg-gray-50 flex flex-col items-center py-12 px-4">
+        <section className="min-h-screen w-full relative bg-slate-100 flex flex-col items-center py-12 px-4 shadow-inner">
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}

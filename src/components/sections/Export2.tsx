@@ -62,7 +62,14 @@ export const Export2 = () => {
             id="export"
             className="min-h-screen w-full overflow-x-hidden flex flex-col items-center justify-center py-20 relative bg-white dark:bg-black"
         >
-            <div className="section-container w-full max-w-[90rem] mx-auto px-4">
+            {/* Background World Map / Network Pattern */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
+                <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-no-repeat bg-center bg-contain" />
+                {/* Dotted Overlay */}
+                <div className="absolute inset-0 bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:20px_20px] alpha-10"></div>
+            </div>
+
+            <div className="section-container w-full max-w-[90rem] mx-auto px-4 relative z-10">
                 {/* Header Section */}
                 <div className="text-center mb-10 space-y-4">
                     <motion.h2

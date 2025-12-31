@@ -8,7 +8,7 @@ export const About = () => {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % 4);
-    }, 5000);
+    }, 2500);
     return () => clearInterval(timer);
   }, []);
 
@@ -17,7 +17,9 @@ export const About = () => {
   };
 
   return (
-    <section id="about" className="min-h-screen w-full flex items-center justify-center py-16 bg-gradient-subtle relative overflow-hidden font-sans">
+    <section id="about" className="min-h-screen w-full flex items-center justify-center py-16 relative overflow-hidden font-sans bg-gradient-to-br from-slate-200 via-blue-100 to-slate-200">
+      {/* Metallic Shine Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50 pointer-events-none" />
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -70,7 +72,7 @@ export const About = () => {
               <h3 className="text-3xl font-bold text-secondary mb-4">Today's Leadership</h3>
               <p className="text-lg text-gray-800 leading-relaxed font-medium">
                 Today, we stand as <span className="text-primary font-bold">India's largest producer</span> of
-                aluminium slugs, commanding a remarkable 70% market share with ou 99.7% pure aluminium products. Our work area spreads over
+                aluminium slugs, commanding a remarkable 70% market share with over 99.7% pure aluminium products. Our work area spreads over
                 <span className="text-primary font-bold"> 3,00,000 square feet</span> with a dedicated workforce of
                 <span className="text-primary font-bold"> over 400 skilled employees.</span>
               </p>
@@ -105,30 +107,51 @@ export const About = () => {
           </div>
 
 
-          <motion.div
-            className="flex-1 w-full h-[15rem] lg:h-[25rem] relative overflow-hidden rounded-2xl shadow-xl border border-primary/20"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            {[
-              "/fact1.png",
-              "/fact2.png",
-              "/hadapsar2.jpg",
-              "/coil.jpg"
-            ].map((src, index) => (
-              <motion.img
-                key={src}
-                src={src}
-                alt={`Slide ${index + 1}`}
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: currentImage === index ? 1 : 0 }}
-                transition={{ duration: 1 }} // Smooth crossfade
-              />
-            ))}
-          </motion.div>
+          {/* Image Column */}
+          <div className="flex-1 w-full flex flex-col gap-6">
+            <motion.div
+              className="w-full h-[15rem] lg:h-[25rem] relative overflow-hidden rounded-xl shadow-2xl border border-white/60"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              {[
+                "/fact1.png",
+                "/fact2.png",
+                "/hadapsar2.jpg",
+                "/coil.jpg"
+              ].map((src, index) => (
+                <motion.img
+                  key={src}
+                  src={src}
+                  alt={`Slide ${index + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: currentImage === index ? 1 : 0 }}
+                  transition={{ duration: 0.3 }} // Smooth crossfade
+                />
+              ))}
+
+              {/* Shine/Reflection Overlay on Image */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50 pointer-events-none" />
+            </motion.div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center gap-3">
+              {[0, 1, 2, 3].map((index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImage(index)}
+                  className={`transition-all duration-300 rounded-full ${currentImage === index
+                    ? "w-8 h-2.5 bg-blue-600 shadow-md transform scale-105"
+                    : "w-2.5 h-2.5 bg-blue-300/50 hover:bg-blue-400"
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
 
         </div>
       </div>

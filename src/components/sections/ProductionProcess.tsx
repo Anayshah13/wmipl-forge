@@ -68,7 +68,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                     className={`
             w-20 h-20 rounded-full flex items-center justify-center
             text-white font-bold text-2xl transition-all duration-300
-            group-hover:scale-[1.07] cursor-pointer
+            group-hover:scale-[1.2] cursor-pointer
             ${item.color}
             border-[3px] border-white shadow-xl
           `}
@@ -90,7 +90,7 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                         {item.name}
                     </h3>
                     {/* Image scaled down (w-48->~154px), border reduced (8px->6px) */}
-                    <div className="w-[11.25rem] h-[11.25rem] overflow-hidden rounded-full border-[0.5rem] border-white shadow-2xl mx-auto flex-shrink-0">
+                    <div className="w-[11.25rem] h-[11.25rem] overflow-hidden rounded-full border-[0.35rem] border-white shadow-2xl mx-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-[1.1]">
                         <img
                             src={`/steps/${index + 1}.png`}
                             alt={item.name}
@@ -150,7 +150,7 @@ export const ProductionProcess = () => {
     if (dimensions.width === 0) return null;
 
     return (
-        <section className="min-h-screen w-full relative bg-cover bg-center flex flex-col items-center justify-center overflow-hidden">
+        <section className="min-h-screen w-full relative bg-cover bg-center flex flex-col items-center justify-center overflow-hidden bg-slate-50/80">
             {/* Title Section */}
             <div className="absolute top-0 pt-6 left-0 w-full text-center z-10 px-4">
                 <motion.div

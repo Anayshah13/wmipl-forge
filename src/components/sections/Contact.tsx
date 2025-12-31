@@ -81,12 +81,12 @@ export const Contact = () => {
                                     <Mail className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Email</p>
+                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Email</p>
                                     <a
                                         href="mailto:western@westernaluminium.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-xs lg:text-sm font-bold text-secondary hover:text-primary block transition-colors break-words"
+                                        className="text-sm lg:text-base font-bold text-secondary hover:text-primary block transition-colors break-words"
                                     >
                                         western@westernaluminium.com
                                     </a>
@@ -100,8 +100,8 @@ export const Contact = () => {
                                     <Phone className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Phone</p>
-                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
+                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Phone</p>
+                                    <p className="text-sm lg:text-base font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-3">
@@ -109,8 +109,8 @@ export const Contact = () => {
                                     <Globe className="w-5 h-5 text-primary" />
                                 </div>
                                 <div className="overflow-hidden">
-                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
-                                    <p className="text-xs lg:text-sm font-bold text-secondary overflow-wrap-anywhere">westernaluminium.com</p>
+                                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Website</p>
+                                    <p className="text-sm lg:text-base font-bold text-secondary overflow-wrap-anywhere">westernaluminium.com</p>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +126,7 @@ export const Contact = () => {
                                 </div>
                                 <div className="text-left">
                                     <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Head Office</h3>
-                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                    <p className="text-sm lg:text-base text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
                                     </p>
                                 </div>
@@ -140,7 +140,7 @@ export const Contact = () => {
                                 </div>
                                 <div className="text-left">
                                     <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Mfg. Unit</h3>
-                                    <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
+                                    <p className="text-sm lg:text-base text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         254 Khor Road, Bhandgaon,<br />Pune - 412214
                                     </p>
                                 </div>
