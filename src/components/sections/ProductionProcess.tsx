@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Settings, Factory, Wrench, Hammer, Zap } from "lucide-react";
 
 const timelineData = [
     { id: '01', name: "Melting", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
@@ -150,7 +150,16 @@ export const ProductionProcess = () => {
     if (dimensions.width === 0) return null;
 
     return (
-        <section className="min-h-screen w-full relative bg-cover bg-center flex flex-col items-center justify-center overflow-hidden bg-slate-50/80">
+        <section className="min-h-screen w-full relative flex flex-col items-center justify-center overflow-hidden bg-slate-200">
+            {/* Subtle Background Components */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+                <Settings className="absolute top-10 -left-10 text-slate-300 w-64 h-64 opacity-40 animate-[spin_10s_linear_infinite]" />
+                <Factory className="absolute bottom-0 -right-10 text-slate-300 w-96 h-96 opacity-40" />
+                <Wrench className="absolute top-1/4 right-1/4 text-slate-300 w-24 h-24 opacity-40 rotate-12" />
+                <Hammer className="absolute bottom-1/3 left-20 text-slate-300 w-32 h-32 opacity-40 -rotate-45" />
+                <Zap className="absolute top-40 right-10 text-slate-300 w-20 h-20 opacity-40" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-100/30 rounded-full blur-3xl -z-10" />
+            </div>
             {/* Title Section */}
             <div className="absolute top-0 pt-6 left-0 w-full text-center z-10 px-4">
                 <motion.div
@@ -174,7 +183,7 @@ export const ProductionProcess = () => {
                     <motion.path
                         d={pathData}
                         fill="none"
-                        stroke="#f2f2f2ff"
+                        stroke="#cfcfcfff"
                         strokeWidth="28"
                         strokeLinecap="butt"
                         animate={{ pathLength: [0, 1] }}

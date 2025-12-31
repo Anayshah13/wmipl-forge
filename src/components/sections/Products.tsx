@@ -90,8 +90,8 @@ export const Products = () => {
   };
 
   return (
-    <section id="products" className="min-h-screen w-full overflow-x-hidden bg-[url('/products.avif')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-center">
-      <div className="absolute inset-0 bg-white/70 z-0" />
+    <section id="products" className="min-h-screen w-full overflow-x-hidden bg-[url('/products.png')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-center">
+      <div className="absolute inset-0 bg-white/40 z-0" />
       <div className="relative z-10 w-full h-full">
         <AnimatePresence>
           {active && typeof active === "object" && (
@@ -211,8 +211,8 @@ export const Products = () => {
               <div className="relative w-full py-1 flex items-center justify-center gap-6">
 
                 {/* Prev Button - Left of Center */}
-                <button onClick={handlePrev} className="absolute left-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full border border-gray-200 bg-white/70 shadow-md flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all">
-                  <ChevronLeft size={20} />
+                <button onClick={handlePrev} className="absolute left-2 md:left-16 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full border border-gray-200 bg-white/70 shadow-md flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all">
+                  <ChevronLeft size={30} />
                 </button>
 
                 {/* Previous Item Preview (Left) */}
@@ -250,7 +250,7 @@ export const Products = () => {
                         transition={{ duration: 0.5 }}
                         src={rawProducts[carouselIndex].image}
                         alt={rawProducts[carouselIndex].name}
-                        className="h-full w-full object-contain relative z-10 drop-shadow-2xl"
+                        className="h-full w-full object-cover relative z-10 drop-shadow-2xl"
                       />
                     </div>
 
@@ -286,8 +286,8 @@ export const Products = () => {
                 </div>
 
                 {/* Next Button - Right of Center */}
-                <button onClick={handleNext} className="absolute right-0 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full border border-gray-200 bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all">
-                  <ChevronRight size={20} />
+                <button onClick={handleNext} className="absolute right-2 md:right-16 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full border border-gray-200 bg-white shadow-md flex items-center justify-center text-gray-600 hover:text-blue-600 hover:scale-110 transition-all">
+                  <ChevronRight size={30} />
                 </button>
 
               </div>
@@ -327,9 +327,9 @@ export const Products = () => {
                   <table className="w-full text-sm text-center">
                     <thead className="bg-blue-900 text-white">
                       <tr>
-                        <th className="p-2 text-left font-bold rounded-tl-lg">Range Type (mm)</th>
-                        <th className="p-2 font-bold">Diameter Range</th>
-                        <th className="p-2 font-bold">Thickness Range</th>
+                        <th className="p-2 text-left font-bold rounded-tl-lg">Type</th>
+                        <th className="p-2 font-bold">Diameter Range (mm)</th>
+                        <th className="p-2 font-bold">Thickness Range (mm)</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-gray-100">

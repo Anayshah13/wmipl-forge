@@ -15,6 +15,7 @@ import { Export2 } from "@/components/sections/Export2";
 import { CertificatesSection } from "@/components/sections/certificatesect";
 import { CSR2 } from "@/components/sections/CSR2";
 import { ClientsPage2 } from "@/components/sections/ClientsPage2";
+import { Product2 } from "@/components/sections/Product2";
 
 const Index = () => {
   return (
@@ -23,7 +24,7 @@ const Index = () => {
       <br />
       <About />
       <br />
-      <Products />
+      <Product2 />
       <br />
       <WhyWMIPL />
       <br />

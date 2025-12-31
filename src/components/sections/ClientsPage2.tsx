@@ -60,7 +60,7 @@ export const ClientsPage2 = () => {
                 </div>
 
                 {/* Divider */}
-                <div className="hidden xl:block h-[80%] w-px bg-gray-400/50 self-center mx-4"></div>
+                <div className="hidden xl:block h-[90%] w-1 bg-gray-400/20 self-center mx-4"></div>
 
                 {/* Marquee Suppliers Section - 4 items (2x2 Grid) */}
                 <div className="w-full xl:w-[500px] flex flex-col items-center xl:items-start justify-start h-full">

@@ -51,7 +51,7 @@ export const Contact = () => {
             from_email: formData.email,
             phone: formData.phone,
             message: formData.message,
-            to_email: 'anayshah10@gmail.com'
+            to_email: 'chintanshah123@gmail.com'
         };
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)

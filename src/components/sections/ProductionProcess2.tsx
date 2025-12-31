@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Settings, Factory, Wrench, Hammer, Zap } from "lucide-react";
 
 const timelineData = [
     { id: '01', name: "Melting", color: 'bg-[#2A2A2A]', dotColor: '#27272a' },
@@ -19,7 +19,16 @@ export const ProductionProcess2 = () => {
     };
 
     return (
-        <section className="min-h-screen w-full relative bg-slate-100 flex flex-col items-center py-12 px-4 shadow-inner">
+        <section className="min-h-screen w-full relative bg-slate-200 flex flex-col items-center py-12 px-4 shadow-inner overflow-hidden">
+            {/* Subtle Background Components */}
+            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+                <Settings className="absolute top-10 -left-10 text-slate-400 w-64 h-64 opacity-50 animate-[spin_10s_linear_infinite]" />
+                <Factory className="absolute bottom-0 -right-10 text-slate-400 w-96 h-96 opacity-50" />
+                <Wrench className="absolute top-1/4 right-1/4 text-slate-400 w-24 h-24 opacity-50 rotate-12" />
+                <Hammer className="absolute bottom-1/3 left-20 text-slate-400 w-32 h-32 opacity-50 -rotate-45" />
+                <Zap className="absolute top-40 right-10 text-slate-400 w-20 h-20 opacity-50" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-300/30 rounded-full blur-3xl -z-10" />
+            </div>
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
