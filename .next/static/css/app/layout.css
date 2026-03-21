@@ -1076,9 +1076,6 @@ html {
 .h-\[1px\]{
   height: 1px;
 }
-.h-\[25rem\]{
-  height: 25rem;
-}
 .h-\[400px\]{
   height: 400px;
 }
@@ -1611,9 +1608,6 @@ html {
 }
 .gap-12{
   gap: 3rem;
-}
-.gap-16{
-  gap: 4rem;
 }
 .gap-2{
   gap: 0.5rem;
@@ -4493,9 +4487,6 @@ All colors MUST be HSL.
   }
   .md\:h-\[25rem\]{
     height: 25rem;
-  }
-  .md\:h-\[43\.75rem\]{
-    height: 43.75rem;
   }
   .md\:h-fit{
     height: -moz-fit-content;
