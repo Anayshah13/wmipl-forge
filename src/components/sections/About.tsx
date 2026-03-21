@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const About = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
@@ -117,20 +120,25 @@ export const About = () => {
               viewport={{ once: true }}
             >
               {[
-                "/fact1.png",
-                "/fact2.png",
-                "/hadapsar2.jpg",
-                "/coil.jpg"
-              ].map((src, index) => (
-                <motion.img
-                  key={src}
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover"
+                { src: "/fact1.png", alt: "WMIPL factory operations — Western Metal Industries manufacturing" },
+                { src: "/fact2.png", alt: "Aluminium slug production facility — Western Metal Industries Pune" },
+                { src: "/hadapsar2.jpg", alt: "Hadapsar plant aerial view — WMIPL manufacturing facility" },
+                { src: "/coil.jpg", alt: "Aluminium coil rolls at WMIPL Hadapsar manufacturing facility" }
+              ].map((item, index) => (
+                <motion.div
+                  key={item.src}
+                  className="absolute inset-0 w-full h-full"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: currentImage === index ? 1 : 0 }}
-                  transition={{ duration: 0.3 }} // Smooth crossfade
-                />
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               ))}
 
               {/* Shine/Reflection Overlay on Image */}

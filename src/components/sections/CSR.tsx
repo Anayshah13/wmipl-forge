@@ -1,3 +1,5 @@
+"use client";
+
 import { HexagonIcon } from "@/components/HexagonIcon";
 import { GraduationCap, Users, Sun, Leaf, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";

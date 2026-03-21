@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface ProductStat {
     name: string;
@@ -80,9 +83,11 @@ export const Product2 = () => {
                                 {/* Image Section - Full Width & Height */}
                                 <div className="h-48 relative bg-gradient-to-b from-gray-50 to-white flex items-center justify-center overflow-hidden">
                                     <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] opacity-50" />
-                                    <img
+                                    <Image
                                         src={product.image}
-                                        alt={product.name}
+                                        alt={`${product.name} — Western Metal Industries aluminium slug product`}
+                                        width={400}
+                                        height={400}
                                         className="w-full h-full object-cover relative z-10 drop-shadow-lg"
                                     />
                                 </div>
@@ -184,7 +189,7 @@ export const Product2 = () => {
                                     >
                                         {/* Reduced Image Container Aspect Ratio or size */}
                                         <div className={`w-[80%] rounded-lg flex items-center justify-center transition-all duration-300 overflow-hidden ${activeIndex === index ? 'bg-blue-100 scale-105' : 'bg-gray-50 group-hover:bg-blue-50'}`}>
-                                            <img src={product.icon} alt={product.name} className="w-full h-full object-cover text-center" />
+                                            <Image src={product.icon} alt={`${product.name} — aluminium slug application`} width={80} height={80} className="w-full h-full object-cover text-center" />
                                         </div>
                                         <span className={`text-s font-bold transition-colors ${activeIndex === index ? 'text-blue-800' : 'text-gray-700 group-hover:text-blue-700'}`}>
                                             {product.name}

@@ -1,8 +1,11 @@
+"use client";
+
 
 import { useState } from "react";
 import WorldMap from "@/components/ui/world-map";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const countriesData = [
     {
@@ -107,9 +110,11 @@ export const Export2 = () => {
                                 onMouseLeave={() => setHoveredCountry(null)}
                             >
                                 <div className="p-1 bg-white rounded flex-shrink-0 opacity-90 group-hover:opacity-100 transition-opacity">
-                                    <img
+                                    <Image
                                         src={`https://flagcdn.com/w80/${country.code}.png`}
-                                        alt={`${country.name} flag`}
+                                        alt={`${country.name} flag — WMIPL aluminium slug export destination`}
+                                        width={80}
+                                        height={56}
                                         className="w-10 h-7 object-cover rounded shadow-sm"
                                     />
                                 </div>

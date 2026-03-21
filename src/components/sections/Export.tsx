@@ -1,7 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { World } from "@/components/ui/globe";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const globeConfig = {
     pointSize: 2,
@@ -141,9 +144,11 @@ export const Export = () => {
                                 onMouseLeave={() => setHoveredCountry(null)}
                                 whileHover={{ x: 10 }}
                             >
-                                <img
+                                <Image
                                     src={`https://flagcdn.com/w80/${country.code}.png`}
-                                    alt={`${country.name} flag`}
+                                    alt={`${country.name} flag — Western Metal Industries export destination`}
+                                    width={80}
+                                    height={53}
                                     className="w-16 h-10 object-cover rounded shadow-md"
                                 />
                                 <span className="text-xl font-bold text-gray-800 dark:text-gray-200">

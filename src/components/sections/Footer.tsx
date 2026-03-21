@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Linkedin } from "lucide-react";
 
 export const Footer = () => {
@@ -21,9 +22,11 @@ export const Footer = () => {
 
           {/* Column 1: Logo & Socials (Flex-2 -> 50%) */}
           <div className="flex-[2] w-full flex flex-col items-center gap-6 md:border-r border-white/5 px-4">
-            <img
-              src="logo2.png"
-              alt="Western Metal Industries"
+            <Image
+              src="/logo2.png"
+              alt="Western Metal Industries logo — aluminium slug manufacturer Pune India"
+              width={160}
+              height={128}
               className="h-32 w-auto object-contain pl-6"
             />
             <div className="flex gap-4">
@@ -57,10 +60,10 @@ export const Footer = () => {
           <div className="flex-1 w-full flex flex-col items-center px-4 pt-4 md:pt-0">
             <h4 className="font-semibold mb-6 text-xl uppercase tracking-wider text-white">Certifications</h4>
             <ul className="space-y-3 text-base text-zinc-400">
-              <li><Link to="/certifications" className="hover:text-primary transition-colors">ISO 9001:2015</Link></li>
-              <li><Link to="/certifications" className="hover:text-primary transition-colors">ISO 14001:2015</Link></li>
-              <li><Link to="/certifications" className="hover:text-primary transition-colors">ISO 45001:2018</Link></li>
-              <li><Link to="/certifications" className="hover:text-primary transition-colors">Export House</Link></li>
+              <li><Link href="/certifications" className="hover:text-primary transition-colors">ISO 9001:2015</Link></li>
+              <li><Link href="/certifications" className="hover:text-primary transition-colors">ISO 14001:2015</Link></li>
+              <li><Link href="/certifications" className="hover:text-primary transition-colors">ISO 45001:2018</Link></li>
+              <li><Link href="/certifications" className="hover:text-primary transition-colors">Export House</Link></li>
             </ul>
           </div>
 

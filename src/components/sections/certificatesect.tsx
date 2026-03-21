@@ -1,7 +1,10 @@
+"use client";
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Check, ChevronDown } from 'lucide-react';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import Image from "next/image";
 
 const certificatesData = [
     {
@@ -12,17 +15,17 @@ const certificatesData = [
     {
         title: "ISO 45001:2018",
         desc: "Certified Occupational Health and Safety Management System ensuring structured workplace safety, risk control, and regulatory compliance.",
-        src: "iso45001.png",
+        src: "/iso45001.png",
     },
     {
         title: "ISO 14001:2015",
         desc: "Certified Environmental Management System demonstrating systematic environmental responsibility and compliance with applicable regulations.",
-        src: "iso14001.png",
+        src: "/iso14001.png",
     },
     {
         title: "ISO 9001:2015",
         desc: "Certified Quality Management System ensuring consistent product quality, process control, and customer satisfaction.",
-        src: "iso9001_1.png",
+        src: "/iso9001_1.png",
     },
 ]
 
@@ -32,7 +35,6 @@ const qualityPoints = [
     "We are an ISO 9001-2015 certified company with ISO 45001:2018 & ISO 14001:2015 certifications",
     "We intend to modernize our production lines, to achieve even better product quality",
 ];
-
 const ScrollLock = () => {
     React.useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -72,9 +74,11 @@ export const CertificatesSection = () => {
                                     className="relative flex-grow p-4 cursor-pointer overflow-hidden flex items-center justify-center bg-white/50"
                                     onClick={() => setSelectedImage(cert.src)}
                                 >
-                                    <img
+                                    <Image
                                         src={cert.src}
-                                        alt={cert.title}
+                                        alt={`${cert.title} certificate — Western Metal Industries quality management`}
+                                        width={600}
+                                        height={400}
                                         className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-[#0A4DAA]/10 transition-colors duration-300 flex items-center justify-center">

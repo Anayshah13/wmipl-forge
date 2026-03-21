@@ -1,6 +1,9 @@
+"use client";
+
 import { MapPin, Square, Home, Sun, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const Infrastructure = () => {
   const plants = [
@@ -89,9 +92,11 @@ export const Infrastructure = () => {
             <motion.div key={index} variants={itemVariants}>
               <Card className="overflow-hidden hover:shadow-2xl transition-shadow h-full border-0 shadow-lg">
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={plant.image}
-                    alt={plant.name}
+                    alt={plant.name === "Hadapsar Plant" ? "Hadapsar plant Western Metal Industries — manufacturing facility since 1978 Pune" : "Bhandgaon plant WMIPL — aluminium slug unit Pune Solapur highway"}
+                    width={800}
+                    height={500}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>

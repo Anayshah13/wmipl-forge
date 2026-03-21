@@ -1,5 +1,8 @@
+"use client";
+
 
 import React, { useEffect, useState, useMemo } from 'react';
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, Settings, Factory, Wrench, Hammer, Zap } from "lucide-react";
 
@@ -91,7 +94,9 @@ const TimelineNode = ({ item, index, width, centerY, radius, startX }) => {
                     </h3>
                     {/* Image scaled down (w-48->~154px), border reduced (8px->6px) */}
                     <div className="w-[11.25rem] h-[11.25rem] overflow-hidden rounded-full border-[0.35rem] border-white shadow-2xl mx-auto flex-shrink-0 transition-transform duration-300 group-hover:scale-[1.1]">
-                        <img
+                        <Image
+                            width={300}
+                            height={200}
                             src={`/steps/${index + 1}.png`}
                             alt={item.name}
                             className="w-full h-full object-cover"

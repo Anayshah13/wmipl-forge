@@ -1,7 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export const Hero = () => {
   const [videoSrc, setVideoSrc] = useState("");
@@ -35,14 +38,21 @@ export const Hero = () => {
         <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col items-center text-center">
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-8 items-center w-full">
-              <motion.img
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                src="/logo2.png"
-                alt="Western Metal Industries Pvt. Ltd."
-                className="w-full max-w-2xl h-auto drop-shadow-2xl px-10 py-4"
-              />
+                className="w-full max-w-2xl px-10 py-4"
+              >
+                <Image
+                  src="/logo2.png"
+                  alt="Western Metal Industries Pvt. Ltd. — aluminium slug manufacturer Pune India"
+                  width={600}
+                  height={200}
+                  priority
+                  className="w-full h-auto drop-shadow-2xl"
+                />
+              </motion.div>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

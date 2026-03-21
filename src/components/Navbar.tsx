@@ -1,14 +1,19 @@
+"use client";
+
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const Navbar = () => {
+const NavbarContent = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isPastHero, setIsPastHero] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const location = useLocation();
-    const navigate = useNavigate();
+    const pathname = usePathname();
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,8 +27,8 @@ export const Navbar = () => {
 
     const scrollToSection = (id: string) => {
         setIsMobileMenuOpen(false);
-        if (location.pathname !== '/') {
-            navigate('/', { state: { scrollTo: id } });
+        if (pathname !== '/') {
+            router.push('/?scrollTo=' + id);
         } else {
             const element = document.getElementById(id);
             if (element) {
@@ -33,20 +38,20 @@ export const Navbar = () => {
     };
 
     useEffect(() => {
-        if (location.pathname === '/' && location.state && (location.state as any).scrollTo) {
-            const id = (location.state as any).scrollTo;
+        const scrollTo = searchParams.get('scrollTo');
+        if (pathname === '/' && scrollTo) {
             setTimeout(() => {
-                const element = document.getElementById(id);
+                const element = document.getElementById(scrollTo);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
-                // Clear state
-                window.history.replaceState({}, document.title);
+                // Clear the param from URL without navigation
+                window.history.replaceState({}, document.title, '/');
             }, 100);
         }
-    }, [location]);
+    }, [searchParams, pathname]);
 
-    const isHomePage = location.pathname === '/';
+    const isHomePage = pathname === '/';
 
     const getNavbarStyles = () => {
         if (!isHomePage) return "bg-[#0b2555EF] py-4";
@@ -72,10 +77,12 @@ export const Navbar = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center py-0 flex-row">
                         {(!isHomePage || isPastHero) && (
-                            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-1">
-                                <img
+                            <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-1">
+                                <Image
                                     src="/logo5.png"
-                                    alt="WMIPL Logo"
+                                    alt="WMIPL Logo — Western Metal Industries Pvt Ltd"
+                                    width={120}
+                                    height={48}
                                     className="h-12 w-auto object-contain cursor-pointer"
                                 />
                                 <h2 className="pt-1.5 text-white/90 hover:text-white text-2xl font-montserrat transition-colors hidden xl:block">Western Metal Industries Pvt. Ltd.</h2>
@@ -130,5 +137,13 @@ export const Navbar = () => {
                 )}
             </AnimatePresence>
         </header>
+    );
+};
+
+export const Navbar = () => {
+    return (
+        <Suspense fallback={null}>
+            <NavbarContent />
+        </Suspense>
     );
 };

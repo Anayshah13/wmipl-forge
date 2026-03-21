@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState, useEffect, useId, useRef } from "react";
+import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
@@ -123,7 +126,7 @@ export const Products = () => {
                 className="w-full max-w-[31.25rem] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden shadow-2xl"
               >
                 <motion.div layoutId={`image-${active.name}-${id}`}>
-                  <img
+                  <Image
                     width={200}
                     height={200}
                     src={active.image}
@@ -219,7 +222,9 @@ export const Products = () => {
                 <div className="hidden md:block w-1/5 opacity-40 scale-95 select-none grayscale transition-all duration-500">
                   <div className="bg-white rounded-xl border border-gray-200 h-56 flex flex-col shadow-sm overflow-hidden">
                     <div className="h-2/3 bg-gray-50 flex items-center justify-center p-4">
-                      <img
+                      <Image
+                        width={300}
+                        height={200}
                         src={rawProducts[(carouselIndex - 1 + rawProducts.length) % rawProducts.length].image}
                         alt="prev"
                         className="h-full w-full object-contain mix-blend-multiply opacity-50"
@@ -244,14 +249,20 @@ export const Products = () => {
                     {/* Image Section - No Padding, Full Bleed */}
                     <div className="h-[50%] relative bg-gradient-to-b from-gray-50 to-white flex items-center justify-center overflow-hidden">
                       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] opacity-50" />
-                      <motion.img
+                      <motion.div
                         initial={{ scale: 0.9, y: 10 }}
                         animate={{ scale: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        src={rawProducts[carouselIndex].image}
-                        alt={rawProducts[carouselIndex].name}
-                        className="h-full w-full object-cover relative z-10 drop-shadow-2xl"
-                      />
+                        className="h-full w-full relative z-10"
+                      >
+                        <Image
+                          width={300}
+                          height={200}
+                          src={rawProducts[carouselIndex].image}
+                          alt={rawProducts[carouselIndex].name}
+                          className="h-full w-full object-cover drop-shadow-2xl"
+                        />
+                      </motion.div>
                     </div>
 
                     {/* Content Section - Title Below Image */}
@@ -272,7 +283,9 @@ export const Products = () => {
                 <div className="hidden md:block w-1/5 opacity-60 scale-95 select-none grayscale transition-all duration-500 hover:opacity-80">
                   <div className="bg-white rounded-xl border border-gray-200 h-56 flex flex-col shadow-sm overflow-hidden">
                     <div className="h-2/3 bg-gray-50 flex items-center justify-center p-4">
-                      <img
+                      <Image
+                        width={300}
+                        height={200}
                         src={rawProducts[(carouselIndex + 1) % rawProducts.length].image}
                         alt="next"
                         className="h-full w-full object-contain mix-blend-multiply opacity-50"
@@ -376,7 +389,7 @@ export const Products = () => {
                       onMouseLeave={() => setActiveIndex(-1)}
                     >
                       <div className={`w-full aspect-square rounded-xl flex items-center justify-center transition-all duration-300 overflow-hidden ${activeIndex === index ? 'bg-blue-100 scale-110' : 'bg-gray-50 group-hover:bg-blue-50'}`}>
-                        <img src={product.icon} alt={product.name} className="w-full h-full object-cover" />
+                        <Image width={80} height={80} src={product.icon} alt={product.name} className="w-full h-full object-cover" />
                       </div>
                       <span className={`text-sm font-bold transition-colors ${activeIndex === index ? 'text-blue-800' : 'text-gray-700 group-hover:text-blue-700'}`}>
                         {product.name}

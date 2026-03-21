@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown, Settings, Factory, Wrench, Hammer, Zap } from "lucide-react";
 
@@ -59,7 +62,9 @@ export const ProductionProcess2 = () => {
 
                         {/* Image */}
                         <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-gray-100 shadow-inner mb-4">
-                            <img
+                            <Image
+                                width={300}
+                                height={200}
                                 src={`/steps/${index + 1}.png`}
                                 alt={item.name}
                                 className="w-full h-full object-cover"

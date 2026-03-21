@@ -1,5 +1,8 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export const WhyWMIPL = () => {
     const features = [
@@ -95,9 +98,11 @@ export const WhyWMIPL = () => {
                                                     clipPath: "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)"
                                                 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={feature.image}
-                                                    alt={feature.title}
+                                                    alt={`${feature.title} — Western Metal Industries capability`}
+                                                    width={64}
+                                                    height={64}
                                                     className="w-full h-full object-contain p-3 invert brightness-0 filter"
                                                 />
                                             </div>
@@ -122,9 +127,11 @@ export const WhyWMIPL = () => {
                     >
                         <div className="relative w-full h-full">
 
-                            <img
+                            <Image
                                 src="/hexagon.png"
-                                alt="WMIPL Icon"
+                                alt="WMIPL hexagon icon — Western Metal Industries aluminium manufacturing"
+                                width={400}
+                                height={400}
                                 className="w-full h-full object-contain"
                             />
                         </div>
@@ -154,9 +161,11 @@ export const WhyWMIPL = () => {
                                                     clipPath: "polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%)"
                                                 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={feature.image}
-                                                    alt={feature.title}
+                                                    alt={`${feature.title} — Western Metal Industries capability`}
+                                                    width={64}
+                                                    height={64}
                                                     className="w-full h-full object-contain p-3 invert brightness-0 filter"
                                                 />
                                             </div>

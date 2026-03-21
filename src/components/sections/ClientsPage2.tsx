@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -47,7 +50,9 @@ export const ClientsPage2 = () => {
                                 transition={{ duration: 0.2 }}
                                 className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group"
                             >
-                                <img
+                                <Image
+                                    width={120}
+                                    height={60}
                                     src={client}
                                     alt={`Client ${index + 1}`}
                                     className="w-full h-full object-contain p-6"
@@ -84,7 +89,7 @@ export const ClientsPage2 = () => {
                                 whileHover={{ scale: 1.05, zIndex: 10 }}
                                 className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group flex items-center justify-center"
                             >
-                                <img src={supplier} alt={`Supplier ${index + 1}`} className="w-full h-full object-contain p-6" />
+                                <Image width={120} height={60} src={supplier} alt={`Supplier ${index + 1}`} className="w-full h-full object-contain p-6" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                             </motion.div>
                         ))}

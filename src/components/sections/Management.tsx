@@ -1,3 +1,5 @@
+"use client";
+
 import { Card } from "@/components/ui/card";
 import { User, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";

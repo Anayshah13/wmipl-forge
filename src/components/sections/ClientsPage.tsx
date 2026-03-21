@@ -1,3 +1,6 @@
+"use client";
+
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -50,7 +53,7 @@ export const ClientsPage = () => {
                     whileHover={{ scale: 1.25, zIndex: 10 }}
                     className="flex items-center justify-center h-16 cursor-default bg-white/50 rounded-lg p-1.5 shadow-lg hover:shadow-xl transition-shadow duration-100"
                 >
-                    <img src={item} alt="Client Logo" className="max-h-full max-w-full object-contain" />
+                    <Image width={120} height={60} src={item} alt="Client Logo" className="max-h-full max-w-full object-contain" />
                 </motion.div>
             ))}
         </div>
