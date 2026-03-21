@@ -1,4 +1,4 @@
-// File: /Users/ishaan812/conductor/workspaces/wmipl-forge/belo-horizonte/src/app/layout.tsx
+// File: C:\Users\Anay Shah\OneDrive\Desktop\codes\wmipl-forge\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
