@@ -75,7 +75,7 @@ export const About = () => {
               <h3 className="text-3xl font-bold text-secondary mb-4">Today's Leadership</h3>
               <p className="text-lg text-gray-800 leading-relaxed font-medium">
                 Today, we stand as <span className="text-primary font-bold">India's largest producer</span> of
-                aluminium slugs, commanding a remarkable 70% market share with over 99.7% pure aluminium products. Our work area spreads over
+                aluminium slugs, commanding a remarkable 75% market share with over 99.7% pure aluminium products. Our work area spreads over
                 <span className="text-primary font-bold"> 3,00,000 square feet</span> with a dedicated workforce of
                 <span className="text-primary font-bold"> over 400 skilled employees.</span>
               </p>
