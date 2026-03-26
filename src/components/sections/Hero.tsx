@@ -59,7 +59,7 @@ export const Hero = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="text-white/80 text-l md:text-2xl leading-relaxed max-w-3xl drop-shadow-lg"
               >
-                India's largest manufacturer of aluminium slugs with 70% market share. 45+ years of excellence.
+                India's largest manufacturer of aluminium slugs with 75% market share. 45+ years of excellence.
               </motion.p>
             </div>
 

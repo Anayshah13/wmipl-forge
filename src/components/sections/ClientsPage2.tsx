@@ -13,9 +13,9 @@ export const ClientsPage2 = () => {
     const marqueeSuppliers = Array.from({ length: 4 }, (_, i) => `/clients/x${i + 1}.png`);
 
     return (
-        <div id="clients" className="relative h-screen w-full overflow-hidden bg-gray-200 flex flex-col items-center justify-center">
+        <div id="clients" className="relative min-h-screen xl:h-screen w-full py-20 xl:py-0 overflow-y-auto xl:overflow-hidden bg-gray-200 flex flex-col items-center justify-center">
             {/* Enhanced Background Elements - Grayer and more apparent */}
-            <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 z-0 pointer-events-none">
                 {/* Stronger Grid Pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808025_1px,transparent_1px),linear-gradient(to_bottom,#80808025_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_at_center,black_80%,transparent_100%)]"></div>
 
@@ -25,22 +25,22 @@ export const ClientsPage2 = () => {
                 <div className="absolute top-[40%] left-[60%] w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[90px]" />
             </div>
 
-            <div className="relative z-10 w-full max-w-[1400px] px-6 flex flex-col xl:flex-row gap-8 items-start justify-center h-auto xl:h-full max-h-[90vh]">
+            <div className="relative z-10 w-full max-w-[1400px] px-6 mt-10 xl:mt-0 flex flex-col xl:flex-row gap-12 xl:gap-8 items-start justify-center h-auto xl:h-full xl:max-h-[90vh]">
 
-                {/* End Use Clients Section - 9 items (3x3 Grid) */}
-                <div className="flex-1 flex flex-col items-center justify-start h-full">
+                {/* End Use Clients Section - 9 items grid */}
+                <div className="flex-1 flex flex-col items-center justify-start h-full w-full">
                     <div className="mb-6 self-start w-full">
                         <motion.h3
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            className="text-4xl md:text-6xl font-bold text-gray-800 tracking-tighter flex items-center gap-4 relative whitespace-nowrap"
+                            className="text-3xl md:text-5xl xl:text-6xl font-bold text-gray-800 tracking-tighter flex items-center gap-4 relative whitespace-nowrap"
                         >
-                            <span className="w-12 h-1 bg-blue-600"></span>
+                            <span className="w-8 md:w-12 h-1 bg-blue-600"></span>
                             End Use Clients
                         </motion.h3>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-8 w-full h-auto aspect-[4/3] max-h-[70vh]">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 w-full h-auto xl:aspect-[4/3] xl:max-h-[70vh]">
                         {endUseClients.map((client, index) => (
                             <motion.div
                                 key={`enduse-${index}`}
@@ -48,14 +48,14 @@ export const ClientsPage2 = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 whileHover={{ scale: 1.05, zIndex: 10 }}
                                 transition={{ duration: 0.2 }}
-                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group"
+                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group aspect-square md:aspect-auto"
                             >
                                 <Image
                                     width={120}
                                     height={60}
                                     src={client}
                                     alt={`Client ${index + 1}`}
-                                    className="w-full h-full object-contain p-6"
+                                    className="w-full h-full object-contain p-4 md:p-6"
                                 />
                                 {/* Shine effect */}
                                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
@@ -67,29 +67,29 @@ export const ClientsPage2 = () => {
                 {/* Divider */}
                 <div className="hidden xl:block h-[90%] w-1 bg-gray-400/20 self-center mx-4"></div>
 
-                {/* Marquee Suppliers Section - 4 items (2x2 Grid) */}
+                {/* Marquee Suppliers Section - 4 items grid */}
                 <div className="w-full xl:w-[500px] flex flex-col items-center xl:items-start justify-start h-full">
                     <div className="mb-6 self-start w-full">
                         <motion.h3
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
-                            className="text-4xl md:text-6xl font-bold text-gray-800 tracking-tighter flex items-center gap-4 xl:justify-start whitespace-nowrap"
+                            className="text-3xl md:text-5xl xl:text-6xl font-bold text-gray-800 tracking-tighter flex items-center gap-4 xl:justify-start whitespace-nowrap"
                         >
-                            <span className="w-16 h-1 bg-blue-600 shrink-0"></span>
+                            <span className="w-10 md:w-16 h-1 bg-blue-600 shrink-0"></span>
                             Marquee Suppliers
                         </motion.h3>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 w-full max-w-[400px] aspect-square max-h-[40vh] xl:max-h-none mx-auto xl:mx-0">
+                    <div className="grid grid-cols-2 gap-4 md:gap-8 w-full xl:max-w-[400px] aspect-square mx-auto xl:mx-0">
                         {marqueeSuppliers.map((supplier, index) => (
                             <motion.div
                                 key={`marquee-${index}`}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 whileHover={{ scale: 1.05, zIndex: 10 }}
-                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group flex items-center justify-center"
+                                className="bg-white/30 backdrop-blur-md rounded-lg shadow-md hover:shadow-xl border border-white/40 overflow-hidden relative group flex items-center justify-center aspect-square"
                             >
-                                <Image width={120} height={60} src={supplier} alt={`Supplier ${index + 1}`} className="w-full h-full object-contain p-6" />
+                                <Image width={120} height={60} src={supplier} alt={`Supplier ${index + 1}`} className="w-full h-full object-contain p-4 md:p-6" />
                                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                             </motion.div>
                         ))}

@@ -60,8 +60,44 @@ const organizationSchema = {
     "ISO 45001:2018",
     "One-Star Export House"
   ],
-  "slogan": "India's #1 Aluminium Slug Manufacturer",
-  "sameAs": []
+  // Explicit contact point for improved rich snippets
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+91-20-26870164",
+    contactType: "customer service",
+    email: "western@westernaluminium.com",
+    areaServed: "Worldwide"
+  },
+  slogan: "India's #1 Aluminium Slug Manufacturer",
+  sameAs: [
+    "https://www.linkedin.com/company/western-metal-industries-pvt.ltd"
+  ]
+};
+
+// Breadcrumb structured data for main navigation routes
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.westernaluminium.com"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Products",
+      item: "https://www.westernaluminium.com/products"
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Contact",
+      item: "https://www.westernaluminium.com/contact"
+    }
+  ]
 };
 
 const productSchema = {
@@ -162,62 +198,62 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.westernaluminium.com"),
 
   title: {
-    // Keyword-first title for stronger ranking signal
-    default: "Aluminium Slug Manufacturer India | Western Metal Industries",
-    template: "%s | Western Metal Industries",
+    // Keyword-rich default title and template
+    default: "Western Metal Industries — Aluminium Slug Manufacturer Pune",
+    template: "%s | Western Metal Industries — Aluminium Slug Manufacturer Pune",
   },
 
+  // Compelling default meta description with keywords and CTA
   description:
-    "Western Metal Industries — India's largest aluminium slug manufacturer with 70% market share. Plain, perforated & domed slugs for aerosol, pharma & cosmetic industries. ISO certified. Exporting since 1985.",
+    "Explore Western Metal Industries—India's leading aluminium slug manufacturer with 70% market share. ISO certified plain & domed slugs. Request a quote today!",
 
   keywords: [
-    // Core product keywords
+    // Requested keywords
     "aluminium slug manufacturer India",
+    "aluminium slug Pune",
+    "impact extrusion blank",
+    "collapsible tube slug",
+    "aerosol can slug",
+    "plain slug manufacturer",
+    "domed slug supplier",
+    "aluminium slug exporter India",
+    "ISO certified aluminium manufacturer",
+    // Clients & Marquee Suppliers
+    "Cipla",
+    "L'Oréal",
+    "Fogg",
+    "Sun Pharma",
+    "Dr. Reddy's",
+    "Park Avenue",
+    "GSK",
+    "Wild Stone",
+    "Ranbaxy",
+    "Vedanta",
+    "NALCO",
+    "Hindalco",
+    "IndianOil",
+    // Core product keywords
     "aluminium slug supplier India",
-    "aluminium slug manufacturer Pune",
     "aluminium slugs manufacturer",
     "impact extrusion aluminium slugs",
-    // Product variants
-    "aluminium slug without center hole",
-    "plain aluminium slugs",
-    "aluminium slug with center hole",
-    "perforated aluminium slugs",
-    "domed aluminium slugs",
-    "taper aluminium slugs",
-    // Application keywords
-    "aluminium slugs for aerosol cans",
-    "aluminium slugs for pharmaceutical tubes",
-    "aluminium slugs for cosmetic tubes",
-    "aluminium collapsible tube slugs",
-    "monobloc aerosol can slugs",
-    // Quality/spec keywords
-    "99.7 pure aluminium slugs",
-    "ISO certified aluminium manufacturer",
-    "high purity aluminium slugs",
-    // Export/brand keywords
-    "aluminium slug exporter India",
+    // Long-tail B2B keywords
     "WMIPL",
     "Western Metal Industries",
-    "Western Metal Industries Pune",
-    // Long-tail B2B keywords
-    "largest aluminium slug manufacturer India",
-    "aluminium slug supplier UAE",
-    "aluminium slug manufacturer 35000 MT capacity",
   ],
 
   authors: [{ name: "Western Metal Industries Pvt. Ltd." }],
   creator: "Western Metal Industries Pvt. Ltd.",
   publisher: "Western Metal Industries Pvt. Ltd.",
 
+  // Full Open Graph tags
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://www.westernaluminium.com",
     siteName: "Western Metal Industries Pvt. Ltd.",
-    // Keyword-first OG title for social sharing
-    title: "Aluminium Slug Manufacturer India | Western Metal Industries",
+    title: "Western Metal Industries — Aluminium Slug Manufacturer Pune",
     description:
-      "India's largest aluminium slug manufacturer with 70% market share. Supplying Cipla, L'Oréal, GSK, Sun Pharma and 50+ global brands. ISO certified. 45+ years of excellence from Pune.",
+      "India's largest aluminium slug manufacturer with 70% market share. Supplying Cipla, L'Oréal, GSK, Sun Pharma and 50+ global brands. ISO certified.",
     images: [
       {
         url: "/og-image.jpg",
@@ -229,11 +265,12 @@ export const metadata: Metadata = {
     ],
   },
 
+  // Twitter card meta tags
   twitter: {
     card: "summary_large_image",
-    title: "Aluminium Slug Manufacturer India | Western Metal Industries",
+    title: "Western Metal Industries — Aluminium Slug Manufacturer",
     description:
-      "India's largest aluminium slug manufacturer. 70% market share. Plain, perforated & domed slugs. ISO certified. Exporting globally since 1985.",
+      "India's largest aluminium slug manufacturer. 70% market share. Plain, perforated & domed slugs. ISO certified. Exporting globally.",
     images: [
       {
         url: "/og-image.jpg",
@@ -243,6 +280,7 @@ export const metadata: Metadata = {
   },
 
   robots: {
+    // Ensures search engines will crawl and index the site
     index: true,
     follow: true,
     googleBot: {
@@ -282,6 +320,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Performance hints: Preconnect and DNS prefetch for third-party domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+
         {/* Organization schema — helps Google understand your business entity */}
         <script
           type="application/ld+json"
@@ -297,9 +340,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        {/* Breadcrumb schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {/* Semantic HTML landmark element */}
+          <main aria-label="Main content">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
