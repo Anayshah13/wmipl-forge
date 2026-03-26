@@ -43,7 +43,6 @@ export const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Replace these with your actual Service ID, Template ID, and Public Key from EmailJS
         const serviceId = 'western_test';
         const templateId = 'template_tqx2geq';
         const publicKey = 'qrcgKzfnNgDSru5Ee';
@@ -93,7 +92,7 @@ export const Contact = () => {
                     </p>
                 </div>
 
-                {/* Combined Contact Info & Address Box - The "1 Box" */}
+                {/* Combined Contact Info & Address Box */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -101,9 +100,10 @@ export const Contact = () => {
                     transition={{ duration: 0.5 }}
                     className="mb-5"
                 >
-                    <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none flex flex-col lg:flex-row items-center gap-6 justify-between">
-                        {/* Contact Methods */}
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full lg:w-[60%] border-b lg:border-b-0 lg:border-r border-gray-200 pb-4 lg:pb-0 lg:pr-6">
+                    <Card className="p-5 shadow-lg bg-white/90 backdrop-blur-sm border-none">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                            {/* Email */}
                             <div
                                 className="flex items-center gap-3 cursor-pointer group"
                                 onClick={() => window.open('mailto:western@westernaluminium.com', '_blank')}
@@ -116,6 +116,8 @@ export const Contact = () => {
                                     <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors break-words">western@westernaluminium.com</p>
                                 </div>
                             </div>
+
+                            {/* Phone */}
                             <div
                                 className="flex items-center gap-3 cursor-pointer group"
                                 onClick={() => copyToClipboard("+91-20-26870164", "Phone number")}
@@ -128,11 +130,8 @@ export const Contact = () => {
                                     <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
                                 </div>
                             </div>
-                           
-                        </div>
 
-                        {/* Addresses */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full lg:w-[40%]">
+                            {/* Head Office */}
                             <div
                                 className="flex items-center gap-3 cursor-pointer group"
                                 onClick={() => copyToClipboard("251/1 A, B Hadapsar Ind. Estate, Hadapsar, Pune - 411013", "Head Office Address")}
@@ -141,12 +140,14 @@ export const Contact = () => {
                                     <MapPin className="text-primary w-5 h-5" />
                                 </div>
                                 <div className="text-left">
-                                    <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Head Office</h3>
+                                    <h3 className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider mb-0.5">Head Office</h3>
                                     <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         251/1 A, B Hadapsar Ind. Estate,<br />Hadapsar, Pune - 411013
                                     </p>
                                 </div>
                             </div>
+
+                            {/* Mfg. Unit */}
                             <div
                                 className="flex items-center gap-3 cursor-pointer group"
                                 onClick={() => copyToClipboard("254 Khor Road, Bhandgaon, Pune - 412214", "Mfg. Unit Address")}
@@ -155,12 +156,13 @@ export const Contact = () => {
                                     <MapPin className="text-primary w-5 h-5" />
                                 </div>
                                 <div className="text-left">
-                                    <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-0.5">Mfg. Unit</h3>
+                                    <h3 className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider mb-0.5">Mfg. Unit</h3>
                                     <p className="text-xs lg:text-sm text-secondary font-bold leading-snug group-hover:text-primary transition-colors">
                                         254 Khor Road, Bhandgaon,<br />Pune - 412214
                                     </p>
                                 </div>
                             </div>
+
                         </div>
                     </Card>
                 </motion.div>
@@ -174,7 +176,6 @@ export const Contact = () => {
                         transition={{ duration: 0.5 }}
                         className="flex flex-col gap-4 h-full"
                     >
-                        {/* Contact Form */}
                         <Card className="p-6 md:p-8 shadow-xl bg-white/90 backdrop-blur-sm border-none flex-grow flex flex-col">
                             <h2 className="text-sm font-bold text-secondary mb-5 uppercase tracking-wider border-b border-gray-100 pb-3">
                                 Send us a Message
@@ -264,7 +265,6 @@ export const Contact = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col gap-4 h-full"
                     >
-                        {/* Map */}
                         <div className="flex-grow rounded-xl overflow-hidden shadow-xl border border-white/20 min-h-[15.625rem] relative bg-gray-100">
                             <LoadScript googleMapsApiKey="AIzaSyDRkLHkjclT6KD7oN1ZZPzjUcw7BRLDx1c">
                                 <GoogleMap
