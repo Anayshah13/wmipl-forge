@@ -53,7 +53,7 @@ export const Contact = () => {
             from_email: formData.email,
             phone: formData.phone,
             message: formData.message,
-            to_email: 'chintanshah123@gmail.com'
+            to_email: 'chintan@westernaluminium.com'
         };
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
@@ -128,18 +128,7 @@ export const Contact = () => {
                                     <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors">+91-20-26870164</p>
                                 </div>
                             </div>
-                            <div
-                                className="flex items-center gap-3 cursor-pointer group"
-                                onClick={() => copyToClipboard("westernaluminium.com", "Website URL")}
-                            >
-                                <div className="w-10 h-10 bg-primary/10 rounded-full flex flex-shrink-0 items-center justify-center">
-                                    <Globe className="w-5 h-5 text-primary" />
-                                </div>
-                                <div className="overflow-hidden">
-                                    <p className="text-[0.625rem] font-bold text-gray-500 uppercase tracking-wider">Website</p>
-                                    <p className="text-xs lg:text-sm font-bold text-secondary group-hover:text-primary transition-colors overflow-wrap-anywhere">westernaluminium.com</p>
-                                </div>
-                            </div>
+                           
                         </div>
 
                         {/* Addresses */}
