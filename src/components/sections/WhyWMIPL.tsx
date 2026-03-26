@@ -9,7 +9,7 @@ export const WhyWMIPL = () => {
         {
             image: "/why/leadership.png",
             title: "Leadership Position",
-            description: "70% market share in aluminium slugs industry in India with 3+ decades of legacy",
+            description: "75% market share in aluminium slugs industry in India with 3+ decades of legacy",
         },
         {
             image: "/why/portfolio.png",
