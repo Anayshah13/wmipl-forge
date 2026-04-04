@@ -1,43 +1,19 @@
 # ============================================================
 # robots.txt — westernaluminium.com
-# Last updated: April 2026
+# Updated: April 2026
 # Docs: https://developers.google.com/search/docs/crawling-indexing/robots/intro
 # ============================================================
 
-# ── Allow all major search engines (default) ────────────────
+# ── All crawlers (including Googlebot & bingbot via wildcard) ─
 User-agent: *
 Allow: /
-
-# Block Next.js internals that should never be indexed
 Disallow: /_next/
 Disallow: /api/
+Disallow: /*.php$
 Disallow: /404
 Disallow: /500
 
-# Block staging or admin paths if they exist in future
-# Disallow: /admin/
-# Disallow: /staging/
-
-# ── Google-specific ─────────────────────────────────────────
-User-agent: Googlebot
-Allow: /
-Disallow: /_next/
-Disallow: /api/
-
-User-agent: Googlebot-Image
-Allow: /
-# Let Google index all product & facility images for image search
-
-# ── Bing ────────────────────────────────────────────────────
-User-agent: bingbot
-Allow: /
-Disallow: /_next/
-Disallow: /api/
-
-# ── AI training crawlers — block to protect content ─────────
-# These bots collect data for generative AI model training.
-# Blocking them prevents content scraping without SEO impact.
-
+# ── AI training crawlers — block to protect content ──────────
 User-agent: GPTBot
 Disallow: /
 
@@ -68,5 +44,5 @@ Disallow: /
 User-agent: PetalBot
 Disallow: /
 
-# ── Sitemap location ────────────────────────────────────────
+# ── Sitemap location ─────────────────────────────────────────
 Sitemap: https://www.westernaluminium.com/sitemap.xml
