@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — westernaluminium.com
+  Generated: April 2026
+  Submit at: https://search.google.com/search-console
+  Validate at: https://www.xml-sitemaps.com/validate-xml-sitemap.html
+
+  PRIORITY GUIDE:
+    1.0 = Homepage
+    0.9 = Core product pages (add when created)
+    0.8 = Application / use-case pages (add when created)
+    0.7 = Company / infrastructure / export pages
+    0.6 = Blog / resources (add when created)
+    0.5 = Contact, certifications, FAQ
+
+  CHANGEFREQ GUIDE:
+    daily    = blog, news
+    weekly   = product specs (if updated frequently)
+    monthly  = about, infrastructure, team
+    yearly   = static policy pages
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- TIER 1 — LIVE NOW                                      -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.westernaluminium.com/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/fact1.png</image:loc>
+      <image:title>Western Metal Industries — Aluminium Slug Manufacturing Plant, Pune</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/wocenter.png</image:loc>
+      <image:title>Aluminium Slug Without Centre Hole — Western Metal Industries</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/wchole.png</image:loc>
+      <image:title>Aluminium Slug With Centre Hole — Western Metal Industries</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/domed.png</image:loc>
+      <image:title>Domed / Taper Aluminium Slug for Aerosol Cans — Western Metal Industries</image:title>
+    </image:image>
+  </url>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- TIER 2 — RECOMMENDED PAGES TO CREATE (HIGH PRIORITY)  -->
+  <!-- Uncomment each block once the page is live.           -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <!-- Product: Plain / Rigid Aluminium Slugs -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/products/aluminium-slug-without-centre-hole</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/wocenter.png</image:loc>
+      <image:title>Plain Aluminium Slug — Without Centre Hole, Western Metal Industries</image:title>
+    </image:image>
+  </url>
+  -->
+
+  <!-- Product: Pierced / Centre-Hole Aluminium Slugs -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/products/aluminium-slug-with-centre-hole</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+  <!-- Product: Domed / Taper Slugs -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/products/domed-taper-aluminium-slug</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+  <!-- Product: Aluminium Circles -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/products/aluminium-circles</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+  <!-- Product: Aluminium Strips -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/products/aluminium-strips</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  -->
+
+  <!-- Application: Aerosol Cans -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/applications/aluminium-slugs-for-aerosol-cans</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+  <!-- Application: Collapsible Tubes -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/applications/aluminium-slugs-for-collapsible-tubes</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+  <!-- Application: Monobloc Bottles -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/applications/aluminium-slugs-for-monobloc-bottles</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+  <!-- ── Company pages ─────────────────────────────────────── -->
+
+  <!-- About Us -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/about</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  -->
+
+  <!-- Infrastructure / Facilities -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/infrastructure</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/hadapsar.jpg</image:loc>
+      <image:title>Hadapsar Manufacturing Plant — Western Metal Industries, Pune</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.westernaluminium.com/bhandgaon.jpg</image:loc>
+      <image:title>Bhandgaon Manufacturing Plant — Western Metal Industries</image:title>
+    </image:image>
+  </url>
+  -->
+
+  <!-- Quality & Certifications -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/quality-certifications</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  -->
+
+  <!-- Export / Global Reach -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/exports</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  -->
+
+  <!-- FAQ -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/faq</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  -->
+
+  <!-- Contact -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/contact</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  -->
+
+  <!-- ── Blog / Resources (add as articles are published) ──── -->
+  <!--
+  <url>
+    <loc>https://www.westernaluminium.com/blog/what-is-aluminium-slug</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.westernaluminium.com/blog/impact-extrusion-process-guide</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.westernaluminium.com/blog/en-570-standard-aluminium-slugs</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  -->
+
+</urlset>
