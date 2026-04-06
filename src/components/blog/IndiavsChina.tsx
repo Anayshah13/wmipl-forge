@@ -50,31 +50,62 @@ function useTocActive(ids: string[]) {
   return active
 }
 
-/* ─── Fade-in hook ───────────────────────────────────────── */
+/* ─── Fade-in hook ─────────────────────────────────────────
+   Adds global class "visible" — must match .fadeIn:global(.visible) in CSS module. */
 function useFadeIn(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    const io = new IntersectionObserver(
+    const show = () => {
+      el.classList.add('visible')
+    }
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      show()
+      return
+    }
+    let io: IntersectionObserver
+    const fallback = window.setTimeout(() => {
+      show()
+      io.disconnect()
+    }, 3500)
+    io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add('visible')
+          window.clearTimeout(fallback)
+          show()
           io.disconnect()
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.05, rootMargin: '0px 0px 15% 0px' }
     )
     io.observe(el)
-    return () => io.disconnect()
+    return () => {
+      window.clearTimeout(fallback)
+      io.disconnect()
+    }
   }, [ref])
 }
 
 /* ─── Fade wrapper ───────────────────────────────────────── */
-function F({ children, as: Tag = 'div' }: { children: React.ReactNode; as?: keyof JSX.IntrinsicElements }) {
+type FadeTag = 'div' | 'p' | 'h2' | 'h3' | 'span'
+
+function F({
+  children,
+  as: Tag = 'div',
+  id,
+}: {
+  children: React.ReactNode
+  as?: FadeTag
+  id?: string
+}) {
   const ref = useRef<HTMLElement>(null)
   useFadeIn(ref)
-  // @ts-expect-error — dynamic tag
-  return <Tag ref={ref} className={s.fadeIn}>{children}</Tag>
+  return (
+    // @ts-expect-error — dynamic intrinsic tag + shared HTMLElement ref
+    <Tag ref={ref} id={id} className={s.fadeIn}>
+      {children}
+    </Tag>
+  )
 }
 
 /* ─── TOC section IDs ────────────────────────────────────── */
@@ -99,38 +130,50 @@ export default function IndiaVsChina() {
   const activeId = useTocActive(TOC_IDS)
 
   return (
-    <div className={s.root}>
+    <article className={s.root} aria-labelledby="article-title">
       {/* PROGRESS BAR */}
       <div className={s.progressBar} style={{ width: `${progress}%` }} aria-hidden />
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className={s.hero}>
+      <header className={s.hero}>
         <div className={s.heroInner}>
           <nav className={s.breadcrumb} aria-label="Breadcrumb">
             <Link href="/">Home</Link>
-            <span>/</span>
-            <Link href="/blog">Industry Insights</Link>
-            <span>/</span>
-            <span>India vs China</span>
+            <span aria-hidden>/</span>
+            <Link href="/insights">Insights</Link>
+            <span aria-hidden>/</span>
+            <span aria-current="page">India vs China</span>
           </nav>
-          <div className={s.heroTag}>Procurement Guide</div>
-          <h1 className={s.heroH1}>
+          <p className={s.heroTag}>Procurement Guide</p>
+          <h1 id="article-title" className={s.heroH1}>
             Sourcing aluminium slugs from India vs&nbsp;China: quality, cost and reliability compared
           </h1>
           <div className={s.heroMeta}>
-            <div className={s.heroMetaItem}><span className={s.heroMetaDot} />April 2026</div>
-            <div className={s.heroMetaItem}><span className={s.heroMetaDot} />8 min read</div>
-            <div className={s.heroMetaItem}><span className={s.heroMetaDot} />~1,600 words</div>
-            <div className={s.heroMetaItem}><span className={s.heroMetaDot} />Western Metal Industries</div>
+            <div className={s.heroMetaItem}>
+              <span className={s.heroMetaDot} aria-hidden />
+              <time dateTime="2026-04-01">April 2026</time>
+            </div>
+            <div className={s.heroMetaItem}>
+              <span className={s.heroMetaDot} aria-hidden />
+              <span>8 min read</span>
+            </div>
+            <div className={s.heroMetaItem}>
+              <span className={s.heroMetaDot} aria-hidden />
+              <span>~1,600 words</span>
+            </div>
+            <div className={s.heroMetaItem}>
+              <span className={s.heroMetaDot} aria-hidden />
+              <span>Western Metal Industries</span>
+            </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* ── ARTICLE + SIDEBAR GRID ───────────────────────── */}
       <div className={s.articleWrap}>
 
         {/* ── ARTICLE BODY ─────────────────────────────── */}
-        <article className={s.articleBody}>
+        <div className={s.articleBody}>
 
           {/* INTRO */}
           <F as="p"><span className={s.lead}>For global procurement teams sourcing aluminium slugs, China has been the default answer for decades. Low base cost, high production volumes, and well-established export infrastructure made it the obvious starting point for buyers in Europe, the Americas and the Middle East.</span></F>
@@ -329,10 +372,10 @@ export default function IndiaVsChina() {
             </div>
           </F>
 
-        </article>
+        </div>
 
         {/* ── SIDEBAR ──────────────────────────────────── */}
-        <aside className={s.sidebar}>
+        <aside className={s.sidebar} aria-label="Article tools and summary">
 
           <div className={s.sidebarBlock}>
             <div className={s.sidebarLabel}>In this article</div>
@@ -385,6 +428,6 @@ export default function IndiaVsChina() {
 
         </aside>
       </div>
-    </div>
+    </article>
   )
 }

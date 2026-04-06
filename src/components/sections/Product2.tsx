@@ -46,7 +46,7 @@ export const Product2 = () => {
     };
 
     return (
-        <section id="products2" className="min-h-screen w-full overflow-x-hidden bg-[url('/products.png')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-center">
+        <section id="products" className="min-h-screen w-full overflow-x-hidden bg-[url('/products.png')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-center">
             <div className="absolute inset-0 bg-white/40 z-0" />
             <div className="relative z-10 w-full h-full py-10 flex flex-col justify-center">
 

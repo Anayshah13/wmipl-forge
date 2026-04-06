@@ -1,3 +1,4 @@
+import { HomeSectionScroller } from "@/components/HomeSectionScroller";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { WhyWMIPL } from "@/components/sections/WhyWMIPL";
@@ -17,6 +18,7 @@ import { Product2 } from "@/components/sections/Product2";
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <HomeSectionScroller />
       <Hero />
       <br />
       <About />

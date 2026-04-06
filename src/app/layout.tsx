@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Providers } from "./providers";
+import { playfair, sourceSans, sourceSerif } from "@/lib/fonts";
 
 // ─── Structured Data ────────────────────────────────────────────────────────
 
@@ -318,7 +319,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${playfair.variable} ${sourceSans.variable} ${sourceSerif.variable}`}
+    >
       <head>
         {/* Performance hints: Preconnect and DNS prefetch for third-party domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -356,17 +360,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
-
-import { playfair, sourceSans, sourceSerif } from '@/lib/fonts'
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <html
-      lang="en"
-      className={`${playfair.variable} ${sourceSans.variable} ${sourceSerif.variable}`}
-    >
-      <body>{children}</body>
-    </html>
-  )
 }

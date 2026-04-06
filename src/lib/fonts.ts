@@ -31,7 +31,6 @@ export const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   weight: ['400'],
   style: ['normal', 'italic'],
-  axes: ['opsz'],
   variable: '--font-serif',
   display: 'swap',
 })
