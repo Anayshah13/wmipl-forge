@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { BLOG_POSTS } from '@/lib/blog'
 
 const BASE = 'https://www.westernaluminium.com'
 
@@ -29,19 +30,24 @@ const ENTRIES: Entry[] = [
   { path: '/products/plain-aluminium-slugs', changeFrequency: 'monthly', priority: 0.88 },
   { path: '/products/perforated-aluminium-slugs', changeFrequency: 'monthly', priority: 0.88 },
   { path: '/products/domed-aluminium-slugs', changeFrequency: 'monthly', priority: 0.88 },
-  {
-    path: '/blog/sourcing-aluminium-slugs-india-vs-china',
-    changeFrequency: 'yearly',
-    priority: 0.65,
-  },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
-  return ENTRIES.map(({ path, changeFrequency, priority }) => ({
+
+  const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
+    url: `${BASE}/blog/${p.slug}`,
+    lastModified,
+    changeFrequency: p.sitemapChangeFrequency,
+    priority: p.sitemapPriority,
+  }))
+
+  const staticEntries = ENTRIES.map(({ path, changeFrequency, priority }) => ({
     url: path === '/' ? `${BASE}/` : `${BASE}${path}`,
     lastModified,
     changeFrequency,
     priority,
   }))
+
+  return [...staticEntries, ...blogEntries]
 }

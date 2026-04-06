@@ -143,6 +143,21 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
+  /* Homepage section anchors: land ~7% viewport height above section (navbar / breathing room) */
+  #about,
+  #products,
+  #why-wmipl,
+  #production-process,
+  #infrastructure,
+  #management,
+  #export,
+  #clients,
+  #csr-section,
+  #contact,
+  #certificates {
+    scroll-margin-top: 7vh;
+  }
+
   /* Section padding */
   .section-padding {
     @apply py-16 md:py-24 lg:py-32;

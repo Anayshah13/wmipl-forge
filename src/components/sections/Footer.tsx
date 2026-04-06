@@ -11,17 +11,17 @@ export const Footer = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-[#1a1a1a] text-white py-16 font-sans relative overflow-hidden">
+    <footer id="footer" className="bg-[#000000] text-white py-16 font-sans relative overflow-hidden">
       {/* Decorative Dome Effect */}
       <div
-        className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[92%] bg-[#25488a] rounded-t-[100%] opacity-85 blur-[7.5rem] pointer-events-none z-0"
+        className="absolute bottom-[-20%] left-1/2 -translate-x-1/2 w-[120%] h-[92%] bg-[#1c60eadc] rounded-t-[100%] opacity-70 blur-[7.5rem] pointer-events-none z-0"
       />
 
-      <div className="relative z-10 max-w-[85%] mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-0 items-stretch justify-center text-center">
+      <div className="relative z-10 mx-auto max-w-[92%] px-4 md:px-8">
+        <div className="flex flex-col items-stretch justify-center gap-8 text-center md:flex-row md:gap-0">
 
-          {/* Column 1: Logo & Socials (Flex-2 -> 50%) */}
-          <div className="flex-[2] w-full flex flex-col items-center gap-6 md:border-r border-white/5 px-4">
+          {/* Column 1: Logo & Socials */}
+          <div className="flex w-full flex-col items-center gap-6 px-4 md:flex-[1.75] md:border-r md:border-white/10">
             <Image
               src="/logo2.png"
               alt="Western Metal Industries logo — aluminium slug manufacturer Pune India"
@@ -45,19 +45,23 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links (Flex-1 -> 25%) */}
-          <div className="flex-1 w-full flex flex-col items-center md:border-r border-white/10 px-4 pt-4 md:pt-0">
-            <h4 className="font-semibold mb-6 text-xl uppercase tracking-wider text-white">Quick Links</h4>
-            <ul className="space-y-3 text-base text-zinc-400">
+          {/* Column 2: Quick Links — 8 items, 2 cols; wider horizontal band */}
+          <div className="flex w-full min-w-0 flex-col items-center px-4 pt-4 md:flex-[1.5] md:border-r md:border-white/10 md:px-10 md:pt-0">
+            <h4 className="mb-6 text-xl font-semibold uppercase tracking-wider text-white">Quick Links</h4>
+            <ul className="mx-auto grid w-full max-w-2xl grid-cols-2 gap-x-12 gap-y-5 text-center text-base leading-relaxed text-zinc-300">
               <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="#clients" className="hover:text-primary transition-colors">Clients &amp; Suppliers</a></li>
               <li><a href="#products" className="hover:text-primary transition-colors">Products</a></li>
+              <li><a href="#export" className="hover:text-primary transition-colors">Export Network</a></li>
               <li><a href="#infrastructure" className="hover:text-primary transition-colors">Infrastructure</a></li>
-              <li><a href="#management" className="hover:text-primary transition-colors">Management</a></li>
+              <li><a href="#why-wmipl" className="hover:text-primary transition-colors">Why WMIPL</a></li>
+              <li><a href="#csr-section" className="hover:text-primary transition-colors">CSR</a></li>
+              <li><a href="#production-process" className="hover:text-primary transition-colors">Production Process</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Certifications (Flex-1 -> 25%) */}
-          <div className="flex-1 w-full flex flex-col items-center px-4 pt-4 md:pt-0">
+          {/* Column 3: Certifications */}
+          <div className="flex w-full min-w-0 flex-col items-center px-4 pt-4 md:flex-[0.9] md:pt-0">
             <h4 className="font-semibold mb-6 text-xl uppercase tracking-wider text-white">Certifications</h4>
             <ul className="space-y-3 text-base text-zinc-400">
               <li><Link href="/certifications" className="hover:text-primary transition-colors">ISO 9001:2015</Link></li>

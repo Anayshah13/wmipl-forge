@@ -146,7 +146,7 @@ export default function IndiaVsChina() {
           </nav>
           <p className={s.heroTag}>Procurement Guide</p>
           <h1 id="article-title" className={s.heroH1}>
-            Sourcing aluminium slugs from India vs&nbsp;China: quality, cost and reliability compared
+            Sourcing Aluminium slugs from India vs&nbsp;China: quality, cost and reliability compared
           </h1>
           <div className={s.heroMeta}>
             <div className={s.heroMetaItem}>

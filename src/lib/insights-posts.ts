@@ -1,3 +1,5 @@
+import { BLOG_POSTS } from '@/lib/blog'
+
 export type InsightPost = {
   title: string
   description: string
@@ -5,16 +7,13 @@ export type InsightPost = {
   published: string
 }
 
-/** Long-form articles hosted on this site (add new entries when you add blog routes). */
-export const INSIGHT_POSTS: InsightPost[] = [
-  {
-    title: 'Sourcing Aluminium Slugs: India vs China — Cost, Quality & Reliability',
-    description:
-      'A procurement guide for global buyers comparing Indian and Chinese aluminium slug suppliers on landed cost, quality, lead times, MOQs, tariffs, and ESG.',
-    href: '/blog/sourcing-aluminium-slugs-india-vs-china',
-    published: '2026-04-01',
-  },
-]
+/** Derived from `BLOG_POSTS` — keep blog entries in `src/lib/blog.ts` + `components/blog/registry.tsx`. */
+export const INSIGHT_POSTS: InsightPost[] = BLOG_POSTS.map((p) => ({
+  title: p.listTitle,
+  description: p.listDescription,
+  href: `/blog/${p.slug}`,
+  published: p.publishedDate,
+}))
 
 export const LINKEDIN_COMPANY_URL =
   'https://www.linkedin.com/company/western-metal-industries-private-ltd/' as const

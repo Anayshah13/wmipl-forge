@@ -7,11 +7,11 @@
   --ink-4: #9ca3af;
   --rule: #e5e7eb;
   /* Brand (replaces gold) */
-  --brand: #0a4daa;
-  --brand-dk: #0b2555;
-  --brand-mid: #1565c0;
+  --brand: #4c80c9;
+  --brand-dk: #6180bb;
+  --brand-mid: #6e99c9;
   --brand-lt: #e8f1fc;
-  --brand-hover: #083d88;
+  --brand-hover: #0d356d;
   --bg: #f8fafc;
   --white: #ffffff;
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
