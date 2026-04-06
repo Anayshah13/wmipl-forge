@@ -3,14 +3,20 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 
+const VIDEO_SRC = "/video1.mp4";
+
 export const Hero = () => {
-  const [videoSrc, setVideoSrc] = useState("");
+  const [videoVisible, setVideoVisible] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    setVideoSrc("/video1.mp4");
+    const t = window.setTimeout(() => {
+      videoRef.current?.load();
+    }, 0);
+    return () => clearTimeout(t);
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -19,18 +25,38 @@ export const Hero = () => {
 
   return (
     <div className="relative w-full h-screen min-h-[700px] flex flex-col items-center justify-center overflow-hidden">
-      {/* Background Video with Overlay */}
+      {/* hero-bg (under) → video (fade in) → gradient on top */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/80 to-transparent z-10"></div>
+        <div
+          className="absolute inset-0 z-0"
+          aria-hidden
+        >
+          <Image
+            src="/hero-bg.png"
+            alt=""
+            fill
+            loading="eager"
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover"
+          preload="none"
+          onCanPlay={() => setVideoVisible(true)}
+          onPlaying={() => setVideoVisible(true)}
+          onError={() => setVideoVisible(false)}
+          className={`absolute inset-0 z-[1] h-full w-full object-cover transition-opacity duration-700 ease-out ${
+            videoVisible ? "opacity-100" : "opacity-0"
+          }`}
         >
-          {videoSrc && <source src={videoSrc} type="video/mp4" />}
+          <source src={VIDEO_SRC} type="video/mp4" />
         </video>
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-secondary via-secondary/80 to-transparent" />
       </div>
 
       {/* Hero Content */}
@@ -39,7 +65,7 @@ export const Hero = () => {
           <div className="flex flex-col gap-6 items-center">
             <div className="flex flex-col gap-8 items-center w-full">
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={false}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="w-full max-w-2xl px-10 py-4"
@@ -54,9 +80,9 @@ export const Hero = () => {
                 />
               </motion.div>
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.8 }}
                 className="text-white/80 text-l md:text-2xl leading-relaxed max-w-3xl drop-shadow-lg"
               >
                 India's largest manufacturer of aluminium slugs with 75% market share. 45+ years of excellence.
@@ -65,9 +91,9 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mt-6 w-full px-4 sm:px-0">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 0.5 }}
                 className="w-full sm:w-auto"
               >
                 <Button
@@ -79,9 +105,9 @@ export const Hero = () => {
                 </Button>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.7 }}
+                transition={{ duration: 0.5 }}
                 className="w-full sm:w-auto"
               >
                 <Button
@@ -100,9 +126,9 @@ export const Hero = () => {
 
       {/* Scroll Indicator */}
       <motion.button
-        initial={{ opacity: 0 }}
+        initial={false}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 0.35 }}
         onClick={() => scrollToSection('about')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white animate-bounce"
       >
