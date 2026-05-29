@@ -1,10 +1,13 @@
 import { About } from "@/components/sections/About";
-import { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Western Metal Industries",
-  description: "Learn more about Western Metal Industries, India's largest aluminium slug manufacturer.",
-};
+export const metadata = buildPageMetadata({
+  title: "About Us — Aluminium Slug Manufacturer India Since 1978",
+  description:
+    "About Western Metal Industries (WMIPL): India's largest aluminium slug manufacturer in Pune with 75% market share, 99.7% pure aluminium, ISO certified since 1978. Serving Mumbai & global buyers.",
+  path: "/about",
+  keywords: ["aluminium slug manufacturer history", "WMIPL Pune", "aluminium India manufacturer"],
+});
 
 export default function AboutPage() {
   return (

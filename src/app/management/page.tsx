@@ -1,10 +1,12 @@
 import { Management } from "@/components/sections/Management";
-import { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Management | Western Metal Industries",
-  description: "Meet the experienced management team that drives Western Metal Industries forward.",
-};
+export const metadata = buildPageMetadata({
+  title: "Leadership & Management — Western Metal Industries",
+  description:
+    "Meet the leadership behind India's largest aluminium slug manufacturer. WMIPL management team guiding Pune operations and global aluminium slug supply since 1978.",
+  path: "/management",
+});
 
 export default function ManagementPage() {
   return (

@@ -52,6 +52,26 @@ const nextConfig = {
       { source: '/enquiry-form.php', destination: '/', permanent: true },
       { source: '/sitemap.php', destination: '/sitemap.xml', permanent: true },
       { source: '/:path*.php', destination: '/', permanent: true },
+      {
+        source: '/products/plain-aluminium-slugs',
+        destination: '/products/aluminium-slugs-plain-without-center-hole',
+        permanent: true,
+      },
+      {
+        source: '/products/perforated-aluminium-slugs',
+        destination: '/products/aluminium-slugs-perforated-with-center-hole',
+        permanent: true,
+      },
+      {
+        source: '/products/domed-aluminium-slugs',
+        destination: '/products/aluminium-slugs-domed-taper',
+        permanent: true,
+      },
+      {
+        source: '/applications/automative-impact-extrusion',
+        destination: '/applications/automotive-impact-extrusion',
+        permanent: true,
+      },
     ]
   },
 }

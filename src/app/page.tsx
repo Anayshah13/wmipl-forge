@@ -20,13 +20,9 @@ export default function Home() {
     <div className="min-h-screen">
       <HomeSectionScroller />
       <Hero />
-      <br />
       <About />
-      <br />
       <Product2 />
-      <br />
       <WhyWMIPL />
-      <br />
       <div id="production-process">
         <div className="hidden md:block">
           <ProductionProcess />
@@ -35,15 +31,10 @@ export default function Home() {
           <ProductionProcess2 />
         </div>
       </div>
-      <br />
       <Infrastructure />
-      <br />
       <Management />
-      <br />
       <Export2 />
-      <br />
       <ClientsPage2 />
-      <br />
       <div id="csr-section">
         <div className="block md:hidden">
           <CSR />
@@ -52,9 +43,7 @@ export default function Home() {
           <CSR2 />
         </div>
       </div>
-      <br />
       <CertificatesSection />
-      <br />
       <Contact />
       <Footer />
     </div>

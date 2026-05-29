@@ -1,11 +1,18 @@
 import { ProductionProcess } from "@/components/sections/ProductionProcess";
 import { ProductionProcess2 } from "@/components/sections/ProductionProcess2";
-import { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Production Process | Western Metal Industries",
-  description: "Explore our state-of-the-art production process for manufacturing high-quality aluminium slugs.",
-};
+export const metadata = buildPageMetadata({
+  title: "Aluminium Slug Production Process — Manufacturing Pune India",
+  description:
+    "How WMIPL manufactures aluminium slugs in Pune: casting, rolling, blanking, annealing and finishing for plain, perforated and domed impact extrusion slugs. ISO-certified process.",
+  path: "/production-process",
+  keywords: [
+    "aluminium slug manufacturing process",
+    "how aluminium slugs are made",
+    "impact extrusion slug production India",
+  ],
+});
 
 export default function ProductionProcessPage() {
   return (

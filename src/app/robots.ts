@@ -1,27 +1,20 @@
-import type { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
 
-const BASE = 'https://www.westernaluminium.com'
-
+/**
+ * Allow all crawlers including AI/search bots (GPTBot, ClaudeBot, etc.)
+ * so the site can appear in ChatGPT, Perplexity, and similar tools.
+ */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/_next/', '/api/', '/404', '/500'],
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/_next/", "/api/"],
       },
-      { userAgent: 'GPTBot', disallow: '/' },
-      { userAgent: 'ChatGPT-User', disallow: '/' },
-      { userAgent: 'Google-Extended', disallow: '/' },
-      { userAgent: 'anthropic-ai', disallow: '/' },
-      { userAgent: 'ClaudeBot', disallow: '/' },
-      { userAgent: 'CCBot', disallow: '/' },
-      { userAgent: 'omgili', disallow: '/' },
-      { userAgent: 'FacebookBot', disallow: '/' },
-      { userAgent: 'Bytespider', disallow: '/' },
-      { userAgent: 'PetalBot', disallow: '/' },
     ],
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
-  }
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
+  };
 }

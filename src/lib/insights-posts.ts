@@ -28,6 +28,36 @@ export type LinkedInEmbed = {
 
 export const LINKEDIN_EMBEDS: LinkedInEmbed[] = [
   {
+    src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7464590872165384192?collapsed=1',
+    width: 504,
+    height: 670,
+    title: 'Western Metal Industries — LinkedIn update',
+  },
+  {
+    src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7461379760150093824?collapsed=1',
+    width: 504,
+    height: 670,
+    title: 'Western Metal Industries — LinkedIn update',
+  },
+  {
+    src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7460919895761952768?collapsed=1',
+    width: 504,
+    height: 508,
+    title: 'Western Metal Industries — LinkedIn update',
+  },
+  {
+    src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7459977660937687040?collapsed=1',
+    width: 504,
+    height: 670,
+    title: 'Western Metal Industries — LinkedIn update',
+  },
+  {
+    src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7462376962905473024?collapsed=1',
+    width: 504,
+    height: 553,
+    title: 'Western Metal Industries — LinkedIn update',
+  },
+  {
     src: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7446452119093833728',
     width: 504,
     height: 571,

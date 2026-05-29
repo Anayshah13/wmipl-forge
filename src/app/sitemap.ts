@@ -1,75 +1,23 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = "https://www.westernaluminium.com";
+import { BLOG_POSTS } from "@/lib/blog";
+import { SITE_URL, SITEMAP_ROUTES } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return [
-    // Homepage
-    {
-      url: SITE_URL,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    // Products index
-    {
-      url: `${SITE_URL}/products`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    // Product pages
-    {
-      url: `${SITE_URL}/products/aluminium-slugs-plain-without-center-hole`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/aluminium-slugs-perforated-with-center-hole`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${SITE_URL}/products/aluminium-slugs-domed-taper`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    // Applications index
-    {
-      url: `${SITE_URL}/applications`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    // Application pages
-    {
-      url: `${SITE_URL}/applications/aerosol-cans`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/applications/collapsible-tubes`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/applications/food-packaging`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/applications/automotive-impact-extrusion`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  const staticEntries: MetadataRoute.Sitemap = SITEMAP_ROUTES.map((route) => ({
+    url: route.path === "/" ? SITE_URL : `${SITE_URL}${route.path}`,
+    lastModified: now,
+    changeFrequency: route.changeFrequency,
+    priority: route.priority,
+  }));
+
+  const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.modifiedISO),
+    changeFrequency: post.sitemapChangeFrequency,
+    priority: post.sitemapPriority,
+  }));
+
+  return [...staticEntries, ...blogEntries];
 }
