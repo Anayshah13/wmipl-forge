@@ -12,7 +12,7 @@ import {
   FAQList,
   CTABand,
   JsonLd,
-} from "../../components/PageShell";
+} from "@/components/PageShell";
 import {
   SITE_URL,
   ORGANIZATION_JSONLD,

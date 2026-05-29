@@ -1,6 +1,4 @@
-// app/components/PageShell.tsx
 // Shared layout primitives for product and application pages.
-// Matches existing westernaluminium.com design language (#173178 blue, hexagon motifs).
 
 import Link from "next/link";
 import Image from "next/image";
@@ -11,10 +9,7 @@ export function Breadcrumbs({
   trail: { name: string; href?: string }[];
 }) {
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="text-sm text-slate-600 mb-6"
-    >
+    <nav aria-label="Breadcrumb" className="text-sm text-slate-600 mb-6">
       <ol className="flex flex-wrap items-center gap-2">
         {trail.map((item, i) => (
           <li key={i} className="flex items-center gap-2">
@@ -126,9 +121,7 @@ export function Section({
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg text-slate-600 leading-relaxed">
-                {subtitle}
-              </p>
+              <p className="text-lg text-slate-600 leading-relaxed">{subtitle}</p>
             )}
           </div>
         )}
@@ -148,10 +141,7 @@ export function SpecTable({
       <table className="w-full text-left">
         <tbody>
           {rows.map((row, i) => (
-            <tr
-              key={i}
-              className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}
-            >
+            <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
               <th
                 scope="row"
                 className="py-3 px-5 font-medium text-slate-700 w-1/2 border-r border-slate-200"
@@ -184,12 +174,8 @@ export function FeatureGrid({
               {item.icon}
             </div>
           )}
-          <h3 className="text-lg font-semibold text-[#173178] mb-2">
-            {item.title}
-          </h3>
-          <p className="text-slate-600 text-sm leading-relaxed">
-            {item.description}
-          </p>
+          <h3 className="text-lg font-semibold text-[#173178] mb-2">{item.title}</h3>
+          <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
         </div>
       ))}
     </div>
@@ -206,9 +192,7 @@ export function FAQList({
       {faqs.map((faq, i) => (
         <details key={i} className="group p-6">
           <summary className="flex justify-between items-start cursor-pointer list-none">
-            <h3 className="text-lg font-semibold text-slate-900 pr-8">
-              {faq.q}
-            </h3>
+            <h3 className="text-lg font-semibold text-slate-900 pr-8">{faq.q}</h3>
             <span className="text-[#173178] text-2xl leading-none group-open:rotate-45 transition-transform">
               +
             </span>
@@ -229,7 +213,7 @@ export function CTABand() {
             Discuss your specifications with our team
           </h2>
           <p className="text-blue-100">
-            India's largest aluminium slug manufacturer. Serving 50+ countries since 1978.
+            India&apos;s largest aluminium slug manufacturer. Serving 50+ countries since 1978.
           </p>
         </div>
         <Link
@@ -251,4 +235,3 @@ export function JsonLd({ data }: { data: object | object[] }) {
     />
   );
 }
-
